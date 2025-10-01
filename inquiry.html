@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry | Shikisha Tours & Travel</title>
+  <meta name="description" content="Send your inquiry to Shikisha Tours & Travel. We’ll help you plan your next adventure.">
+  <link rel="icon" type="image/png" href="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:58c2bcd2b2a43ec02eb55c7563b7a4fc/directUpload/user-thumbnail.png">
+
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: "Manrope", Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #ffffff;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      max-height: 50px;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #22a9e6;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea, button {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #c75f00;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #a64c00;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png" alt="Shikisha Tours & Travel"></a>
+</header>
+
+<main>
+  <h1>Inquiry Form</h1>
+  <p>Please fill in your details and we’ll get back to you shortly.</p>
+
+  <form action="/submit-inquiry" method="POST">
+    <input type="text" name="full_name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number">
+    <textarea name="message" placeholder="Do you already have specific requirements or locations in mind that we can consider? The more you already know about your travel requirements, the better our travel expert will prepare a tailored proposal for you. Think about specific parks, type of activities, etc.
+" rows="6" required></textarea>
+
+    <!-- Cloudflare Turnstile -->
+    <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+
+    <button type="submit">Submit Inquiry</button>
+  </form>
+</main>
+
+<!-- Cloudflare Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+</body>
+</html>
