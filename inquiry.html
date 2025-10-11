@@ -142,6 +142,29 @@
     <button type="submit">GET A FREE QUOTE!</button>
   </form>
 
+  <form id="quoteForm">
+  <!-- your inputs -->
+  <button type="submit">GET A FREE QUOTE!</button>
+</form>
+
+<script>
+document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = Object.fromEntries(new FormData(e.target).entries());
+  const res = await fetch('/api/sendQuote', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  });
+
+  const data = await res.json();
+  if (data.success) alert('Your inquiry has been sent successfully!');
+  else alert('Failed to send inquiry. Please try again.');
+});
+</script>
+
+
   <div class="consultant">
   <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ce1de39b271eb16f0c02ed634d0dee7b/directUpload/SB-65.jpg" alt="Travel Consultant">
   <p><strong>SCHEDULE 1-ON-1 CALL WITH OUR CONSULTANT</strong><br>
