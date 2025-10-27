@@ -523,25 +523,83 @@ slideInterval = setInterval(nextSlide, 5000);
   background: #1a87b7;
   transform: scale(1.03);
 }
-  
 
+  /* Footer */
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.site-footer .social-icons {
+  margin-bottom: 1.5rem;
+}
+
+.site-footer .social-icons a {
+  color: #fff;
+  margin: 0 12px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.site-footer .social-icons a:hover {
+  color: #22A9E6; /* Brand blue */
+}
+
+.site-footer .footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px;
+}
+
+.site-footer .footer-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.site-footer .footer-menu li a:hover {
+  color: #22A9E6;
+}
+
+/* Mobile stacked footer menu */
+@media (max-width: 768px) {
+  .site-footer .footer-menu {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.site-footer .copyright {
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: #aaa;
+}
+
+</style>
 
 <!-- Footer -->
 <footer class="site-footer">
   <!-- Social Icons -->
 <div class="social-icons">
-  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.facebook.com" target="https://www.facebook.com/shikishatourstravel/"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com" target="https://instagram.com/shikisha_tours/"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com" target="https://www.linkedin.com/company/shikishatoursandtravel/"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.tiktok.com" target="https://www.tiktok.com/@shikisha_tours/"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com" target="https://www.youtube.com/@shikishatourstravel/"><i class="fab fa-youtube"></i></a>
 </div>
 
 
   <ul class="footer-menu">
     <li><a href="#">Help Center</a></li>
     <li><a href="#">About Us</a></li>
-    <li><a href="#">Careers</a></li>
+    <li><a href="https://shikishatoursandtravels.zohorecruit.com/jobs/careers">Careers</a></li>
     <li><a href="#">Supplier Sign Up</a></li>
     <li><a href="#">Affiliate Program</a></li>
     <li><a href="#">News</a></li>
