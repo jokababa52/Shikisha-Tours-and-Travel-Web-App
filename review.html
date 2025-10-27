@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit your feedback | How was Shikisha Tours and Travel in Nairobi?</title>
+  <title>Share Your Experience | Shikisha Tours and Travel</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
@@ -29,14 +29,6 @@
     }
 
     .logo { width: 220px; }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 28px;
-    }
 
     nav ul {
       list-style: none;
@@ -106,14 +98,12 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
-    .review-card i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
+    .review-card i,
     .review-card img {
-      width: 30px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 10px;
+      object-fit: contain;
     }
 
     .review-card span {
@@ -121,8 +111,8 @@
       font-size: 1.1rem;
     }
 
+    /* Brand colors */
     .review-card:nth-child(1) i { color: #db4437; } /* Google */
-    .review-card:nth-child(2) i { color: #34e0a1; } /* TripAdvisor */
     .review-card:nth-child(4) i { color: #00b67a; } /* Trustpilot */
 
     @media (max-width: 768px) {
@@ -130,10 +120,7 @@
         flex-direction: column;
         align-items: center;
       }
-
-      .review-card {
-        width: 90%;
-      }
+      .review-card { width: 90%; }
     }
 
     /* Footer */
@@ -187,7 +174,9 @@
 
 <!-- Header -->
 <header>
-  <a href="index.html"><img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours Logo" class="logo"></a>
+  <a href="index.html">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours Logo" class="logo">
+  </a>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -201,27 +190,31 @@
 
 <!-- Reviews Section -->
 <section class="reviews-page">
-  <h1>How was Shikisha Tours and Travel in Nairobi?</h1>
+  <h1>How Was Shikisha Tours and Travel in Nairobi?</h1>
   <p>We’d be grateful if you would review us on the following platforms, the world’s largest travel sites, helping millions of visitors every month plan the perfect trip.</p>
 
   <div class="review-links">
+    <!-- Google -->
     <a href="https://g.page/r/CcovRiB3cjEpEBM/review" target="_blank" class="review-card">
       <i class="fab fa-google"></i>
       <span>Google</span>
     </a>
 
+    <!-- TripAdvisor -->
     <a href="https://www.tripadvisor.com/Attraction_Review-g294207-d33022187-Reviews-Shikisha_Tours_and_Travel-Nairobi.html" target="_blank" class="review-card">
-      <i class="fab fa-tripadvisor"></i>
-      <span>TripAdvisor</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Tripadvisor_Logo_circle-green_horizontal-lockup_registered_RGB.svg" alt="Tripadvisor Logo">
+      <span>Tripadvisor</span>
     </a>
 
+    <!-- SafariBookings -->
     <a href="https://www.safaribookings.com/review/p7111" target="_blank" class="review-card">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:07ca78f1bc9b73ba0c739f9be84c70ec/directUpload/download-3.png" alt="SafariBookings Logo">
+      <img src="https://www.safaribookings.com/images/sb-logo.svg" alt="SafariBookings Logo">
       <span>SafariBookings</span>
     </a>
 
+    <!-- Trustpilot -->
     <a href="https://www.trustpilot.com/review/shikishatoursandtravels.co.ke" target="_blank" class="review-card">
-      <i class="fab fa-trustpilot"></i>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Trustpilot_logo_star.svg" alt="Trustpilot Logo">
       <span>Trustpilot</span>
     </a>
   </div>
