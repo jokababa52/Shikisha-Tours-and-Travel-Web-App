@@ -1,215 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Share Your Experience — Shikisha Tours & Travel</title>
-  <meta name="description" content="Leave a review for Shikisha Tours & Travel on Google, TripAdvisor, SafariBookings or Trustpilot." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Experience | Shikisha Tours & Travel</title>
+  <link rel="icon" href="https://shikishatoursandtravels.co.ke/wp-content/uploads/2023/06/Shikisha-Logo-Icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --green:#1E5631;
-      --sand:#F5F3E7;
-      --gold:#D4AF37;
-      --muted:#5b6b5a;
-      --glass: rgba(255,255,255,0.85);
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:'Poppins',system-ui,Helvetica,Arial;line-height:1.45;margin:0;color:#122; background:#fff}
-
-    /* Header / hero */
-    .site-wrap{min-height:100vh;display:flex;flex-direction:column}
-    header{padding:28px 20px;text-align:center}
-    .logo{max-width:220px;margin:0 auto}
-
-    .hero{
-      position:relative;
-      display:grid;place-items:center;
-      padding:56px 20px;
-      background-image:linear-gradient(rgba(30,86,49,0.45), rgba(30,86,49,0.25)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=60');
-      background-size:cover;background-position:center;
-      color:#fff;
-      text-align:center;
-      border-bottom-left-radius:32px;border-bottom-right-radius:32px;
-    }
-    .hero-content{max-width:980px;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));border-radius:12px}
-    h1{font-family:'Playfair Display',serif;font-size:2.1rem;margin:0 0 12px}
-    p.lead{margin:0 auto 18px;max-width:720px;opacity:0.95}
-    .btn-primary{display:inline-block;background:var(--gold);color:#0f1a0f;padding:14px 20px;border-radius:999px;font-weight:600;text-decoration:none;box-shadow:0 6px 18px rgba(17,24,15,0.12)}
-
-    /* Review grid */
-    .container{width:100%;max-width:1080px;margin:36px auto;padding:0 20px}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .card{background:var(--glass);backdrop-filter: blur(6px);border-radius:12px;padding:20px;display:flex;align-items:center;gap:16px;box-shadow:0 6px 20px rgba(15,20,15,0.06)}
-    .card .icon{width:68px;height:68px;border-radius:10px;display:grid;place-items:center;font-size:28px}
-    .card h3{margin:0;font-size:1.05rem}
-    .card p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
-    .card .cta{margin-left:auto}
-    .card .cta a{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;background:var(--green);color:#fff}
-
-    /* Single-column on small screens */
-    @media (max-width:780px){
-      h1{font-size:1.6rem}
-      .grid{grid-template-columns:1fr}
-      .hero{padding:40px 18px}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Testimonials */
-    .testimonials{margin:28px 0;padding:26px;background:var(--sand);border-radius:12px}
-    .test-list{display:flex;gap:18px;overflow:hidden}
-    .test-card{min-width:300px;padding:18px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(17,24,15,0.06)}
-    .stars{color:var(--gold);margin-bottom:8px}
-    .meta{font-size:0.85rem;color:var(--muted);margin-top:12px}
+    body {
+      background-color: #f5f3e7;
+      color: #333;
+    }
 
-    /* Social / thank you */
-    .thank{padding:44px 20px;text-align:center;background:linear-gradient(90deg,var(--green),#2a7a3d);color:#fff;border-radius:12px;margin:36px 20px}
-    .social{margin-top:12px;display:flex;gap:12px;justify-content:center}
-    .social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.12);text-decoration:none;color:#fff;font-weight:600}
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:56a51ed70315a22e94ed2a4ccb4ef157/https://shikishatoursandtravels.co.ke/Masai_Mara_National_Reserve_091.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
 
-    footer{padding:26px 20px;text-align:center;color:#fff;background:#12361f;margin-top:auto}
-    footer a{color:var(--gold);text-decoration:none}
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #FFD700;
+    }
 
-    /* small helper */
-    .muted{color:var(--muted)}
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .platform-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .platform-card i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .platform-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #1E5631;
+    }
+
+    .platform-card p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-card a {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    /* Platform colors */
+    .google a { background: #4285F4; }
+    .tripadvisor a { background: #34E0A1; color: #000; }
+    .safaribookings a { background: #E6A122; }
+    .trustpilot a { background: #00B67A; }
+
+    .google a:hover { background: #3367d6; }
+    .tripadvisor a:hover { background: #20b885; }
+    .safaribookings a:hover { background: #cc8c1c; }
+    .trustpilot a:hover { background: #009d6b; }
+
+    footer {
+      background-color: #1E5631;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
   </style>
-
 </head>
 <body>
-  <div class="site-wrap">
-    <header>
-      <!-- Replace src with your logo path -->
-      <img class="logo" src="https://via.placeholder.com/320x60?text=Shikisha+Tours+%26+Travel" alt="Shikisha Tours & Travel logo">
-    </header>
+  <header>
+    <h1>Share Your Experience</h1>
+    <p>Thank you for choosing Shikisha Tours & Travel. Your feedback helps us grow, improve, and inspire more travellers to explore Africa with us.</p>
+  </header>
 
-    <section class="hero" aria-label="Share your experience">
-      <div class="hero-content">
-        <h1>Your Journey Matters to Us</h1>
-        <p class="lead">Every story you share helps future travellers discover unforgettable adventures. Would you take a moment to leave a review about your recent trip with Shikisha?</p>
-        <a class="btn-primary" href="#reviews">Leave a Review</a>
-      </div>
-    </section>
+  <section class="platforms">
+    <div class="platform-card google">
+      <i class="fa-brands fa-google"></i>
+      <h3>Google Reviews</h3>
+      <p>Leave a quick Google review and let others know how your trip went!</p>
+      <a href="{{GOOGLE_REVIEW_URL}}" target="_blank">Review on Google</a>
+    </div>
 
-    <main>
-      <section id="reviews" class="container" aria-label="Review platforms">
-        <h2 style="font-family:'Playfair Display',serif;margin:8px 0 18px;text-align:center">Choose a platform to leave your review</h2>
+    <div class="platform-card tripadvisor">
+      <i class="fa-brands fa-tripadvisor"></i>
+      <h3>TripAdvisor</h3>
+      <p>Share your story and help fellow travellers plan their next adventure.</p>
+      <a href="{{TRIPADVISOR_REVIEW_URL}}" target="_blank">Review on TripAdvisor</a>
+    </div>
 
-        <div class="grid">
-          <!-- Google -->
-          <article class="card" role="article" aria-labelledby="gtitle">
-            <div class="icon" style="background:#e8f7e9;color:var(--green)">
-              <!-- inline svg google like icon (simple) -->
-              G
-            </div>
-            <div>
-              <h3 id="gtitle">Google Reviews</h3>
-              <p>Quick &amp; easy — leave a short review that helps local travellers find us.</p>
-            </div>
-            <div class="cta">
-              <!-- Replace the href with your Google review URL -->
-              <a href="{{GOOGLE_REVIEW_URL}}" target="_blank" rel="noopener noreferrer">Review on Google</a>
-            </div>
-          </article>
+    <div class="platform-card safaribookings">
+      <i class="fa-solid fa-binoculars"></i>
+      <h3>SafariBookings</h3>
+      <p>Rate your safari experience and help other explorers make the right choice.</p>
+      <a href="{{SAFARIBOOKINGS_REVIEW_URL}}" target="_blank">Review on SafariBookings</a>
+    </div>
 
-          <!-- TripAdvisor -->
-          <article class="card" role="article" aria-labelledby="ttitle">
-            <div class="icon" style="background:#fff9e6;color:#c07a00">T</div>
-            <div>
-              <h3 id="ttitle">TripAdvisor</h3>
-              <p>Share your travel story and help other explorers choose the perfect trip.</p>
-            </div>
-            <div class="cta">
-              <a href="{{TRIPADVISOR_REVIEW_URL}}" target="_blank" rel="noopener noreferrer">Review on TripAdvisor</a>
-            </div>
-          </article>
+    <div class="platform-card trustpilot">
+      <i class="fa-brands fa-trustpilot"></i>
+      <h3>Trustpilot</h3>
+      <p>Your trust means everything — tell others why you’d book with us again.</p>
+      <a href="{{TRUSTPILOT_REVIEW_URL}}" target="_blank">Review on Trustpilot</a>
+    </div>
+  </section>
 
-          <!-- SafariBookings -->
-          <article class="card" role="article" aria-labelledby="stitle">
-            <div class="icon" style="background:#f3f7ff;color:#2357a6">S</div>
-            <div>
-              <h3 id="stitle">SafariBookings</h3>
-              <p>Rate your safari experience and help fellow travellers choose wisely.</p>
-            </div>
-            <div class="cta">
-              <a href="{{SAFARIBOOKINGS_REVIEW_URL}}" target="_blank" rel="noopener noreferrer">Review on SafariBookings</a>
-            </div>
-          </article>
-
-          <!-- Trustpilot -->
-          <article class="card" role="article" aria-labelledby="ptitle">
-            <div class="icon" style="background:#fff6f1;color:#b33a2c">★</div>
-            <div>
-              <h3 id="ptitle">Trustpilot</h3>
-              <p>Your honest review helps future customers trust our service.</p>
-            </div>
-            <div class="cta">
-              <a href="{{TRUSTPILOT_REVIEW_URL}}" target="_blank" rel="noopener noreferrer">Review on Trustpilot</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Optional testimonials -->
-        <div class="testimonials" style="margin-top:22px">
-          <h3 style="margin:0 0 12px;font-family:'Playfair Display',serif;text-align:left">Recent traveler highlights</h3>
-          <div class="test-list" id="test-list">
-            <div class="test-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <div class="quote">"Everything was seamless — from Nairobi pickup to our Maasai Mara stay. Highly recommend!"</div>
-              <div class="meta">L. Fernandes — United Kingdom</div>
-            </div>
-            <div class="test-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <div class="quote">"The Shikisha team made our honeymoon in Zanzibar unforgettable! Excellent service."</div>
-              <div class="meta">Joyce &amp; Daniel — Kenya</div>
-            </div>
-            <div class="test-card">
-              <div class="stars">⭐⭐⭐⭐⭐</div>
-              <div class="quote">"Guides were knowledgeable and caring; accommodation was superb. Will book again."</div>
-              <div class="meta">M. Ochieng' — Kenya</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA reminder -->
-        <div style="text-align:center;margin-top:18px">
-          <p class="muted">Prefer we send the review link directly? Email us at <a href="mailto:info@shikishatoursandtravels.co.ke">info@shikishatoursandtravels.co.ke</a></p>
-        </div>
-      </section>
-
-      <section class="thank" aria-label="Thank you">
-        <h2 style="margin:0 0 8px">Asante — thank you for sharing your story</h2>
-        <p style="margin:0">Your feedback helps us improve every safari, every stay, and every smile. Follow us for trip ideas and special offers.</p>
-        <div class="social" role="navigation" aria-label="Social links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">ig</a>
-          <a href="#" aria-label="X">x</a>
-          <a href="#" aria-label="TikTok">tt</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div style="max-width:1100px;margin:0 auto;padding:8px 20px">
-        <div>© 2025 Shikisha Tours &amp; Travel — All Rights Reserved</div>
-        <div style="margin-top:6px">Made with <span aria-hidden>❤️</span> in Kenya — <a href="mailto:info@shikishatoursandtravels.co.ke">info@shikishatoursandtravels.co.ke</a> • +254 701 705 005</div>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Simple horizontal scroll for the testimonial list on larger screens
-    (function(){
-      const list = document.getElementById('test-list');
-      if(!list) return;
-      let isDown = false, startX, scrollLeft;
-      list.addEventListener('mousedown', (e)=>{isDown=true;list.classList.add('active');startX=e.pageX - list.offsetLeft;scrollLeft=list.scrollLeft});
-      list.addEventListener('mouseleave', ()=>{isDown=false;list.classList.remove('active')});
-      list.addEventListener('mouseup', ()=>{isDown=false;list.classList.remove('active')});
-      list.addEventListener('mousemove', (e)=>{if(!isDown) return; e.preventDefault(); const x=e.pageX - list.offsetLeft; const walk=(x-startX)*1.2; list.scrollLeft=scrollLeft - walk});
-    })();
-  </script>
+  <footer>
+    © 2025 Shikisha Tours & Travel • Made with ❤️ in Kenya<br>
+    <a href="mailto:info@shikishatoursandtravels.co.ke">info@shikishatoursandtravels.co.ke</a> | 
+    <a href="tel:+254701705005">+254 701 705 005</a>
+  </footer>
 </body>
 </html>
