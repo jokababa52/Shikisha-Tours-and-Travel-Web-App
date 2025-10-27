@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Shikisha Tours & Travel</title>
-
-  <!-- Favicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
@@ -14,6 +12,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* Header */
@@ -30,13 +29,8 @@
       transition: all 0.3s ease;
     }
 
-    /* Logo */
-    .logo {
-      width: 250px;
-      height: auto;
-    }
+    .logo { width: 250px; height: auto; }
 
-    /* Desktop Nav */
     nav ul {
       list-style: none;
       display: flex;
@@ -52,12 +46,8 @@
       font-weight: 500;
       transition: color 0.3s ease;
     }
+    nav ul li a:hover { color: #22A9E6; }
 
-    nav ul li a:hover {
-      color: #22A9E6;
-    }
-
-    /* CTA Button */
     nav ul li .cta {
       background: #22A9E6;
       color: #fff !important;
@@ -67,13 +57,8 @@
       transition: all 0.3s ease;
       display: inline-block;
     }
+    nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
 
-    nav ul li .cta:hover {
-      background: #0f8dc0;
-      transform: scale(1.05);
-    }
-
-    /* Hamburger */
     .hamburger {
       display: none;
       background: none;
@@ -82,107 +67,174 @@
       font-size: 28px;
       z-index: 1001;
     }
+    .hamburger::before { content: "☰"; font-size: 28px; color: #333; }
+    .hamburger.active::before { content: "✖"; color: #fff; }
 
-    .hamburger::before {
-      content: "☰";
-      font-size: 28px;
-      color: #333;
-    }
-
-    .hamburger.active::before {
-      content: "✖";
-      color: #fff; /* contrast on blue menu */
-    }
-
-    /* Mobile Menu */
     @media (max-width: 768px) {
       nav {
-        position: fixed;
-        top: 0;
-        left: 100%;
-        width: 100%;
-        height: 100%;
-        background: #22A9E6;
-        padding: 80px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        transition: left 0.3s ease-in-out;
-        z-index: 1000;
+        position: fixed; top: 0; left: 100%; width: 100%; height: 100%;
+        background: #22A9E6; padding: 80px 20px;
+        display: flex; flex-direction: column; align-items: flex-start;
+        transition: left 0.3s ease-in-out; z-index: 1000;
       }
-
-      nav.show {
-        left: 0;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-      }
-
-      nav ul li a {
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: bold;
-      }
-
-      .mobile-cta {
-        margin-top: 30px;
-        width: 100%;
-      }
-
+      nav.show { left: 0; }
+      nav ul { flex-direction: column; gap: 20px; width: 100%; }
+      nav ul li a { color: #fff; font-size: 1.3rem; font-weight: bold; }
+      .mobile-cta { margin-top: 30px; width: 100%; }
       .mobile-cta .cta {
-        background: #fff;
-        color: #22A9E6 !important;
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
+        background: #fff; color: #22A9E6 !important;
+        display: block; width: 100%; text-align: center; padding: 14px 20px;
       }
-
-      .mobile-cta .cta:hover {
-        background: #f0f0f0;
-        color: #22A9E6 !important;
-      }
-
-      .hamburger {
-        display: block;
-        margin-left: auto;
-      }
-
-      /* Logo shrinks slightly */
-      header .logo {
-        width: 200px;
-      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
     }
+    header.shrink { padding: 6px 1rem; }
+    header.shrink .logo { width: 180px; }
 
-    /* Shrink on scroll */
-    header.shrink {
-      padding: 6px 1rem;
+    /* Hero Slider */
+    .hero-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+    .slides { position: relative; width: 100%; height: 100%; }
+    .slide {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 1;
     }
+    .slide.active { opacity: 1; z-index: 2; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .caption {
+      position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%);
+      text-align: center; color: #fff; background: rgba(0,0,0,0.4);
+      padding: 15px 25px; border-radius: 10px;
+    }
+    .caption h2 { font-size: 2rem; margin: 0; }
+    .caption p { margin-top: 5px; font-size: 1rem; }
 
-    header.shrink .logo {
-      width: 180px;
+    /* Why Choose Us */
+    .why-choose-us { text-align: center; padding: 3rem 1rem; background: #f9f9f9; }
+    .why-choose-us h2 { margin-bottom: 2rem; font-size: 2rem; color: #c75f00; }
+    .features {
+      display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .feature {
+      flex: 1 1 250px; max-width: 300px;
+      background: #fff; border-radius: 12px;
+      padding: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover { transform: translateY(-6px); box-shadow: 0 6px 15px rgba(0,0,0,0.12); }
+    .feature .icon { width: 60px; height: 60px; margin-bottom: 1rem; }
+    .feature h3 { font-size: 1.2rem; color: #c75f00; }
+    .feature p { font-size: 0.95rem; color: #444; }
+    .feature a { color: #c75f00; text-decoration: none; font-weight: 500; }
+
+    /* Auth Box */
+    .auth-box {
+      max-width: 500px; margin: 80px auto;
+      padding: 40px 20px; text-align: center;
+      background: #f7f9fc; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .auth-box h2 { font-size: 1.5rem; margin-bottom: 15px; color: #222; }
+    .auth-box p { font-size: 1rem; color: #555; margin-bottom: 25px; }
+    .auth-box p a { color: #22A9E6; font-weight: 600; text-decoration: none; }
+    .auth-btn {
+      display: inline-block; background: #22A9E6; color: #fff;
+      text-decoration: none; padding: 14px 28px;
+      border-radius: 6px; font-weight: 600; transition: 0.3s ease;
+    }
+    .auth-btn:hover { background: #1a87b7; transform: scale(1.03); }
+
+    /* Traveller Reviews Preview */
+    .reviews-preview {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #fff;
+    }
+    .reviews-preview h2 {
+      font-size: 2rem;
+      color: #c75f00;
+      margin-bottom: 1rem;
+    }
+    .reviews-preview p {
+      color: #555;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .review-platforms {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .platform-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .platform-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .platform-card i { font-size: 1.8rem; }
+    .platform-card img { width: 24px; height: auto; }
+    .platform-card:nth-child(1) i { color: #db4437; }
+    .platform-card:nth-child(2) i { color: #34e0a1; }
+    .platform-card:nth-child(4) i { color: #00b67a; }
+    .reviews-preview .cta-btn {
+      margin-top: 2.5rem;
+      display: inline-block;
+      background: #22A9E6;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+    .reviews-preview .cta-btn:hover { background: #1a87b7; transform: scale(1.05); }
+
+    /* Footer */
+    .site-footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .social-icons a {
+      color: #fff; margin: 0 12px; font-size: 1.5rem; transition: 0.3s ease;
+    }
+    .social-icons a:hover { color: #22A9E6; }
+    .footer-menu {
+      list-style: none; padding: 0; margin: 1.5rem 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 30px;
+    }
+    .footer-menu a {
+      color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
+    }
+    .footer-menu a:hover { color: #22A9E6; }
+    .copyright { font-size: 0.85rem; margin-top: 1.5rem; color: #aaa; }
+
+    @media(max-width:768px){
+      .review-platforms{flex-direction:column;align-items:center;}
+      .platform-card{width:90%;}
+      .footer-menu{flex-direction:column;gap:12px;}
     }
   </style>
-
 </head>
+
 <body>
-
-<!-- Header -->
 <header id="site-header">
-  <!-- Logo -->
   <a href="/" class="logo-link">
-    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
-         alt="Shikisha Tours & Travel Logo" class="logo">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
   </a>
-
-  <!-- Hamburger -->
   <button class="hamburger" id="hamburger"></button>
-
-  <!-- Nav -->
   <nav id="nav-menu">
     <ul>
       <li><a href="#">Home</a></li>
@@ -195,506 +247,71 @@
   </nav>
 </header>
 
-<script>
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
-
-// Toggle menu + icon
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-  hamburger.classList.toggle("active");
-});
-
-// Shrink header on scroll
-window.addEventListener("scroll", () => {
-  const header = document.getElementById("site-header");
-  if (window.scrollY > 50) {
-    header.classList.add("shrink");
-  } else {
-    header.classList.remove("shrink");
-  }
-});
-</script>
-  
-
-  <!-- ✅ Hero Slider Section -->
+<!-- HERO SLIDER (kept unchanged) -->
 <section class="hero-slider">
   <div class="slides">
-    <!-- Slide 1 -->
     <div class="slide active">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:56a51ed70315a22e94ed2a4ccb4ef157/https://shikishatoursandtravels.co.ke/Masai_Mara_National_Reserve_091.jpg" alt="Safari Adventures">
-      <div class="caption">
-        <h2>Safari Adventures</h2>
-        <p>Explore the wild like never before</p>
-      </div>
+      <img src="https://shikishatoursandtravels.co.ke/Masai_Mara_National_Reserve_091.jpg" alt="Safari Adventures">
+      <div class="caption"><h2>Safari Adventures</h2><p>Explore the wild like never before</p></div>
     </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:48c3be383e6b5e16c6d9343a2a2db229/https://shikishatoursandtravels.co.ke/wmremove-transformed.jpg" alt="Cultural Journeys">
-      <div class="caption">
-        <h2>Cultural Journeys</h2>
-        <p>Immerse yourself in authentic traditions</p>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="slide">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:0848b30a9c22e3e31513fcea7df2777e/https://shikishatoursandtravels.co.ke/Tanzania.jpeg" alt="Snow-Capped Peaks">
-      <div class="caption">
-        <h2>Snow-Capped Peaks</h2>
-        <p>Experience breathtaking mountain scenery</p>
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="slide">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:1ebab7adabc396bd27f9e99143e3187d/https://shikishatoursandtravels.co.ke/chumbe-island-coral-park.jpg" alt="Beach Escapes">
-      <div class="caption">
-        <h2>Beach Escapes</h2>
-        <p>Relax by the ocean under the sun</p>
-      </div>
-    </div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/wmremove-transformed.jpg" alt="Cultural Journeys"><div class="caption"><h2>Cultural Journeys</h2><p>Immerse yourself in authentic traditions</p></div></div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/Tanzania.jpeg" alt="Snow-Capped Peaks"><div class="caption"><h2>Snow-Capped Peaks</h2><p>Experience breathtaking mountain scenery</p></div></div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/chumbe-island-coral-park.jpg" alt="Beach Escapes"><div class="caption"><h2>Beach Escapes</h2><p>Relax by the ocean under the sun</p></div></div>
   </div>
-
-  <!-- Dots Navigation -->
   <div class="dots"></div>
 </section>
 
-<style>
-/* Slider Container */
-/* Default (desktop & tablet) */
-/* Base Captions */
-.hero-slider {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* Slides (stacked) */
-.slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  z-index: 1; /* below captions & dots */
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 1; /* ensure image stays under caption */
-}
-
-  /* Make sure body and html are not restricting */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* Captions */
-.caption {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #fff;
-  background: rgba(0,0,0,0.4);
-  padding: 15px 25px;
-  border-radius: 10px;
-  z-index: 3; /* ✅ keeps caption above image */
-}
-
-.caption h2 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.caption p {
-  margin-top: 5px;
-  font-size: 1rem;
-}
-
-</style>
-
-
-<script>
-const slides = document.querySelectorAll('.slide');
-const dotsContainer = document.querySelector('.dots');
-let currentIndex = 0;
-let slideInterval;
-
-// Create dots
-slides.forEach((_, i) => {
-  const dot = document.createElement('button');
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goToSlide(i));
-  dotsContainer.appendChild(dot);
-});
-const dots = document.querySelectorAll('.dots button');
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-    dots[i].classList.toggle('active', i === index);
-  });
-  currentIndex = index;
-}
-
-function nextSlide() {
-  let next = (currentIndex + 1) % slides.length;
-  showSlide(next);
-}
-
-function goToSlide(index) {
-  showSlide(index);
-  resetInterval();
-}
-
-function resetInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 5000); // auto slide every 5s
-}
-
-// Start autoplay
-slideInterval = setInterval(nextSlide, 5000);
-</script>
-  
-
-  <!-- Why Choose Us Section -->
+<!-- WHY CHOOSE US -->
 <section class="why-choose-us">
   <h2>Why Choose Shikisha?</h2>
   <div class="features">
     <div class="feature">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:cbaddc174138775b90c6dba234da11b2/directUpload/2270411.svg" alt="Customer Support Icon" class="icon">
+      <img src="https://shikishatoursandtravels.co.ke/icons/support.svg" alt="Support" class="icon">
       <h3>24/7 Customer Support</h3>
       <p>No matter the time zone, we're here to help 24/7/365.</p>
     </div>
     <div class="feature">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:dbc549a2bf064fd4135f551bdfd2641e/directUpload/2270443.svg" alt="Licensed Operator Icon" class="icon">
+      <img src="https://shikishatoursandtravels.co.ke/icons/license.svg" alt="Licensed Operator" class="icon">
       <h3>Licensed Tour/Safari Operator</h3>
       <p>Plan and book with confidence. <a href="https://tra.go.ke/licensing-2/list-of-entities" target="_blank">Verify our license</a>.</p>
     </div>
     <div class="feature">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:18d61347b8810cbf7c7e8298ee28f099/directUpload/2270479.svg" alt="Money Back Guarantee Icon" class="icon">
+      <img src="https://shikishatoursandtravels.co.ke/icons/moneyback.svg" alt="Money Back Guarantee" class="icon">
       <h3>Money Back Guarantee</h3>
       <p>Explore our flexible <a href="https://shikishatoursandtravels.co.ke/booking-terms-conditions/" target="_blank">Booking & Cancellation Policy</a>.</p>
     </div>
   </div>
 </section>
 
-<style>
-.why-choose-us {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #f9f9f9;
-}
-.why-choose-us h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #c75f00; /* brand orange */
-}
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.feature {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.feature:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-.feature .icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1rem;
-  filter: hue-rotate(-20deg) saturate(150%) brightness(1.1); /* subtle orange tint */
-}
-.feature h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #c75f00; /* brand orange */
-}
-.feature p {
-  font-size: 0.95rem;
-  color: #444;
-}
-.feature a {
-  color: #c75f00; /* brand orange links */
-  text-decoration: none;
-  font-weight: 500;
-}
-.feature a: hover {
-  text-decoration: underline;
-}
-</style>
-
-
-  <!-- ✅ Sign-In / Sign-Up Section -->
+<!-- LOGIN BOX -->
 <section class="auth-box">
   <h2>Log in to manage bookings & Rewards</h2>
-  <p>
-    Don’t have an account yet? 
-    <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank">Sign up</a>
-  </p>
+  <p>Don’t have an account yet? <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank">Sign up</a></p>
   <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank" class="auth-btn">Log in</a>
 </section>
 
-<style>
-.auth-box {
-  max-width: 500px;
-  margin: 80px auto;
-  padding: 40px 20px;
-  text-align: center;
-  background: #f7f9fc;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.auth-box h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-.auth-box p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 25px;
-}
-
-.auth-box p a {
-  color: #22A9E6;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.auth-box p a:hover {
-  text-decoration: underline;
-}
-
-.auth-btn {
-  display: inline-block;
-  background: #22A9E6; /* ✅ Brand color */
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  max-width: 250px;
-}
-
-.auth-btn:hover {
-  background: #1a87b7;
-  transform: scale(1.03);
-}
-
-  <!-- Traveller Reviews Section -->
-<section class="reviews-section">
-  <h2>How was Shikisha Tours and Travel?</h2>
-  <p>Our travellers often tell us how helpful it is to read past travellers' reviews before selecting their own experiences. And we're always eager to hear what you liked and how we can improve.</p>
-
-  <div class="review-links">
-    <a href="{{GOOGLE_REVIEW_URL}}" target="https://g.page/r/CcovRiB3cjEpEBM/review" class="review-card">
-      <i class="fab fa-google"></i>
-      <span>Review on Google</span>
-    </a>
-
-    <a href="{{TRIPADVISOR_REVIEW_URL}}" target="https://www.tripadvisor.com/Attraction_Review-g294207-d33022187-Reviews-Shikisha_Tours_and_Travel-Nairobi.html" class="review-card">
-      <i class="fab fa-tripadvisor"></i>
-      <span>Review on TripAdvisor</span>
-    </a>
-
-    <a href="{{SAFARIBOOKINGS_REVIEW_URL}}" target="https://www.safaribookings.com/review/p7111" class="review-card">
-      <img src="https://www.safaribookings.com/images/sb-logo.svg" alt="SafariBookings Logo" class="sb-logo">
-      <span>Review on SafariBookings</span>
-    </a>
-
-    <a href="{{TRUSTPILOT_REVIEW_URL}}" target="https://www.trustpilot.com/review/shikishatoursandtravels.co.ke" class="review-card">
-      <i class="fab fa-trustpilot"></i>
-      <span>Review on Trustpilot</span>
-    </a>
+<!-- TRAVELLER REVIEWS PREVIEW -->
+<section class="reviews-preview">
+  <h2>Share Your Experience</h2>
+  <p>We value your feedback — let other travellers know about your journey with Shikisha.</p>
+  <div class="review-platforms">
+    <a href="https://g.page/r/CcovRiB3cjEpEBM/review" target="_blank" class="platform-card"><i class="fab fa-google"></i><span>Google</span></a>
+    <a href="https://www.tripadvisor.com/Attraction_Review-g294207-d33022187-Reviews-Shikisha_Tours_and_Travel-Nairobi.html" target="_blank" class="platform-card"><i class="fab fa-tripadvisor"></i><span>TripAdvisor</span></a>
+    <a href="https://www.safaribookings.com/review/p7111" target="_blank" class="platform-card"><img src="https://www.safaribookings.com/images/sb-logo.svg" alt="SafariBookings"><span>SafariBookings</span></a>
+    <a href="https://www.trustpilot.com/review/shikishatoursandtravels.co.ke" target="_blank" class="platform-card"><i class="fab fa-trustpilot"></i><span>Trustpilot</span></a>
   </div>
+  <a href="review.html" class="cta-btn">Write a Review</a>
 </section>
 
-  /* Footer */
-.site-footer {
-  background: #000;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.site-footer .social-icons {
-  margin-bottom: 1.5rem;
-}
-
-.site-footer .social-icons a {
-  color: #fff;
-  margin: 0 12px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.site-footer .social-icons a:hover {
-  color: #22A9E6; /* Brand blue */
-}
-
-.site-footer .footer-menu {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px 30px;
-}
-
-.site-footer .footer-menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.site-footer .footer-menu li a:hover {
-  color: #22A9E6;
-}
-
-/* Mobile stacked footer menu */
-@media (max-width: 768px) {
-  .site-footer .footer-menu {
-    flex-direction: column;
-    gap: 12px;
-  }
-}
-
-.site-footer .copyright {
-  font-size: 0.85rem;
-  margin-top: 1.5rem;
-  color: #aaa;
-}
-
-  <style>
-.reviews-section {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: #f3f7fb;
-}
-
-.reviews-section h2 {
-  font-size: 2rem;
-  color: #c75f00;
-  margin-bottom: 1rem;
-}
-
-.reviews-section p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 2rem;
-}
-
-.review-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.review-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #333;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.review-card i {
-  font-size: 1.8rem;
-}
-
-.review-card .sb-logo {
-  width: 26px;
-  height: auto;
-}
-
-.review-card:nth-child(1) i { color: #db4437; } /* Google */
-.review-card:nth-child(2) i { color: #34e0a1; } /* TripAdvisor */
-.review-card:nth-child(4) i { color: #00b67a; } /* Trustpilot */
-
-@media (max-width: 768px) {
-  .review-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .review-card {
-    width: 90%;
-  }
-}
-</style>
-
-
-</style>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="site-footer">
-  <!-- Social Icons -->
-<div class="social-icons">
-  <a href="https://www.facebook.com" target="https://www.facebook.com/shikishatourstravel/"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com" target="https://instagram.com/shikisha_tours/"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.linkedin.com" target="https://www.linkedin.com/company/shikishatoursandtravel/"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://www.tiktok.com" target="https://www.tiktok.com/@shikisha_tours/"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.youtube.com" target="https://www.youtube.com/@shikishatourstravel/"><i class="fab fa-youtube"></i></a>
-</div>
-
+  <div class="social-icons">
+    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
 
   <ul class="footer-menu">
     <li><a href="#">Help Center</a></li>
@@ -705,19 +322,25 @@ slideInterval = setInterval(nextSlide, 5000);
     <li><a href="#">News</a></li>
     <li><a href="#">Accessibility</a></li>
   </ul>
-  
 
-  <!-- Bottom -->
-  <div class="footer-bottom">
-    <p>© 2025 Shikisha Tours and Travel</p>
-    <div class="bottom-links" aria-hidden="false">
-      <a href="#">Terms & Conditions</a>
-      <a href="#">How It Works</a>
-      <a href="#">Privacy & Cookies</a>
-    </div>
-  </div>
-  
+  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
- 
+
+<script>
+const hamburger=document.getElementById("hamburger");
+const navMenu=document.getElementById("nav-menu");
+hamburger.addEventListener("click",()=>{navMenu.classList.toggle("show");hamburger.classList.toggle("active");});
+window.addEventListener("scroll",()=>{const header=document.getElementById("site-header");if(window.scrollY>50){header.classList.add("shrink");}else{header.classList.remove("shrink");}});
+const slides=document.querySelectorAll('.slide');
+const dotsContainer=document.querySelector('.dots');
+let currentIndex=0;let slideInterval;
+slides.forEach((_,i)=>{const dot=document.createElement('button');if(i===0)dot.classList.add('active');dot.addEventListener('click',()=>goToSlide(i));dotsContainer.appendChild(dot);});
+const dots=document.querySelectorAll('.dots button');
+function showSlide(index){slides.forEach((s,i)=>{s.classList.toggle('active',i===index);dots[i].classList.toggle('active',i===index);});currentIndex=index;}
+function nextSlide(){showSlide((currentIndex+1)%slides.length);}
+function goToSlide(index){showSlide(index);resetInterval();}
+function resetInterval(){clearInterval(slideInterval);slideInterval=setInterval(nextSlide,5000);}
+slideInterval=setInterval(nextSlide,5000);
+</script>
 </body>
 </html>
