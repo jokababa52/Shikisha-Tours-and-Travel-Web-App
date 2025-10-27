@@ -524,6 +524,34 @@ slideInterval = setInterval(nextSlide, 5000);
   transform: scale(1.03);
 }
 
+  <!-- Traveller Reviews Section -->
+<section class="reviews-section">
+  <h2>How was Shikisha Tours and Travel?</h2>
+  <p>Our travellers often tell us how helpful it is to read past travellers' reviews before selecting their own experiences. And we're always eager to hear what you liked and how we can improve.</p>
+
+  <div class="review-links">
+    <a href="{{GOOGLE_REVIEW_URL}}" target="https://g.page/r/CcovRiB3cjEpEBM/review" class="review-card">
+      <i class="fab fa-google"></i>
+      <span>Review on Google</span>
+    </a>
+
+    <a href="{{TRIPADVISOR_REVIEW_URL}}" target="https://www.tripadvisor.com/Attraction_Review-g294207-d33022187-Reviews-Shikisha_Tours_and_Travel-Nairobi.html" class="review-card">
+      <i class="fab fa-tripadvisor"></i>
+      <span>Review on TripAdvisor</span>
+    </a>
+
+    <a href="{{SAFARIBOOKINGS_REVIEW_URL}}" target="https://www.safaribookings.com/review/p7111" class="review-card">
+      <img src="https://www.safaribookings.com/images/sb-logo.svg" alt="SafariBookings Logo" class="sb-logo">
+      <span>Review on SafariBookings</span>
+    </a>
+
+    <a href="{{TRUSTPILOT_REVIEW_URL}}" target="https://www.trustpilot.com/review/shikishatoursandtravels.co.ke" class="review-card">
+      <i class="fab fa-trustpilot"></i>
+      <span>Review on Trustpilot</span>
+    </a>
+  </div>
+</section>
+
   /* Footer */
 .site-footer {
   background: #000;
@@ -581,6 +609,78 @@ slideInterval = setInterval(nextSlide, 5000);
   margin-top: 1.5rem;
   color: #aaa;
 }
+
+  <style>
+.reviews-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #f3f7fb;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  color: #c75f00;
+  margin-bottom: 1rem;
+}
+
+.reviews-section p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.review-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.review-card i {
+  font-size: 1.8rem;
+}
+
+.review-card .sb-logo {
+  width: 26px;
+  height: auto;
+}
+
+.review-card:nth-child(1) i { color: #db4437; } /* Google */
+.review-card:nth-child(2) i { color: #34e0a1; } /* TripAdvisor */
+.review-card:nth-child(4) i { color: #00b67a; } /* Trustpilot */
+
+@media (max-width: 768px) {
+  .review-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 90%;
+  }
+}
+</style>
+
 
 </style>
 
