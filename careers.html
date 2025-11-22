@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Shikisha Tours and Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* Header – same style as homepage for consistency */
+    header {
+      background: #fff;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .logo { width: 250px; height: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover { color: #22A9E6; }
+
+    nav ul li .cta {
+      background: #22A9E6;
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    nav ul li .cta:hover {
+      background: #0f8dc0;
+      transform: scale(1.05);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1001;
+    }
+    .hamburger::before {
+      content: "☰";
+      font-size: 28px;
+      color: #333;
+    }
+    .hamburger.active::before {
+      content: "✖";
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: #22A9E6;
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+      }
+      nav.show { left: 0; }
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+      nav ul li a {
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .mobile-cta {
+        margin-top: 30px;
+        width: 100%;
+      }
+      .mobile-cta .cta {
+        background: #fff;
+        color: #22A9E6 !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
+    }
+
+    header.shrink { padding: 6px 1rem; }
+    header.shrink .logo { width: 180px; }
+
+    /* Careers hero */
+    .hero-careers {
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #22A9E6, #c75f00);
+      color: #fff;
+    }
+    .hero-careers h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .hero-careers p {
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+      font-size: 1.05rem;
+    }
+    .hero-careers .hero-cta {
+      display: inline-block;
+      background: #fff;
+      color: #22A9E6;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .hero-careers .hero-cta:hover {
+      transform: scale(1.05);
+      background: #f3f4ff;
+    }
+    .hero-note {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.8rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      font-size: 1.6rem;
+      color: #c75f00;
+    }
+
+    .section p {
+      margin-bottom: 0.8rem;
+      font-size: 0.98rem;
+      color: #444;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .card-light {
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .card-light h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      color: #c75f00;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #fff4e6;
+      color: #c75f00;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+
+    .policy-link {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+    .policy-link a {
+      color: #22A9E6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .policy-link a:hover {
+      text-decoration: underline;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      background: #e8f5ff;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 12px;
+      font-size: 1.5rem;
+      transition: 0.3s ease;
+    }
+    .social-icons a:hover { color: #22A9E6; }
+
+    .footer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px 30px;
+    }
+    .footer-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+    .footer-menu a:hover { color: #22A9E6; }
+
+    .copyright {
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      color: #aaa;
+    }
+
+    @media(max-width:768px){
+      .footer-menu{flex-direction:column;gap:12px;}
+    }
+  </style>
+</head>
+<body>
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png"
+         alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
+  <button class="hamburger" id="hamburger"></button>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="careers.html"><strong>Careers</strong></a></li>
+      <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero-careers">
+  <h1>Work with Shikisha Tours &amp; Travel</h1>
+  <p>
+    Every day, our team helps guests discover East Africa in a genuine, responsible and memorable way.
+    If you love people, travel and problem-solving, you’ll fit right in.
+  </p>
+  <a href="https://shikishatoursandtravels.zohorecruit.com/jobs/careers"
+     target="_blank"
+     class="hero-cta">
+    View open roles on our Zoho Recruit portal
+  </a>
+  <div class="hero-note">
+    You’ll be redirected to our trusted recruitment partner, Zoho Recruit, to complete your application.
+  </div>
+</section>
+
+<div class="content">
+  <!-- Life at Shikisha / Workplace snapshot -->
+  <div class="section" id="workplace-policy">
+    <span class="badge">Workplace &amp; culture</span>
+    <h2>How We Work</h2>
+    <p class="tagline">
+      We’re a hands-on, on-site team. Most of our work happens close to the safari vehicles, partners and guests we serve.
+    </p>
+    <div class="grid">
+      <div class="card-light">
+        <h3>On-site, by design</h3>
+        <p>
+          We operate fully on-site to support smooth travel operations, guest services and team coordination.
+          Being together helps us respond quickly when plans change and guests need us most.
+        </p>
+      </div>
+      <div class="card-light">
+        <h3>Day-to-day rhythm</h3>
+        <p>
+          Roles are based in our office or operational locations. You’ll work on-site during agreed hours,
+          collaborating closely with colleagues across reservations, operations, finance, sales and guest support.
+        </p>
+      </div>
+      <div class="card-light">
+        <h3>Location-based pay</h3>
+        <p>
+          Compensation may be adjusted based on the employee’s country of residence. This helps us keep pay
+          fair and consistent while reflecting local conditions.
+        </p>
+      </div>
+    </div>
+
+    <div class="policy-link">
+      For full details, see our
+      <a href="https://www.shikishatoursandtravels.co.ke/workplace-policy" target="_blank">
+        Workplace Policy page
+      </a>.
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <div class="section">
+    <h2>What You Get on Site</h2>
+    <p class="tagline">
+      We keep things simple: a supportive team, the tools you need, and an environment that lets you focus on guests.
+    </p>
+    <div class="grid">
+      <div class="card-light">
+        <h3>Collaborative working space</h3>
+        <p>
+          Operations, reservations and support teams work side by side. Decisions are made quickly and you can
+          always tap a colleague on the shoulder for help.
+        </p>
+      </div>
+      <div class="card-light">
+        <h3>Dedicated focus hours</h3>
+        <p>
+          We set aside focus time so you can build itineraries, handle complex bookings or guest cases
+          without constant interruptions.
+        </p>
+      </div>
+      <div class="card-light">
+        <h3>Free meals</h3>
+        <p>
+          We provide free meals on-site so you can stay energized throughout your day and spend less time
+          worrying about what’s for lunch.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Health & safety / vaccine -->
+  <div class="section">
+    <h2>Health, Safety &amp; Vaccination</h2>
+    <p>
+      We work with people from all over the world, so looking after health and safety is part of our responsibility.
+      We follow national health guidelines and review our practices regularly.
+    </p>
+    <div class="grid">
+      <div class="card-light">
+        <h3>Our approach to vaccination</h3>
+        <p>
+          Vaccination against COVID-19 is recommended for employees working on-site. In some cases,
+          we may be required by local regulations or partners to request proof of vaccination.
+        </p>
+        <div class="pill">
+          Vaccine recommended for in-person work
+        </div>
+      </div>
+      <div class="card-light">
+        <h3>Everyday safety practices</h3>
+        <p>
+          We emphasize hygiene, regular cleaning of shared spaces, and clear procedures for reporting illness or
+          exposure, with flexibility to recover where possible.
+        </p>
+      </div>
+    </div>
+    <div class="policy-link">
+      Read more in our
+      <a href="https://www.shikishatoursandtravels.co.ke/health-and-safety" target="_blank">
+        Health &amp; Safety / Vaccine Policy
+      </a>.
+    </div>
+    <p class="small-note">
+      Nothing on this page overrides your local labour laws or our legal obligations to provide a fair and
+      non-discriminatory workplace.
+    </p>
+  </div>
+
+  <!-- Application handling / ethical transparency -->
+  <div class="section">
+    <h2>How We Handle Your Application</h2>
+    <p>
+      We use trusted third-party platforms to manage applications securely and keep communication organised.
+      Right now, our main careers portal is <strong>Zoho Recruit</strong>.
+    </p>
+    <p>
+      When you click “View open roles” or start an application, you may be redirected to Zoho Recruit
+      (and in future, certain roles may also be managed via other vetted recruitment partners).
+      These partners help us handle applications, interviews and updates.
+    </p>
+    <p class="small-note">
+      We recommend reviewing our Privacy Policy and the platform’s own terms before sharing your details.
+    </p>
+    <a href="https://shikishatoursandtravels.zohorecruit.com/jobs/careers"
+       target="_blank"
+       class="hero-cta">
+      View open roles on Zoho Recruit
+    </a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <ul class="footer-menu">
+    <li><a href="#">Help Center</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#">Supplier Sign Up</a></li>
+    <li><a href="#">Affiliate Program</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Accessibility</a></li>
+    <li><a href="careers.html#workplace-policy">Workplace Policy</a></li>
+  </ul>
+
+  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("site-header");
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
+</body>
+</html>
