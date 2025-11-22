@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,34 +109,8 @@
     .caption h2 { font-size: 2rem; margin: 0; }
     .caption p { margin-top: 5px; font-size: 1rem; }
 
-    .dots {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-    }
-    .dots button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.6);
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .dots button.active {
-      background: #22A9E6;
-      transform: scale(1.2);
-    }
-
-    /* WHY CHOOSE US */
-    .why-choose-us {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: #f8f4ef; /* warm safari tone */
-    }
+    /* Why Choose Us */
+    .why-choose-us { text-align: center; padding: 3rem 1rem; background: #f9f9f9; }
     .why-choose-us h2 { margin-bottom: 2rem; font-size: 2rem; color: #c75f00; }
     .features {
       display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
@@ -152,16 +127,11 @@
     .feature p { font-size: 0.95rem; color: #444; }
     .feature a { color: #c75f00; text-decoration: none; font-weight: 500; }
 
-    /* Auth Box wrapper + card */
-    .auth-band {
-      background: #e8f6fc; /* soft sky tint */
-      padding: 3rem 1rem;
-    }
+    /* Auth Box */
     .auth-box {
-      max-width: 500px; margin: 0 auto;
+      max-width: 500px; margin: 80px auto;
       padding: 40px 20px; text-align: center;
-      background: #ffffff; /* white card on blue band */
-      border-radius: 12px;
+      background: #f7f9fc; border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
     .auth-box h2 { font-size: 1.5rem; margin-bottom: 15px; color: #222; }
@@ -178,7 +148,7 @@
     .reviews-preview {
       text-align: center;
       padding: 4rem 1rem;
-      background: #fafafa; /* subtle off-white contrast */
+      background: #fff;
     }
     .reviews-preview h2 {
       font-size: 2rem;
@@ -266,8 +236,8 @@
     <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
   </a>
   <button class="hamburger" id="hamburger"></button>
-  <nav id="nav-menu">
-    <ul>
+ <nav id="nav-menu">
+  <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Safaris</a></li>
       <li><a href="#">Destinations</a></li>
@@ -275,35 +245,24 @@
       <li><a href="#">About Us</a></li>
       <li><a href="careers.html"><strong>Careers</strong></a></li>
       <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
-    </ul>
-  </nav>
+  </ul>
+</nav>
+
 </header>
 
-<!-- HERO SLIDER -->
+<!-- HERO SLIDER (kept unchanged) -->
 <section class="hero-slider">
   <div class="slides">
     <div class="slide active">
       <img src="https://shikishatoursandtravels.co.ke/Masai_Mara_National_Reserve_091.jpg" alt="Safari Adventures">
       <div class="caption"><h2>Safari Adventures</h2><p>Explore the wild like never before</p></div>
     </div>
-    <div class="slide">
-      <img src="https://shikishatoursandtravels.co.ke/wmremove-transformed.jpg" alt="Cultural Journeys">
-      <div class="caption"><h2>Cultural Journeys</h2><p>Immerse yourself in authentic traditions</p></div>
-    </div>
-    <div class="slide">
-      <img src="https://shikishatoursandtravels.co.ke/Tanzania.jpeg" alt="Snow-Capped Peaks">
-      <div class="caption"><h2>Snow-Capped Peaks</h2><p>Experience breathtaking mountain scenery</p></div>
-    </div>
-    <div class="slide">
-      <img src="https://shikishatoursandtravels.co.ke/chumbe-island-coral-park.jpg" alt="Beach Escapes">
-      <div class="caption"><h2>Beach Escapes</h2><p>Relax by the ocean under the sun</p></div>
-    </div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/wmremove-transformed.jpg" alt="Cultural Journeys"><div class="caption"><h2>Cultural Journeys</h2><p>Immerse yourself in authentic traditions</p></div></div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/Tanzania.jpeg" alt="Snow-Capped Peaks"><div class="caption"><h2>Snow-Capped Peaks</h2><p>Experience breathtaking mountain scenery</p></div></div>
+    <div class="slide"><img src="https://shikishatoursandtravels.co.ke/chumbe-island-coral-park.jpg" alt="Beach Escapes"><div class="caption"><h2>Beach Escapes</h2><p>Relax by the ocean under the sun</p></div></div>
   </div>
   <div class="dots"></div>
 </section>
-
-<!-- Dark safari divider -->
-<div style="background:#3B312C; height:4px; width:100%;"></div>
 
 <!-- WHY CHOOSE US -->
 <section class="why-choose-us">
@@ -327,13 +286,11 @@
   </div>
 </section>
 
-<!-- LOGIN BOX on blue band -->
-<section class="auth-band">
-  <div class="auth-box">
-    <h2>Log in to manage bookings & Rewards</h2>
-    <p>Don’t have an account yet? <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank">Sign up</a></p>
-    <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank" class="auth-btn">Log in</a>
-  </div>
+<!-- LOGIN BOX -->
+<section class="auth-box">
+  <h2>Log in to manage bookings & Rewards</h2>
+  <p>Don’t have an account yet? <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank">Sign up</a></p>
+  <a href="https://shikishatoursandtravel.wetravel.com/" target="_blank" class="auth-btn">Log in</a>
 </section>
 
 <!-- TRAVELLER REVIEWS PREVIEW -->
@@ -349,20 +306,21 @@
   <a href="review.html" class="cta-btn">Write a Review</a>
 </section>
 
-<!-- WE'RE HIRING STRIP -->
+  <!-- WE'RE HIRING STRIP -->
 <section style="background:#f7f9fc; padding:1.5rem 1rem; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee;">
   <p style="margin:0 0 0.5rem; font-size:1rem; color:#333;">
     💼 We’re growing our on-site team at Shikisha Tours and Travel.
   </p>
   <p style="margin:0 0 1rem; font-size:0.95rem; color:#555;">
-    If you’re passionate about people, travel, and East Africa, explore our open roles and learn how we work.
+    If you’re passionate about people, travel, East Africa and beyond, explore our open roles and learn how we work.
   </p>
   <a href="careers.html"
      style="display:inline-block; background:#22A9E6; color:#fff; padding:10px 22px; border-radius:24px; text-decoration:none; font-weight:600; font-size:0.95rem;">
     View Careers &amp; Workplace Policy
   </a>
 </section>
-
+  
+  
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="social-icons">
@@ -386,6 +344,7 @@
 
   <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
+  
 
 <script>
 const hamburger=document.getElementById("hamburger");
