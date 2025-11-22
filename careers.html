@@ -198,7 +198,7 @@
 
     /* Content wrapper */
     .content {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 2.5rem auto 3rem;
       padding: 0 1.5rem;
     }
@@ -231,18 +231,34 @@
       margin-bottom: 1rem;
     }
 
+    /* FULL-WIDTH GRID LAYOUT */
     .grid {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2.5rem;
-      margin-top: 1.2rem;
-      justify-items: center;
+      padding: 2rem 0 0;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 992px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card-light {
       background: transparent;
-      padding: 0 0.5rem;
-      text-align: center;
+      padding: 0 1rem;
+      text-align: left;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
     .card-light h3 {
@@ -293,6 +309,35 @@
       border-radius: 999px;
     }
 
+    .text-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 0.9rem;
+      margin: 2.2rem 0;
+      text-align: center;
+    }
+
+    .text-divider:before,
+    .text-divider:after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #d8d8d8;
+      margin: 0 12px;
+      opacity: 0.7;
+    }
+
+    .text-divider a {
+      color: #22A9E6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .text-divider a:hover {
+      text-decoration: underline;
+    }
+
     /* Footer */
     .site-footer {
       background: #000;
@@ -334,37 +379,6 @@
     @media(max-width:768px){
       .footer-menu{flex-direction:column;gap:12px;}
     }
-
-    .text-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-size: 0.9rem;
-  margin: 2.2rem 0;
-  text-align: center;
-}
-
-.text-divider:before,
-.text-divider:after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #d8d8d8;
-  margin: 0 12px;
-  opacity: 0.7;
-}
-
-.text-divider a {
-  color: #22A9E6;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.text-divider a:hover {
-  text-decoration: underline;
-}
-
-    
   </style>
 </head>
 <body>
@@ -501,6 +515,12 @@
           exposure, with flexibility to recover where possible.
         </p>
       </div>
+      <div class="card-light">
+        <h3>Support when you need it</h3>
+        <p>
+          If you’re unwell or facing challenges, we encourage early communication so we can explore options and support you appropriately.
+        </p>
+      </div>
     </div>
     <div class="policy-link">
       Read more in our
@@ -527,13 +547,12 @@
       These partners help us handle applications, interviews and updates.
     </p>
     <p class="text-divider">
-  We recommend reviewing our 
-  <a href="https://www.shikishatoursandtravels.co.ke/privacy-policy" target="_blank">Privacy Policy</a> 
-  and the platform’s 
-  <a href="https://www.zohorecruit.com/privacy.html" target="_blank">own terms</a> 
-  before sharing your details.
-</p>
-    
+      We recommend reviewing our 
+      <a href="https://www.shikishatoursandtravels.co.ke/privacy-policy" target="_blank">Privacy Policy</a> 
+      and the platform’s 
+      <a href="https://www.zohorecruit.com/privacy.html" target="_blank">own terms</a> 
+      before sharing your details.
+    </p>
     <a href="https://shikishatoursandtravels.zohorecruit.com/jobs/careers"
        target="_blank"
        class="hero-cta">
