@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shikisha Tours & Travel – Workplace & Safety Policy</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card-bg: #ffffff;
+      --primary: #1456b8;
+      --primary-soft: #e2ecff;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 18px;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.08);
+      --transition-fast: 0.2s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #e4eeff 0, #f5f7fb 52%, #ffffff 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 16px 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 6px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Tabs / navigation */
+    .tab-bar {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 999px;
+      padding: 4px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast),
+        transform var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn span.icon {
+      font-size: 1rem;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .tab-btn:not(.active):hover {
+      background: #edf1ff;
+      color: var(--primary);
+    }
+
+    /* Card layout */
+    .card {
+      margin-top: 28px;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 24px 28px;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 6px 0 10px 1.2rem;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .link-row a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .link-row a:hover {
+      text-decoration: underline;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .pill span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .highlight-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #f3f4ff;
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+
+    .meta-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .meta-item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+      background: #fbfcff;
+      font-size: 0.9rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 18px 16px 22px;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .tab-bar {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-text">
+        <div class="logo-badge">S</div>
+        <div>
+          <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.16em; color:#6b7280;">
+            Shikisha Tours &amp; Travels
+          </div>
+          <h1>Workplace &amp; Health Policy</h1>
+        </div>
+      </div>
+      <p class="subtitle">
+        Learn how we structure our on-site workplace, support our people, and
+        promote a safe, healthy environment for employees and guests.
+      </p>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-target="workplace">
+          <span class="icon">🏢</span>
+          Workplace Policy
+        </button>
+        <button class="tab-btn" data-target="health">
+          <span class="icon">💉</span>
+          Health &amp; Safety Policy
+        </button>
+      </div>
+    </header>
+
+    <!-- Workplace Policy Card -->
+    <main>
+      <article class="card" id="workplace-card">
+        <div class="card-header">
+          <h2>Workplace Policy</h2>
+          <span class="badge">On-site</span>
+        </div>
+
+        <section class="section">
+          <div class="section-title">Overview</div>
+          <p>
+            At Shikisha Tours &amp; Travel, our workplace environment is designed
+            to support excellent service delivery, efficient operations, and strong
+            team collaboration. As a customer-focused travel company, being present
+            on-site helps us respond quickly to guest needs and coordinate
+            effectively across departments.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="section-title">On-site Work Requirement</div>
+          <p>
+            We operate fully on-site to support smooth travel operations, guest
+            services, and team coordination. Being on-site helps us maintain fast
+            communication, quality service, and strong team collaboration.
+          </p>
+          <ul>
+            <li>Seamless communication between team members and management</li>
+            <li>Real-time decision-making during travel operations</li>
+            <li>Hands-on support for bookings and service coordination</li>
+            <li>A collaborative environment that strengthens teamwork</li>
+          </ul>
+
+          <div class="highlight-box">
+            This on-site approach reflects our commitment to high-quality service
+            and operational excellence.
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">On-site Employee Benefits</div>
+          <ul>
+            <li><strong>Collaborative Working Space</strong> for teamwork and shared problem-solving.</li>
+            <li><strong>Dedicated Focus Hours</strong> to support deep, distraction-free work.</li>
+            <li><strong>Free Meals</strong> to keep our team energized throughout the day.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Location-Based Pay Adjustment</div>
+          <p>
+            Shikisha Tours applies location-based pay adjustments based on the
+            employee’s country. This helps ensure fairness and consistency across
+            our global team.
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Adjustment basis</div>
+              Based on employee country
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Policy link</div>
+              <div class="link-row">
+                <span>Full workplace details:</span>
+                <a
+                  href="https://www.shikishatoursandtravels.co.ke/workplace-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View policy page ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- Health & Safety / Vaccine Policy Card -->
+      <article class="card" id="health-card" style="display:none;">
+        <div class="card-header">
+          <h2>Health, Safety &amp; Vaccination Policy</h2>
+          <span class="badge">Vaccine recommended</span>
+        </div>
+
+        <section class="section">
+          <div class="section-title">Commitment to Safety</div>
+          <p>
+            The safety and wellbeing of our employees, clients, and partners is a
+            top priority at Shikisha Tours &amp; Travel. We follow national health
+            guidelines and industry best practices to maintain a safe workplace.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="section-title">COVID-19 Vaccination Policy</div>
+          <p>
+            Vaccination is <strong>recommended</strong> for all employees who work
+            on-site. Staying up to date with COVID-19 vaccines helps us:
+          </p>
+          <ul>
+            <li>Promote safer in-person interactions</li>
+            <li>Reduce health-related service disruptions</li>
+            <li>Maintain continuity in travel operations</li>
+          </ul>
+          <p>
+            Employees may be asked to present proof of vaccination only when
+            required by government or health authorities.
+          </p>
+
+          <div class="pill">
+            <span class="dot"></span>
+            Vaccine recommended for in-person work
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">General Workplace Safety</div>
+          <ul>
+            <li>Regular sanitization of shared spaces and equipment</li>
+            <li>Availability of hygiene supplies, including hand sanitizers</li>
+            <li>Clear procedures for reporting illness or exposure</li>
+            <li>Flexible sick leave arrangements to support recovery</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">More Information</div>
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Policy link</div>
+              <div class="link-row">
+                <span>Health &amp; safety details:</span>
+                <a
+                  href="https://www.shikishatoursandtravels.co.ke/health-and-safety"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View health &amp; safety page ↗</a
+                >
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Contact</div>
+              For policy questions, email
+              <strong>hr@shikishatoursandtravels.co.ke</strong>.
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Shikisha Tours &amp; Travel. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Tab switching logic
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const workplaceCard = document.getElementById("workplace-card");
+    const healthCard = document.getElementById("health-card");
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Update active tab button
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const target = btn.getAttribute("data-target");
+
+        if (target === "workplace") {
+          workplaceCard.style.display = "block";
+          healthCard.style.display = "none";
+        } else {
+          workplaceCard.style.display = "none";
+          healthCard.style.display = "block";
+        }
+
+        // Small scroll adjustment on mobile
+        window.scrollTo({
+          top: document.querySelector("header").offsetTop,
+          behavior: "smooth",
+        });
+      });
+    });
+
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
