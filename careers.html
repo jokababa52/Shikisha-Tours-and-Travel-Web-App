@@ -127,94 +127,78 @@
     header.shrink { padding: 6px 1rem; }
     header.shrink .logo { width: 180px; }
 
-/* Careers hero */
-.hero-careers {
-  position: relative;
-  padding: 4.5rem 1.5rem 3.5rem;
-  color: #fff;
-  text-align: left;
-  overflow: hidden;
+    /* Careers hero */
+    .hero-careers {
+      position: relative;
+      padding: 4.5rem 1.5rem 3.5rem;
+      color: #fff;
+      text-align: left;
+      overflow: hidden;
 
-  /* Photo background + dark overlay for readability */
-  background-image:
-    linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0.2)),
-    url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f6f0de6db6726a2f136356d9d20a05b1/directUpload/SB-96.jpg");
-  background-size: cover;
-  background-position: center;
-}
+      /* Photo background + dark overlay for readability */
+      background-image:
+        linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0.2)),
+        url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f6f0de6db6726a2f136356d9d20a05b1/directUpload/SB-96.jpg");
+      background-size: cover;
+      background-position: center;
+    }
 
-/* container to keep text readable above overlay + border effect */
-.hero-careers-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
+    /* container to keep text readable above overlay */
+    .hero-careers-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
 
-.hero-careers h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.8rem;
-}
+    .hero-careers h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
 
-.hero-careers p {
-  max-width: 650px;
-  margin: 0 0 1.8rem;
-  font-size: 1.05rem;
-}
+    /* full-width hero paragraph */
+    .hero-careers p {
+      max-width: none;
+      width: 100%;
+      margin: 0 0 1.8rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
 
-.hero-careers .hero-cta {
-  display: inline-block;
-  background: #fff;
-  color: #22A9E6;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+    .hero-careers .hero-cta {
+      display: inline-block;
+      background: #fff;
+      color: #22A9E6;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
 
-.hero-careers .hero-cta:hover {
-  transform: scale(1.05);
-  background: #f3f4ff;
-}
+    .hero-careers .hero-cta:hover {
+      transform: scale(1.05);
+      background: #f3f4ff;
+    }
 
-.hero-note {
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
+    .hero-note {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
 
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  .hero-careers {
-    text-align: center;
-    background-position: center top;
-    padding: 3.5rem 1rem 3rem;
-  }
-}
-
-/* Blue border accent similar to the screenshot */
-.hero-careers::after {
-  content: "";
-  position: absolute;
-  right: 4%;
-  bottom: 10%;
-  width: min(360px, 40vw);
-  height: min(220px, 30vh);
-  border: 3px solid #22A9E6;
-  border-radius: 8px;
-  box-sizing: border-box;
-  z-index: 1;          /* behind the text, above the photo */
-  opacity: 0.9;
-}
-
-/* Hide or simplify on small screens */
-@media (max-width: 768px) {
-  .hero-careers::after {
-    display: none;
-  }
-}
-
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      .hero-careers {
+        text-align: center;
+        background-position: center top;
+        padding: 3.5rem 1rem 3rem;
+      }
+      .hero-careers-inner {
+        padding: 0 0.5rem;
+      }
+    }
 
     .content {
       max-width: 1000px;
@@ -391,7 +375,6 @@
     </div>
   </div>
 </section>
-
 
 <div class="content">
   <!-- Life at Shikisha / Workplace snapshot -->
