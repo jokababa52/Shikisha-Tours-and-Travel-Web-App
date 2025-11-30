@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Shikisha Tours and Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .logo { width: 250px; height: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover { color: #22A9E6; }
+
+    nav ul li a.active {
+      color: #22A9E6;
+      font-weight: 700;
+    }
+
+    nav ul li .cta {
+      background: #22A9E6;
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1001;
+    }
+
+    .hamburger::before { content: "☰"; font-size: 28px; color: #333; }
+    .hamburger.active::before { content: "✖"; color: #fff; }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed; top: 0; left: 100%; width: 100%; height: 100%;
+        background: #22A9E6; padding: 80px 20px;
+        display: flex; flex-direction: column; align-items: flex-start;
+        transition: left 0.3s ease-in-out; z-index: 1000;
+      }
+      nav.show { left: 0; }
+      nav ul { flex-direction: column; gap: 20px; width: 100%; }
+      nav ul li a { color: #fff; font-size: 1.3rem; font-weight: bold; }
+      nav ul li a.active { color: #fff; text-decoration: underline; }
+      .mobile-cta { margin-top: 30px; width: 100%; }
+      .mobile-cta .cta {
+        background: #fff; color: #22A9E6 !important;
+        display: block; width: 100%; text-align: center; padding: 14px 20px;
+      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
+    }
+
+    header.shrink { padding: 6px 1rem; }
+    header.shrink .logo { width: 180px; }
+
+    /* HEADER IMAGE HERO */
+    .about-hero-image {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      min-height: 350px;
+      background-image: url('BACKGROUND_IMAGE_URL_HERE');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.6)
+      );
+    }
+
+    .about-hero-caption {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      max-width: 720px;
+    }
+
+    .about-hero-caption h1 {
+      font-size: 2.4rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .about-hero-caption p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero-image {
+        height: 60vh;
+      }
+      .about-hero-caption h1 {
+        font-size: 1.8rem;
+      }
+      .about-hero-caption p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Main Layout */
+    .page-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+      color: #c75f00;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    /* Mission / Vision / Purpose */
+    .mvp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .mvp-card {
+      background: #f7f9fc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border: 1px solid #e4e7f0;
+    }
+
+    .mvp-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+      color: #022b3a;
+    }
+
+    .mvp-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    @media (max-width: 900px) {
+      .mvp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Values */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .value-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .value-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 0.2rem;
+    }
+
+    .value-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.1rem;
+      color: #c75f00;
+    }
+
+    .value-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #444;
+    }
+
+    @media (max-width: 900px) {
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Behaviours */
+    .behaviours {
+      margin-top: 2.5rem;
+      border-radius: 14px;
+      background: #fdf5ec;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #f5e0c4;
+    }
+
+    .behaviours h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.15rem;
+      color: #8b4a07;
+    }
+
+    .behaviours-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      font-size: 0.92rem;
+      color: #444;
+    }
+
+    .behaviour-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .behaviours-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Team CTA */
+    .team-cta {
+      background: #022b3a;
+      color: #fff;
+      padding: 2.8rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .team-cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .team-cta h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.7rem;
+    }
+
+    .team-cta p {
+      margin: 0;
+      font-size: 0.98rem;
+      max-width: 550px;
+      opacity: 0.95;
+    }
+
+    .team-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid transparent;
+      transition: 0.25s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #22A9E6;
+      color: #fff;
+      border-color: #22A9E6;
+    }
+
+    .btn-primary:hover {
+      background: #0f8dc0;
+      border-color: #0f8dc0;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: #fff;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .team-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .social-icons a {
+      color: #fff; margin: 0 12px; font-size: 1.5rem; transition: 0.3s ease;
+    }
+
+    .social-icons a:hover { color: #22A9E6; }
+
+    .footer-menu {
+      list-style: none; padding: 0; margin: 1.5rem 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 30px;
+    }
+
+    .footer-menu a {
+      color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
+    }
+
+    .footer-menu a:hover { color: #22A9E6; }
+
+    .copyright { font-size: 0.85rem; margin-top: 1.5rem; color: #aaa; }
+
+    @media(max-width:768px){
+      .footer-menu{flex-direction:column;gap:12px;}
+    }
+  </style>
+</head>
+
+<body>
+<header id="site-header">
+  <a href="/" class="logo-link">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
+  <button class="hamburger" id="hamburger"></button>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="careers.html"><strong>Careers</strong></a></li>
+      <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HEADER IMAGE HERO -->
+<section class="about-hero-image">
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-caption">
+    <h1>We are your travel partner.</h1>
+    <p>We share your vision. Go ahead!</p>
+  </div>
+</section>
+
+<!-- MISSION / VISION / PURPOSE -->
+<section class="page-section">
+  <div class="page-inner">
+    <h2 class="section-title">Mission, Vision & Purpose</h2>
+    <p class="section-subtitle">
+      Clear direction guides every journey we design – from your first enquiry to your safe return home.
+    </p>
+
+    <div class="mvp-grid">
+      <div class="mvp-card">
+        <h3>Our Mission</h3>
+        <p>
+          At Shikisha, our mission is to inspire and connect travellers with unforgettable
+          experiences. We are committed to providing seamless, personalised, and high-quality travel services
+          that create lasting memories. Through expert planning, exceptional customer service, and sustainable
+          tourism practices, we strive to make every journey enriching, hassle-free, and extraordinary.
+        </p>
+      </div>
+
+      <div class="mvp-card">
+        <h3>Our Vision</h3>
+        <p>
+          To be a leading tours and travel company, recognised for delivering exceptional, personalised, and
+          sustainable travel experiences. We aim to inspire exploration, connect people to new cultures, and
+          make travel seamless, memorable, and accessible for all.
+        </p>
+      </div>
+
+      <div class="mvp-card">
+        <h3>Our Purpose</h3>
+        <p>
+          To use travel as a force for good – opening doors to new places, people, and possibilities while
+          supporting the destinations we love. For our guests, our team, and our partners, we exist
+          <strong>“for journeys that matter.”</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="page-section" style="background:#f9f9f9;">
+  <div class="page-inner">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">
+      These values shape how we design experiences, serve our guests, and work together every day.
+    </p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-label">Value 01</div>
+        <h3>Customer Satisfaction</h3>
+        <p>
+          We prioritise our clients by delivering exceptional service and unforgettable experiences.
+          Every itinerary is built around our guests’ needs, preferences, and peace of mind.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-label">Value 02</div>
+        <h3>Integrity & Transparency</h3>
+        <p>
+          We operate with honesty, trust, and professionalism in all our dealings, from pricing and
+          communication to the partners and suppliers we choose.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-label">Value 03</div>
+        <h3>Personalized Experiences</h3>
+        <p>
+          No two travelers are the same. Every journey is tailored to match unique interests, travel styles,
+          and budgets for a truly customized experience.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-label">Value 04</div>
+        <h3>Excellence &amp; Innovation</h3>
+        <p>
+          We continuously refine our itineraries, technology, and service to offer top-tier travel solutions
+          that stay ahead of expectations.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-label">Value 05</div>
+        <h3>Sustainability &amp; Responsibility</h3>
+        <p>
+          We promote eco-friendly and responsible tourism that protects wildlife, supports local economies,
+          and safeguards destinations for future generations.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-label">Value 06</div>
+        <h3>Passion for Travel</h3>
+        <p>
+          We are driven by a genuine love for exploration and a desire to share the beauty, culture, and
+          diversity of the world with others.
+        </p>
+      </div>
+    </div>
+
+    <div class="behaviours">
+      <h3>How We Live Our Values</h3>
+      <div class="behaviours-list">
+        <div class="behaviour-item">
+          <strong>Closer to our guests</strong>
+          We take time to understand your story, anticipate your needs, and stay available before, during,
+          and after your trip.
+        </div>
+        <div class="behaviour-item">
+          <strong>Connected as one team</strong>
+          Operations, guides, and consultants work as one Shikisha family – aligned around delivering
+          seamless, high-quality experiences.
+        </div>
+        <div class="behaviour-item">
+          <strong>Courageous in what we build</strong>
+          We challenge the ordinary, design fresh experiences, and speak up for sustainable and ethical
+          tourism in every destination we serve.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM CTA -->
+<section class="team-cta">
+  <div class="team-cta-inner">
+    <div>
+      <h2>Meet the Team Behind Your Journey</h2>
+      <p>
+        Behind every itinerary is a close-knit team of young, dynamic travel makers – safari experts,
+        trip designers, and on-the-ground hosts committed to getting every detail right.
+      </p>
+    </div>
+    <div class="team-cta-actions">
+      <a href="team.html" class="btn-primary">Explore Our Team</a>
+      <a href="careers.html" class="btn-outline">Work With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <ul class="footer-menu">
+    <li><a href="#">Help Center</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#">Supplier Sign Up</a></li>
+    <li><a href="#">Affiliate Program</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Accessibility</a></li>
+    <li><a href="careers.html#workplace-policy">Workplace Policy</a></li>
+  </ul>
+
+  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("site-header");
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
+</body>
+</html>
