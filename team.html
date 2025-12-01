@@ -4,61 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet the Team | Shikisha Tours and Travel</title>
-  <meta name="description" content="Meet the team behind Shikisha Tours and Travel – trip designers, safari experts and on-the-ground hosts who bring every journey to life.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
-    /* =========================
-       BRAND FONTS – BLACK MANGO
-       ========================= */
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Thin.woff') format('woff');
-      font-weight: 200;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Light.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Bold.woff') format('woff');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Black.woff') format('woff');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    :root {
-      --font-brand: 'Black Mango', sans-serif;
-      --brand-orange: #c75f00;
-      --brand-blue: #22A9E6;
-      --brand-navy: #022b3a;
-    }
-
     body {
       margin: 0;
-      font-family: var(--font-brand);
-      font-weight: 300;
-      line-height: 1.7;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
       background: #f7f9fc;
       color: #222;
       overflow-x: hidden;
     }
 
-    /* Header (matching your other pages) */
+    /* Header (same style as other pages) */
     header {
       background: #fff;
       padding: 0.8rem 1.5rem;
@@ -72,10 +31,7 @@
       transition: all 0.3s ease;
     }
 
-    .logo {
-      width: 250px;
-      height: auto;
-    }
+    .logo { width: 250px; height: auto; }
 
     nav ul {
       list-style: none;
@@ -93,17 +49,10 @@
       transition: color 0.3s ease;
     }
 
-    nav ul li a:hover {
-      color: var(--brand-blue);
-    }
-
-    nav ul li a.active {
-      color: var(--brand-blue);
-      font-weight: 700;
-    }
+    nav ul li a:hover { color: #22A9E6; }
 
     nav ul li .cta {
-      background: var(--brand-blue);
+      background: #22A9E6;
       color: #fff !important;
       padding: 10px 18px;
       border-radius: 25px;
@@ -112,10 +61,7 @@
       display: inline-block;
     }
 
-    nav ul li .cta:hover {
-      background: #0f8dc0;
-      transform: scale(1.05);
-    }
+    nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
 
     .hamburger {
       display: none;
@@ -126,16 +72,8 @@
       z-index: 1001;
     }
 
-    .hamburger::before {
-      content: "☰";
-      font-size: 28px;
-      color: #333;
-    }
-
-    .hamburger.active::before {
-      content: "✖";
-      color: #fff;
-    }
+    .hamburger::before { content: "☰"; font-size: 28px; color: #333; }
+    .hamburger.active::before { content: "✖"; color: #fff; }
 
     @media (max-width: 768px) {
       nav {
@@ -152,33 +90,21 @@
         transition: left 0.3s ease-in-out;
         z-index: 1000;
       }
-
-      nav.show {
-        left: 0;
-      }
-
+      nav.show { left: 0; }
       nav ul {
         flex-direction: column;
         gap: 20px;
         width: 100%;
       }
-
       nav ul li a {
         color: #fff;
         font-size: 1.3rem;
         font-weight: bold;
       }
-
-      nav ul li a.active {
-        color: #fff;
-        text-decoration: underline;
-      }
-
       .mobile-cta {
         margin-top: 30px;
         width: 100%;
       }
-
       .mobile-cta .cta {
         background: #fff;
         color: #22A9E6 !important;
@@ -187,116 +113,80 @@
         text-align: center;
         padding: 14px 20px;
       }
-
-      header .logo {
-        width: 200px;
-      }
-
-      .hamburger {
-        display: block;
-        margin-left: auto;
-      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
     }
 
-    header.shrink {
-      padding: 6px 1rem;
-    }
+    header.shrink { padding: 6px 1rem; }
+    header.shrink .logo { width: 180px; }
 
-    header.shrink .logo {
-      width: 180px;
-    }
-
-    /* HERO – Team */
+    /* Hero */
     .team-hero {
-      position: relative;
-      width: 100%;
-      min-height: 420px;
-      background-image:
-        linear-gradient(120deg, rgba(0,0,0,0.65), rgba(0,0,0,0.25)),
-        url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f6f0de6db6726a2f136356d9d20a05b1/directUpload/SB-96.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 4rem 1.5rem 3rem;
       text-align: center;
-      color: #fff;
-      padding: 3.5rem 1.5rem;
+      background: radial-gradient(circle at top left, #e3f5ff 0, #f7f9fc 40%, #ffffff 100%);
     }
 
     .team-hero-inner {
-      max-width: 820px;
-    }
-
-    .team-hero h1 {
-      font-size: 2.4rem;
-      margin: 0 0 0.7rem;
-      font-weight: 900;
-    }
-
-    .team-hero p {
-      margin: 0 0 1.4rem;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .team-hero-tagline {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 768px) {
-      .team-hero {
-        padding: 3rem 1.2rem;
-        min-height: 360px;
-        background-position: center top;
-      }
-      .team-hero h1 {
-        font-size: 2rem;
-      }
-      .team-hero p {
-        font-size: 0.98rem;
-      }
-    }
-
-    /* PAGE LAYOUT */
-    .page-section {
-      padding: 3rem 1.5rem;
-    }
-
-    .page-inner {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .section-header {
+    .team-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.6rem;
+      color: #c75f00;
+    }
+
+    .team-hero p {
+      max-width: 640px;
+      margin: 0.25rem auto 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .team-hero span.badge {
+      display: inline-block;
+      margin-bottom: 0.9rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e8f5ff;
+      color: #0b79b8;
+      font-weight: 600;
+    }
+
+    /* Layout wrapper */
+    .team-section {
+      max-width: 1200px;
+      margin: 0 auto 3.5rem;
+      padding: 0 1.5rem 0;
+    }
+
+    .team-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #c75f00;
       text-align: left;
-      margin-bottom: 1.8rem;
     }
 
-    .section-header h2 {
-      margin: 0 0 0.4rem;
-      font-size: 1.7rem;
-      color: var(--brand-orange);
-      font-weight: 700;
-    }
-
-    .section-header p {
-      margin: 0;
+    .team-section p.section-subtitle {
+      margin: 0 0 1.8rem;
       font-size: 0.98rem;
       color: #555;
-      max-width: 640px;
+      max-width: 620px;
     }
 
-    /* TEAM GRID */
+    /* Team grid */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.8rem;
+      gap: 2rem;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       .team-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -310,190 +200,62 @@
 
     .team-card {
       background: #fff;
-      border-radius: 16px;
-      padding: 1.6rem 1.4rem 1.4rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       border: 1px solid #eef0f5;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.55rem;
     }
 
-    .team-avatar {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 0.4rem;
+    .team-photo {
+      width: 100%;
+      background: #e6f4ff;
+    }
+
+    .team-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .team-info {
+      padding: 1.1rem 1.2rem 1.3rem;
     }
 
     .team-name {
-      font-weight: 700;
+      margin: 0 0 0.25rem;
       font-size: 1.05rem;
+      font-weight: 700;
       color: #222;
     }
 
     .team-role {
-      font-size: 0.9rem;
-      color: #777;
+      margin: 0 0 0.25rem;
+      font-size: 0.93rem;
+      color: #555;
+      font-weight: 500;
     }
 
-    .team-focus {
-      font-size: 0.9rem;
-      color: #444;
+    .team-dept {
+      margin: 0 0 0.7rem;
+      font-size: 0.84rem;
+      color: #888;
     }
 
-    .team-meta {
-      font-size: 0.8rem;
-      color: #999;
-    }
-
-    .team-tag {
-      display: inline-block;
-      margin-top: 0.3rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      background: #e8f5ff;
-      color: #0f5780;
-    }
-
-    /* SUB-SECTION: OPERATIONS / GUEST SUPPORT */
-    .sub-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.8rem;
-      margin-top: 2.3rem;
-    }
-
-    @media (max-width: 768px) {
-      .sub-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .sub-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.6rem 1.4rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-      border: 1px solid #eef0f5;
-    }
-
-    .sub-card h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.1rem;
-      color: var(--brand-navy);
-      font-weight: 700;
-    }
-
-    .sub-card p {
-      margin: 0 0 0.4rem;
-      font-size: 0.94rem;
-      color: #444;
-    }
-
-    .sub-card ul {
-      margin: 0.6rem 0 0;
-      padding-left: 1.2rem;
-      font-size: 0.9rem;
+    .team-tagline {
+      margin: 0;
+      font-size: 0.86rem;
       color: #555;
     }
 
-    .sub-card ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* CTA STRIP – careers */
-    .team-cta {
-      background: #022b3a;
-      color: #fff;
-      padding: 2.8rem 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .team-cta-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .team-cta h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.7rem;
-      font-weight: 900;
-    }
-
-    .team-cta p {
-      margin: 0;
-      font-size: 0.96rem;
-      max-width: 540px;
-      opacity: 0.95;
-    }
-
-    .team-cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      display: inline-block;
-      padding: 0.8rem 1.6rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: 2px solid transparent;
-      transition: 0.25s ease;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--brand-blue);
-      color: #fff;
-      border-color: var(--brand-blue);
-    }
-
-    .btn-primary:hover {
-      background: #0f8dc0;
-      border-color: #0f8dc0;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,0.7);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: #fff;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 768px) {
-      .team-cta-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    /* Footer */
+    /* Footer – slimmed down */
     .site-footer {
       background: #000;
       color: #fff;
       padding: 2rem 1rem;
       text-align: center;
+      margin-top: 3rem;
     }
 
     .social-icons a {
@@ -503,14 +265,12 @@
       transition: 0.3s ease;
     }
 
-    .social-icons a:hover {
-      color: var(--brand-blue);
-    }
+    .social-icons a:hover { color: #22A9E6; }
 
     .footer-menu {
       list-style: none;
       padding: 0;
-      margin: 1.5rem 0 0.5rem;
+      margin: 1.5rem 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -520,52 +280,25 @@
     .footer-menu a {
       color: #fff;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: 0.3s ease;
     }
 
-    .footer-menu a:hover {
-      color: var(--brand-blue);
-    }
-
-    /* Minimal legal strip */
-    .footer-legal {
-      margin-top: 0.8rem;
-      font-size: 0.78rem;
-      color: #888;
-    }
-
-    .footer-legal a {
-      color: #888;
-      text-decoration: none;
-      margin: 0 0.25rem;
-    }
-
-    .footer-legal a:hover {
-      color: #22A9E6;
-    }
-
-    .footer-legal span {
-      margin: 0 0.2rem;
-      color: #555;
-    }
+    .footer-menu a:hover { color: #22A9E6; }
 
     .copyright {
-      font-size: 0.85rem;
-      margin-top: 1.1rem;
+      font-size: 0.8rem;
+      margin-top: 1.2rem;
       color: #aaa;
     }
 
-    @media (max-width: 768px) {
-      .footer-menu {
-        flex-direction: column;
-        gap: 12px;
-      }
+    @media(max-width:768px){
+      .footer-menu{flex-direction:column;gap:10px;}
     }
   </style>
 </head>
-
 <body>
+
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png"
@@ -585,174 +318,115 @@
   </nav>
 </header>
 
-<!-- TEAM HERO -->
+<!-- HERO -->
 <section class="team-hero">
   <div class="team-hero-inner">
-    <h1>Meet the Team Behind Your Journey</h1>
+    <span class="badge">People behind your journey</span>
+    <h1>Meet the Shikisha Team</h1>
     <p>
-      Every itinerary at Shikisha is crafted by a close-knit team of travel makers – 
-      safari experts, trip designers and on-the-ground hosts who care about every detail 
-      from the first enquiry to your safe return home.
-    </p>
-    <p class="team-hero-tagline">
-      We are your travel partner. We share your vision. Go ahead.
+      Every itinerary, every airport pickup, and every game drive is powered by a close-knit team
+      of travel consultants, operations experts, and guest support specialists based in Nairobi.
     </p>
   </div>
 </section>
 
-<!-- CORE TEAM SECTION -->
-<section class="page-section">
-  <div class="page-inner">
-    <div class="section-header">
-      <h2>Trip Designers &amp; Safari Experts</h2>
-      <p>
-        These are the people turning your ideas into real journeys – listening to your wishes, 
-        building routes that make sense, and matching you with the right lodges, guides and experiences.
-      </p>
-    </div>
+<!-- TEAM GRID -->
+<section class="team-section">
+  <h2>Trip Designers & On-the-Ground Experts</h2>
+  <p class="section-subtitle">
+    From your first enquiry to your final transfer home, these are the people making sure your journey
+    feels seamless, safe and unforgettable.
+  </p>
 
-    <div class="team-grid">
-      <!-- Card 1 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ce1de39b271eb16f0c02ed634d0dee7b/directUpload/SB-65.jpg');"></div>
-        <div class="team-name">Lead Travel Consultant</div>
-        <div class="team-role">Tailor-Made Safaris &amp; Holidays</div>
-        <p class="team-focus">
-          Specialises in building tailor-made itineraries across Kenya, Tanzania and Rwanda, 
-          balancing dream experiences with practical timelines and budgets.
+  <div class="team-grid">
+    <!-- Henry -->
+    <article class="team-card">
+      <div class="team-photo">
+        <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:9be89fa9b6d632591b3195924c32c508/directUpload/1.png"
+             alt="Henry Odhiambo – Lead Travel Consultant">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Henry Odhiambo</h3>
+        <p class="team-role">Lead Travel Consultant</p>
+        <p class="team-dept">Trip Design · Sales</p>
+        <p class="team-tagline">
+          Oversees tailor-made itineraries and mentors the consulting team, making sure every trip
+          is crafted with insight, care, and attention to detail.
         </p>
-        <div class="team-meta">Speaks: English, Swahili</div>
-        <span class="team-tag">Trip Design</span>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 2 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:d40fef4edf3bf3a27573e4472a41314c/directUpload/Lioness-in-the-Tree-in-the-Maasai-Mara.png');"></div>
-        <div class="team-name">Safari Planning Specialist</div>
-        <div class="team-role">Big Five &amp; Seasonal Safaris</div>
-        <p class="team-focus">
-          Helps guests catch the best of the Mara, Amboseli and beyond – from migration windows 
-          to quieter shoulder seasons for a more intimate experience.
+    <!-- Faith -->
+    <article class="team-card">
+      <div class="team-photo">
+        <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ed356bb5d0e9cabdeea42c03513534ea/directUpload/3.png"
+             alt="Faith Rehema – Junior Travel Consultant">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Faith Rehema</h3>
+        <p class="team-role">Junior Travel Consultant</p>
+        <p class="team-dept">Trip Design · Sales</p>
+        <p class="team-tagline">
+          Supports guests with quotes, ideas and early-stage planning, helping turn rough travel dreams
+          into structured, bookable itineraries.
         </p>
-        <div class="team-meta">Focus: Maasai Mara, Amboseli, Ol Pejeta</div>
-        <span class="team-tag">Safari Expertise</span>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 3 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:030d1db6832111a41531f7be11af0a39/https://shikishatoursandtravels.co.ke/389_1569_16135536483951_diani_beach_ii.jpg');"></div>
-        <div class="team-name">Beach &amp; Honeymoon Consultant</div>
-        <div class="team-role">Coast, Islands &amp; Romantic Escapes</div>
-        <p class="team-focus">
-          Designs relaxed endings to safari adventures – from Diani and Watamu to 
-          island hideaways – with a focus on privacy, downtime and effortless logistics.
+    <!-- Dennis -->
+    <article class="team-card">
+      <div class="team-photo">
+        <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:36a2b7f3055c6ac5f2fca6f4276aa9b4/directUpload/4.png"
+             alt="Dennis Omondi – Operations Manager">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Dennis Omondi</h3>
+        <p class="team-role">Operations Manager</p>
+        <p class="team-dept">Operations · Ground Support</p>
+        <p class="team-tagline">
+          Coordinates vehicles, guides, timings and on-the-ground logistics so that every day of your
+          safari runs safely, smoothly and on schedule.
         </p>
-        <div class="team-meta">Focus: Kenya Coast, Zanzibar</div>
-        <span class="team-tag">Beach Holidays</span>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 4 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f6f0de6db6726a2f136356d9d20a05b1/directUpload/SB-96.jpg');"></div>
-        <div class="team-name">Corporate &amp; Group Travel Lead</div>
-        <div class="team-role">Retreats, Incentives &amp; Delegations</div>
-        <p class="team-focus">
-          Supports organisations planning retreats, conferences and incentive trips – 
-          handling logistics, venues and team experiences end-to-end.
+    <!-- Lucy -->
+    <article class="team-card">
+      <div class="team-photo">
+        <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:d492f4bd23b974ff330c215587701de1/directUpload/2.png"
+             alt="Lucy Obuga – Customer Support">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Lucy Obuga</h3>
+        <p class="team-role">Customer Support</p>
+        <p class="team-dept">Guest Support · Care</p>
+        <p class="team-tagline">
+          Your first point of contact for updates and assistance – from quick questions to real-time
+          support while you’re already on the road.
         </p>
-        <div class="team-meta">Specialty: Corporate &amp; NGO travel</div>
-        <span class="team-tag">MICE &amp; Groups</span>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 5 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ea15bbc7ec389b4b8a74bb1c09b1ad23/directUpload/Angama-Mara-Boma-photographed-by-Sammy-Njoroge.png');"></div>
-        <div class="team-name">Cultural &amp; Experience Curator</div>
-        <div class="team-role">Community &amp; Cultural Journeys</div>
-        <p class="team-focus">
-          Works with local partners to arrange immersive experiences – from village visits 
-          to city food tours – in a respectful and responsible way.
+    <!-- Mary -->
+    <article class="team-card">
+      <div class="team-photo">
+        <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:2fa7fb0185812322296dda8502f6e724/directUpload/Team-.png"
+             alt="Mary Gatu – Office Administrator">
+      </div>
+      <div class="team-info">
+        <h3 class="team-name">Mary Gatu</h3>
+        <p class="team-role">Office Administrator</p>
+        <p class="team-dept">Admin · Coordination</p>
+        <p class="team-tagline">
+          Keeps the Nairobi office organised and responsive – from paperwork and vendor coordination
+          to making sure the team has what they need every day.
         </p>
-        <div class="team-meta">Values: Responsible tourism, local impact</div>
-        <span class="team-tag">Experiences</span>
-      </article>
+      </div>
+    </article>
 
-      <!-- Card 6 -->
-      <article class="team-card">
-        <div class="team-avatar" style="background-image:url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:b8cfa6e76b44adbe972402596c5b75fe/directUpload/Angama-Mara-Aerial-View.png');"></div>
-        <div class="team-name">Senior Travel Advisor</div>
-        <div class="team-role">Guest Advisory &amp; Trip Refinement</div>
-        <p class="team-focus">
-          Reviews itineraries end-to-end, checking connections, seasons and pacing to make 
-          sure each trip feels smooth, safe and thoughtfully planned.
-        </p>
-        <div class="team-meta">Experience: Multi-country routing</div>
-        <span class="team-tag">Guest Advisory</span>
-      </article>
-    </div>
   </div>
 </section>
 
-<!-- OPERATIONS / GUEST SUPPORT -->
-<section class="page-section" style="background:#f9f9f9;">
-  <div class="page-inner">
-    <div class="section-header">
-      <h2>Operations &amp; Guest Support</h2>
-      <p>
-        While trip designers are planning your journey, our operations and guest support teams are the ones 
-        quietly making sure everything runs on time – from airport pick-ups to last-minute changes.
-      </p>
-    </div>
-
-    <div class="sub-grid">
-      <article class="sub-card">
-        <h3>On-the-Ground Operations</h3>
-        <p>
-          Our operations team coordinates drivers, guides, check-ins and activity timings behind the scenes, 
-          staying in close contact with lodges, airlines and local partners.
-        </p>
-        <ul>
-          <li>Monitoring arrivals, departures and transfers</li>
-          <li>Double-checking bookings with camps and hotels</li>
-          <li>Responding quickly when plans change on the road</li>
-        </ul>
-      </article>
-
-      <article class="sub-card">
-        <h3>Guest Support &amp; Aftercare</h3>
-        <p>
-          From the moment you enquire to the moment you land back home, guest support is your safety net – 
-          answering questions, solving issues and capturing feedback.
-        </p>
-        <ul>
-          <li>24/7 contact for urgent travel support</li>
-          <li>Proactive communication before and during trips</li>
-          <li>Post-trip feedback to keep improving our service</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- CTA TO CAREERS / CONTACT -->
-<section class="team-cta">
-  <div class="team-cta-inner">
-    <div>
-      <h2>Want to Work With the Team?</h2>
-      <p>
-        If you’re passionate about travellers, East Africa and doing work that matters day-to-day, 
-        we’d love to hear from you. Explore current openings or send us a note about how you’d like 
-        to contribute at Shikisha.
-      </p>
-    </div>
-    <div class="team-cta-actions">
-      <a href="careers.html" class="btn-primary">View Careers</a>
-      <a href="inquiry.html" class="btn-outline">Plan a Trip With Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="social-icons">
     <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -764,21 +438,10 @@
 
   <ul class="footer-menu">
     <li><a href="#">Help Center</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="booking-terms.html">Booking Terms</a></li>
     <li><a href="careers.html">Careers</a></li>
-    <li><a href="#">Supplier Sign Up</a></li>
-    <li><a href="#">Affiliate Program</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Accessibility</a></li>
   </ul>
-
-  <div class="footer-legal">
-    <a href="privacy.html">Privacy Policy</a>
-    <span>·</span>
-    <a href="booking-terms.html">Terms &amp; Cancellation</a>
-    <span>·</span>
-    <a href="dpa.html">DPA</a>
-  </div>
 
   <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
@@ -801,5 +464,6 @@
     }
   });
 </script>
+
 </body>
 </html>
