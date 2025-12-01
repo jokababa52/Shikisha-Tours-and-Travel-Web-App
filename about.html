@@ -8,12 +8,73 @@
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
+    /* =========================
+       BLACK MANGO – BRAND FONTS
+       ========================= */
+
+    /* Thin (200) */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Thin.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Light (300) – body text */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Bold (700) – subheadings, nav */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Black (900) – main headings */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-brand: 'Black Mango', sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Black Mango;
+      font-family: var(--font-brand);
+      font-weight: 300; /* Light */
       line-height: 1.6;
       overflow-x: hidden;
       color: #222;
+    }
+
+    h1, h2 {
+      font-family: var(--font-brand);
+      font-weight: 900; /* Black */
+    }
+
+    h3, h4 {
+      font-family: var(--font-brand);
+      font-weight: 700; /* Bold */
+    }
+
+    p, li, span {
+      font-family: var(--font-brand);
+      font-weight: 300; /* Light */
+      font-size: 1rem;
     }
 
     /* Header */
@@ -44,7 +105,9 @@
     nav ul li a {
       text-decoration: none;
       color: #333;
-      font-weight: 500;
+      font-family: var(--font-brand);
+      font-weight: 700; /* Bold for nav */
+      font-size: 0.95rem;
       transition: color 0.3s ease;
     }
 
@@ -52,7 +115,7 @@
 
     nav ul li a.active {
       color: #22A9E6;
-      font-weight: 700;
+      font-weight: 900; /* Black */
     }
 
     nav ul li .cta {
@@ -60,7 +123,7 @@
       color: #fff !important;
       padding: 10px 18px;
       border-radius: 25px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s ease;
       display: inline-block;
     }
@@ -88,7 +151,7 @@
       }
       nav.show { left: 0; }
       nav ul { flex-direction: column; gap: 20px; width: 100%; }
-      nav ul li a { color: #fff; font-size: 1.3rem; font-weight: bold; }
+      nav ul li a { color: #fff; font-size: 1.3rem; }
       nav ul li a.active { color: #fff; text-decoration: underline; }
       .mobile-cta { margin-top: 30px; width: 100%; }
       .mobile-cta .cta {
@@ -108,7 +171,7 @@
       width: 100%;
       height: 600px;
       min-height: 350px;
-      background-image: url('https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:b8cfa6e76b44adbe972402596c5b75fe/directUpload/Angama-Mara-Aerial-View.png');
+      background-image: url('https://mlksm2ek1k1e.i.optimole.com/w:2000/h:600/id:b8cfa6e76b44adbe972402596c5b75fe/directUpload/Angama-Mara-Aerial-View.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -138,12 +201,17 @@
 
     .about-hero-caption h1 {
       font-size: 2.4rem;
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.4rem;
+      font-weight: 900; /* Black */
+      letter-spacing: 0.04em;
     }
 
-    .about-hero-caption p {
+    .about-hero-caption h2 {
       margin: 0;
       font-size: 1.1rem;
+      font-weight: 200; /* Thin */
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 768px) {
@@ -153,8 +221,8 @@
       .about-hero-caption h1 {
         font-size: 1.8rem;
       }
-      .about-hero-caption p {
-        font-size: 1rem;
+      .about-hero-caption h2 {
+        font-size: 0.95rem;
       }
     }
 
@@ -172,12 +240,14 @@
       font-size: 1.7rem;
       margin-bottom: 0.5rem;
       color: #c75f00;
+      font-weight: 700; /* Bold */
     }
 
     .section-subtitle {
       font-size: 0.95rem;
       color: #666;
       margin-bottom: 2rem;
+      font-weight: 300; /* Light */
     }
 
     /* Mission / Vision / Purpose */
@@ -200,12 +270,14 @@
       margin-bottom: 0.75rem;
       font-size: 1.15rem;
       color: #022b3a;
+      font-weight: 700;
     }
 
     .mvp-card p {
       margin: 0;
       font-size: 0.95rem;
       color: #444;
+      font-weight: 300;
     }
 
     @media (max-width: 900px) {
@@ -236,18 +308,21 @@
       letter-spacing: 0.08em;
       color: #999;
       margin-bottom: 0.2rem;
+      font-weight: 300;
     }
 
     .value-card h3 {
       margin: 0 0 0.6rem;
       font-size: 1.1rem;
       color: #c75f00;
+      font-weight: 700;
     }
 
     .value-card p {
       margin: 0;
       font-size: 0.92rem;
       color: #444;
+      font-weight: 300;
     }
 
     @media (max-width: 900px) {
@@ -275,6 +350,7 @@
       margin-bottom: 0.7rem;
       font-size: 1.15rem;
       color: #8b4a07;
+      font-weight: 700;
     }
 
     .behaviours-list {
@@ -288,6 +364,7 @@
     .behaviour-item strong {
       display: block;
       margin-bottom: 0.3rem;
+      font-weight: 700;
     }
 
     @media (max-width: 900px) {
@@ -317,6 +394,7 @@
     .team-cta h2 {
       margin: 0 0 0.5rem;
       font-size: 1.7rem;
+      font-weight: 900;
     }
 
     .team-cta p {
@@ -324,6 +402,7 @@
       font-size: 0.98rem;
       max-width: 550px;
       opacity: 0.95;
+      font-weight: 300;
     }
 
     .team-cta-actions {
@@ -338,11 +417,12 @@
       padding: 0.8rem 1.6rem;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       border: 2px solid transparent;
       transition: 0.25s ease;
       text-align: center;
+      font-family: var(--font-brand);
     }
 
     .btn-primary {
@@ -397,11 +477,12 @@
 
     .footer-menu a {
       color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
+      font-weight: 300;
     }
 
     .footer-menu a:hover { color: #22A9E6; }
 
-    .copyright { font-size: 0.85rem; margin-top: 1.5rem; color: #aaa; }
+    .copyright { font-size: 0.85rem; margin-top: 1.5rem; color: #aaa; font-weight: 300; }
 
     @media(max-width:768px){
       .footer-menu{flex-direction:column;gap:12px;}
@@ -581,8 +662,6 @@
   </div>
 </section>
 
-
-  
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="social-icons">
