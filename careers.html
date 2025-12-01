@@ -445,6 +445,32 @@
       font-size: 1.5rem;
       transition: 0.3s ease;
     }
+
+    .footer-legal {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.footer-legal-title {
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+.footer-legal a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 0.15rem;
+}
+
+.footer-legal a:hover {
+  color: #22A9E6;
+}
+
+.footer-legal-separator {
+  color: #555;
+  margin: 0 0.1rem;
+}
     .social-icons a:hover { color: #22A9E6; }
 
     .footer-menu {
@@ -660,18 +686,28 @@
   </div>
 
   <ul class="footer-menu">
-    <li><a href="#">Help Center</a></li>
-    <li><a href="#">About Us</a></li>
+    <li><a href="help-center.html">Help Center</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="careers.html">Careers</a></li>
     <li><a href="#">Supplier Sign Up</a></li>
     <li><a href="#">Affiliate Program</a></li>
     <li><a href="#">News</a></li>
     <li><a href="#">Accessibility</a></li>
-    <li><a href="careers.html#workplace-policy">Workplace Policy</a></li>
   </ul>
+
+  <!-- NEW: Legal & Data Protection strip -->
+  <div class="footer-legal">
+    <span class="footer-legal-title">Legal &amp; Data Protection:</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="footer-legal-separator">·</span>
+    <a href="booking-terms.html">Booking Terms &amp; Cancellation</a>
+    <span class="footer-legal-separator">·</span>
+    <a href="dpa.html">Data Processing Addendum (DPA)</a>
+  </div>
 
   <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
+
 
 <script>
   const hamburger = document.getElementById("hamburger");
