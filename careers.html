@@ -8,13 +8,74 @@
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
+    /* =========================
+       BLACK MANGO – BRAND FONTS
+       ========================= */
+
+    /* Thin (200) */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Thin.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Light (300) – body text */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Bold (700) – subheadings, nav */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Black (900) – main headings */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-brand: 'Black Mango', sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: var(--font-brand);
+      font-weight: 300; /* Light */
       line-height: 1.6;
       background: #f7f9fc;
       color: #222;
       overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: var(--font-brand);
+      font-weight: 900; /* Black */
+    }
+
+    h3, h4 {
+      font-family: var(--font-brand);
+      font-weight: 700; /* Bold */
+    }
+
+    p, li, span {
+      font-family: var(--font-brand);
+      font-weight: 300; /* Light */
+      font-size: 1rem;
     }
 
     /* Header – same style as homepage for consistency */
@@ -45,17 +106,25 @@
     nav ul li a {
       text-decoration: none;
       color: #333;
-      font-weight: 500;
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: 0.95rem;
       transition: color 0.3s ease;
     }
+
     nav ul li a:hover { color: #22A9E6; }
+
+    nav ul li a.active {
+      color: #22A9E6;
+      font-weight: 900; /* Black */
+    }
 
     nav ul li .cta {
       background: #22A9E6;
       color: #fff !important;
       padding: 10px 18px;
       border-radius: 25px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s ease;
       display: inline-block;
     }
@@ -106,7 +175,9 @@
       nav ul li a {
         color: #fff;
         font-size: 1.3rem;
-        font-weight: bold;
+      }
+      nav ul li a.active {
+        text-decoration: underline;
       }
       .mobile-cta {
         margin-top: 30px;
@@ -153,6 +224,8 @@
     .hero-careers h1 {
       font-size: 2.4rem;
       margin-bottom: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
     }
 
     .hero-careers p {
@@ -162,6 +235,7 @@
       font-size: 1.15rem;
       line-height: 1.7;
       text-align: center;
+      font-weight: 300;
     }
 
     .hero-careers .hero-cta {
@@ -173,6 +247,7 @@
       font-weight: 700;
       text-decoration: none;
       transition: 0.3s ease;
+      font-family: var(--font-brand);
     }
 
     .hero-careers .hero-cta:hover {
@@ -184,6 +259,7 @@
       margin-top: 0.7rem;
       font-size: 0.85rem;
       opacity: 0.9;
+      font-weight: 300;
     }
 
     @media (max-width: 768px) {
@@ -193,6 +269,12 @@
       }
       .hero-careers-inner {
         padding: 0 0.5rem;
+      }
+      .hero-careers h1 {
+        font-size: 2rem;
+      }
+      .hero-careers p {
+        font-size: 1rem;
       }
     }
 
@@ -217,18 +299,21 @@
       margin-bottom: 0.8rem;
       font-size: 1.6rem;
       color: #c75f00;
+      font-weight: 900;
     }
 
     .section p {
       margin-bottom: 0.8rem;
       font-size: 0.98rem;
       color: #444;
+      font-weight: 300;
     }
 
     .tagline {
       font-size: 0.9rem;
       color: #777;
       margin-bottom: 1rem;
+      font-weight: 300;
     }
 
     /* FULL-WIDTH GRID LAYOUT */
@@ -266,6 +351,11 @@
       margin-bottom: 0.4rem;
       font-size: 1.05rem;
       color: #c75f00;
+      font-weight: 700;
+    }
+
+    .card-light p {
+      font-weight: 300;
     }
 
     .badge {
@@ -278,17 +368,18 @@
       background: #fff4e6;
       color: #c75f00;
       margin-bottom: 0.7rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .policy-link {
       margin-top: 0.8rem;
       font-size: 0.9rem;
+      font-weight: 300;
     }
     .policy-link a {
       color: #22A9E6;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
     .policy-link a:hover {
       text-decoration: underline;
@@ -298,6 +389,7 @@
       font-size: 0.85rem;
       color: #777;
       margin-top: 0.5rem;
+      font-weight: 300;
     }
 
     .pill {
@@ -307,6 +399,7 @@
       background: #e8f5ff;
       padding: 6px 12px;
       border-radius: 999px;
+      font-weight: 300;
     }
 
     .text-divider {
@@ -317,6 +410,7 @@
       font-size: 0.9rem;
       margin: 2.2rem 0;
       text-align: center;
+      font-weight: 300;
     }
 
     .text-divider:before,
@@ -331,7 +425,7 @@
     .text-divider a {
       color: #22A9E6;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .text-divider a:hover {
@@ -367,6 +461,7 @@
       text-decoration: none;
       font-size: 0.95rem;
       transition: 0.3s ease;
+      font-weight: 300;
     }
     .footer-menu a:hover { color: #22A9E6; }
 
@@ -374,6 +469,7 @@
       font-size: 0.85rem;
       margin-top: 1.5rem;
       color: #aaa;
+      font-weight: 300;
     }
 
     @media(max-width:768px){
@@ -395,7 +491,7 @@
       <li><a href="#">Destinations</a></li>
       <li><a href="#">Experiences</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="careers.html"><strong>Careers</strong></a></li>
+      <li><a href="careers.html" class="active">Careers</a></li>
       <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
     </ul>
   </nav>
@@ -551,7 +647,6 @@
       <a href="#" target="_blank"> own terms </a> 
       before sharing your details.
     </p>
-    
   </div>
 </div>
 
