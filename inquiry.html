@@ -7,87 +7,164 @@
   <meta name="description" content="Send your inquiry to Shikisha Tours & Travel. We’ll help you plan your next adventure.">
   <link rel="icon" type="image/png" href="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:58c2bcd2b2a43ec02eb55c7563b7a4fc/directUpload/user-thumbnail.png">
 
-  <!-- Styles -->
   <style>
+    /* =========================
+       BLACK MANGO – BRAND FONTS
+       ========================= */
+
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Thin.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-brand: 'Black Mango', sans-serif;
+      --brand-orange: #c75f00;
+      --brand-blue: #22a9e6;
+    }
+
     body {
-      font-family: "Manrope", Arial, sans-serif;
+      font-family: var(--font-brand);
+      font-weight: 300; /* Light */
       background: #f9f9f9;
       margin: 0;
       padding: 0;
       color: #333;
     }
+
     header {
       background: #ffffff;
       padding: 1rem;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+
     header img {
       max-height: 50px;
     }
- 
+
     main {
       max-width: 700px;
-      margin: 1rem auto 3rem;
+      margin: 1.5rem auto 3rem;
       background: #fff;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     h1 {
-      color: #c75f00;
+      color: var(--brand-orange);
       text-align: center;
+      font-weight: 900; /* Black weight */
+      margin-top: 0;
+      margin-bottom: 0.5rem;
     }
+
+    main > p {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      font-size: 0.98rem;
+    }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    input, textarea, select, button {
+
+    input,
+    textarea,
+    select,
+    button {
       padding: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
-      width: 100%;
+      font-family: var(--font-brand);
     }
+
+    textarea {
+      resize: vertical;
+    }
+
     button {
-      background: #c75f00;
+      background: var(--brand-orange);
       color: #fff;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
       transition: background 0.3s;
+      border: none;
     }
+
     button:hover {
       background: #a64c00;
     }
+
     .consultant {
       margin-top: 2rem;
       text-align: center;
     }
+
     .consultant img {
       max-width: 150px;
-      border-radius: 0%;
+      border-radius: 0;
       margin-bottom: 0.5rem;
     }
 
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  background: #22a9e6; /* Environment blue for trust */
-  color: #fff;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
+    .consultant p {
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+    }
 
-.cta-button:hover {
-  background: #1d94ca;
-}
+    .consultant p strong {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
 
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--brand-blue);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      font-family: var(--font-brand);
+    }
 
-    
+    .cta-button:hover {
+      background: #1d94ca;
+    }
+
     footer {
       margin-top: 3rem;
       background: #222;
@@ -96,23 +173,40 @@
       padding: 2rem 1rem;
       font-size: 0.9rem;
     }
+
     footer a {
-      color: #c75f00;
+      color: var(--brand-orange);
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="/"><img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png" alt="Shikisha Tours & Travel"></a>
+  <a href="index.html">
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png"
+         alt="Shikisha Tours & Travel">
+  </a>
 </header>
 
 <main>
   <h1>Get a Free Quote</h1>
   <p>Please fill in your details and we’ll get back to you shortly.</p>
 
-  <form action="send-quote.php" method="POST">
+  <!-- Single, clean form (no nesting) -->
+  <form id="quoteForm">
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email Address" required>
     <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -133,55 +227,70 @@
       <option value="Rwanda">Rwanda</option>
     </select>
 
-    <textarea name="message" placeholder="Do you already have specific requirements or locations in mind that we can consider? The more you already know about your travel requirements, the better our travel expert will prepare a tailored proposal for you. Think about specific parks, type of activities, etc.
-..." rows="6" required></textarea>
+    <textarea
+      name="message"
+      rows="6"
+      required
+      placeholder="Do you already have specific requirements or locations in mind that we can consider? 
+The more you already know about your travel requirements, the better our travel expert will prepare a tailored proposal for you. 
+Think about specific parks, type of activities, etc.">
+    </textarea>
 
-    <!-- Cloudflare Turnstile -->
+    <!-- Cloudflare Turnstile inside the form -->
     <div class="cf-turnstile" data-sitekey="0x4AAAAAAB5--b_kHcQxxjP4"></div>
 
-  <form id="quoteForm">
-  <!-- your inputs -->
-  <button type="submit">GET A FREE QUOTE!</button>
-</form>
-
-<script>
-document.getElementById('quoteForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const formData = Object.fromEntries(new FormData(e.target).entries());
-  const res = await fetch('/api/sendQuote', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
-  });
-
-  const data = await res.json();
-  if (data.success) alert('Your inquiry has been sent successfully!');
-  else alert('Failed to send inquiry. Please try again.');
-});
-</script>
-
+    <button type="submit">GET A FREE QUOTE!</button>
+  </form>
 
   <div class="consultant">
-  <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ce1de39b271eb16f0c02ed634d0dee7b/directUpload/SB-65.jpg" alt="Travel Consultant">
-  <p><strong>SCHEDULE 1-ON-1 CALL WITH OUR CONSULTANT</strong><br>
-  We are here to help you 24/7/365.</p>
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ce1de39b271eb16f0c02ed634d0dee7b/directUpload/SB-65.jpg" alt="Travel Consultant">
+    <p>
+      <strong>SCHEDULE 1-ON-1 CALL WITH OUR CONSULTANT</strong><br>
+      We are here to help you 24/7/365.
+    </p>
 
-  <!-- ✅ Calendly CTA Button -->
-  <a href="https://calendly.com/shikishatoursandtravel" target="_blank" class="cta-button">
-    SCHEDULE A FREE CALL
-  </a>
-</div>
-
+    <a href="https://calendly.com/shikishatoursandtravel" target="_blank" class="cta-button">
+      SCHEDULE A FREE CALL
+    </a>
+  </div>
 </main>
 
 <footer>
-  <!-- Paste the same footer code from index.html here -->
   <p>© 2025 Shikisha Tours & Travel | <a href="/privacy.html">Privacy Policy</a></p>
 </footer>
 
 <!-- Cloudflare Turnstile Script -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  // Simple client-side submission using your existing pattern
+  document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch('/api/sendQuote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert('Your inquiry has been sent successfully!');
+        form.reset();
+      } else {
+        alert('Failed to send inquiry. Please try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Something went wrong. Please try again later.');
+    }
+  });
+</script>
 
 </body>
 </html>
