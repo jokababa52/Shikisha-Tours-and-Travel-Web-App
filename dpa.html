@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Processing Addendum (DPA) | Shikisha Tours and Travel</title>
+  <meta name="description" content="Shikisha Tours and Travel Data Processing Addendum (DPA) describing how personal data is processed on behalf of customers and partners.">
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* =========================
+       BLACK MANGO – BRAND FONTS
+       ========================= */
+
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Thin.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-brand: 'Black Mango', sans-serif;
+      --brand-orange: #c75f00;
+      --brand-blue: #22A9E6;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-brand);
+      font-weight: 300;
+      background: #f8f9fb;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      width: 220px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--brand-blue);
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+    }
+
+    /* DPA Container */
+    .policy-container {
+      max-width: 1100px;
+      margin: 3rem auto 4rem;
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .policy-container h1 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--brand-orange);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .effective-date {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .policy-intro {
+      text-align: left;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: #222;
+    }
+
+    h3 {
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0 0 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 12px;
+      font-size: 1.5rem;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--brand-blue);
+    }
+
+    .footer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px 30px;
+    }
+
+    .footer-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+
+    .footer-menu a:hover {
+      color: var(--brand-blue);
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-menu { flex-direction: column; }
+      .policy-container { padding: 1.8rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <a href="index.html">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png"
+         alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- DPA Content -->
+<section class="policy-container">
+  <h1>Data Processing Addendum (DPA)</h1>
+  <p class="last-updated">Effective Date: 17th April 2025</p>
+
+  <p class="policy-intro">
+    This Data Processing Addendum (“<strong>DPA</strong>”) forms part of the agreement between
+    <strong>Shikisha Tours and Travel Limited</strong> (“<strong>Shikisha</strong>”, “we”, “us”, or “our”)
+    and any customer, partner, or organisation (“<strong>Customer</strong>”, “you”, or “your”) that engages us
+    to provide travel and related services which involve the processing of personal data.
+  </p>
+
+  <p>
+    This DPA is intended to meet the requirements of applicable data protection laws, including
+    the General Data Protection Regulation (GDPR), POPIA, and other similar regulations where applicable.
+  </p>
+
+  <h2>1. Roles of the Parties</h2>
+  <p>
+    For the purposes of this DPA and applicable data protection laws:
+  </p>
+  <ul>
+    <li>The Customer is the <strong>Data Controller</strong> (or equivalent term).</li>
+    <li>Shikisha is the <strong>Data Processor</strong> (or equivalent term) when processing personal data on your behalf.</li>
+  </ul>
+
+  <p>
+    Where Shikisha determines the purposes and means of processing for its own business (for example, managing guest
+    records, marketing, and compliance), Shikisha acts as an independent data controller, as described in our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+
+  <h2>2. Subject Matter, Nature and Purpose of Processing</h2>
+  <p>
+    Shikisha processes personal data solely for the purpose of delivering the agreed travel and tourism services,
+    including but not limited to:
+  </p>
+  <ul>
+    <li>Managing tour, safari, transport, and accommodation bookings</li>
+    <li>Coordinating flights and ground services</li>
+    <li>Communicating with travellers and Customer representatives</li>
+    <li>Providing support before, during, and after travel</li>
+    <li>Carrying out necessary administrative, accounting, and compliance tasks</li>
+  </ul>
+
+  <h2>3. Duration of Processing</h2>
+  <p>
+    Shikisha will process personal data:
+  </p>
+  <ul>
+    <li>For the duration of the underlying service agreement and any active bookings; and</li>
+    <li>Thereafter, only as required to comply with legal, regulatory, or contractual obligations (for example, tax and audit requirements).</li>
+  </ul>
+
+  <h2>4. Categories of Data Subjects</h2>
+  <p>Categories of data subjects may include:</p>
+  <ul>
+    <li>Travellers and guests</li>
+    <li>Employees or agents of the Customer</li>
+    <li>Family members or group members linked to a booking</li>
+    <li>Emergency contacts where provided</li>
+  </ul>
+
+  <h2>5. Types of Personal Data</h2>
+  <p>Personal data processed may include, as applicable:</p>
+  <ul>
+    <li>Identification details (name, title, date of birth where required)</li>
+    <li>Contact details (email address, phone number, address)</li>
+    <li>Travel itinerary details (dates, destinations, accommodation, activities)</li>
+    <li>Passport, visa, and travel document information where required for bookings</li>
+    <li>Special requests (dietary requirements, mobility needs, celebration notes)</li>
+    <li>Health-related information limited to what is strictly necessary for travel arrangements, where provided by the Customer or traveller</li>
+  </ul>
+
+  <p>
+    The Customer undertakes not to provide more personal data than is reasonably necessary for the relevant travel services.
+  </p>
+
+  <h2>6. Instructions from the Customer</h2>
+  <p>
+    Shikisha will process personal data only:
+  </p>
+  <ul>
+    <li>On the documented instructions of the Customer, as set out in the service agreement and this DPA; or</li>
+    <li>Where required by applicable law, in which case Shikisha will inform the Customer (unless prohibited by law).</li>
+  </ul>
+
+  <h2>7. Confidentiality</h2>
+  <p>
+    Shikisha will ensure that any person authorised to process personal data (including employees, agents, and
+    contractors) is subject to a duty of confidentiality and processes such data only for the purposes set out in this DPA.
+  </p>
+
+  <h2>8. Security of Processing</h2>
+  <p>
+    Shikisha implements appropriate technical and organisational measures to protect personal data, including:
+  </p>
+  <ul>
+    <li>Access controls and role-based permissions</li>
+    <li>Secure storage and transmission practices</li>
+    <li>Regular backups and monitoring</li>
+    <li>Staff awareness and training on data protection</li>
+  </ul>
+
+  <p>
+    The Customer is responsible for implementing suitable security measures within its own systems, including
+    the secure transfer of personal data to Shikisha.
+  </p>
+
+  <h2>9. Sub-Processors</h2>
+  <p>
+    Shikisha may engage third-party service providers (“<strong>Sub-Processors</strong>”) to support delivery of travel
+    services (for example, airlines, hotels, ground operators, IT providers).
+  </p>
+  <ul>
+    <li>Sub-Processors will only process personal data as necessary to provide their services.</li>
+    <li>Shikisha will ensure Sub-Processors are bound by data protection obligations equivalent to those in this DPA.</li>
+  </ul>
+
+  <p>
+    Where required by law or contract, Shikisha will provide the Customer with information on key Sub-Processors upon request.
+  </p>
+
+  <h2>10. International Transfers</h2>
+  <p>
+    Due to the nature of travel services, personal data may be transferred to or accessed from countries outside the
+    country of origin and, in some cases, outside the European Economic Area (EEA) or similar jurisdictions.
+  </p>
+  <p>
+    Shikisha will take appropriate steps to ensure that such transfers comply with applicable data protection laws,
+    including (where relevant) the use of recognised data transfer mechanisms.
+  </p>
+
+  <h2>11. Assistance with Data Subject Rights</h2>
+  <p>
+    Taking into account the nature of the processing, Shikisha will provide reasonable assistance to the Customer,
+    upon request, to respond to data subject requests relating to:
+  </p>
+  <ul>
+    <li>Access, rectification, or erasure of personal data</li>
+    <li>Restriction or objection to processing</li>
+    <li>Data portability where applicable</li>
+  </ul>
+
+  <p>
+    The Customer remains responsible for identifying and authenticating data subjects and for responding to
+    requests in accordance with applicable law.
+  </p>
+
+  <h2>12. Data Breach Notification</h2>
+  <p>
+    In the event of a personal data breach affecting personal data processed on behalf of the Customer, Shikisha will:
+  </p>
+  <ul>
+    <li>Notify the Customer without undue delay once the breach has been identified; and</li>
+    <li>Provide available information to help the Customer meet any legal obligations to notify authorities or affected individuals.</li>
+  </ul>
+
+  <p>
+    The Customer is responsible for any regulatory or data subject notifications, unless otherwise agreed in writing.
+  </p>
+
+  <h2>13. Data Protection Impact Assessments</h2>
+  <p>
+    Where the Customer is required to carry out a Data Protection Impact Assessment (DPIA) or consult with a
+    supervisory authority, Shikisha will provide reasonable cooperation and assistance, to the extent that the
+    processing by Shikisha is relevant to such assessment.
+  </p>
+
+  <h2>14. Return or Deletion of Data</h2>
+  <p>
+    Upon termination or expiry of the services, and at the Customer’s written request, Shikisha will:
+  </p>
+  <ul>
+    <li>Return personal data to the Customer; or</li>
+    <li>Delete personal data, unless retention is required by law or legitimate business necessity (e.g., tax, audit, or legal defence).</li>
+  </ul>
+
+  <p>
+    Where full deletion is not technically or legally feasible, Shikisha will ensure that any retained data remains
+    subject to appropriate protections and is used only for limited lawful purposes.
+  </p>
+
+  <h2>15. Audit and Compliance</h2>
+  <p>
+    Upon reasonable prior written notice and subject to confidentiality obligations, Shikisha will:
+  </p>
+  <ul>
+    <li>Provide information necessary to demonstrate compliance with this DPA; and</li>
+    <li>Cooperate with audits or inspections initiated by the Customer or its appointed auditor, where required by law.</li>
+  </ul>
+
+  <p>
+    Audits shall be conducted during normal business hours and in a manner that avoids undue disruption to Shikisha’s operations.
+  </p>
+
+  <h2>16. Relationship to Main Agreement and Privacy Policy</h2>
+  <p>
+    This DPA supplements and forms part of the main agreement between Shikisha and the Customer. In case of any
+    conflict between the main agreement and this DPA regarding data protection, this DPA shall prevail to the extent
+    of the inconsistency.
+  </p>
+  <p>
+    For more information on how Shikisha processes personal data as an independent controller, please refer to our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+
+  <h2>17. Changes to this DPA</h2>
+  <p>
+    Shikisha may update this DPA from time to time to reflect legal, operational, or service-related changes.
+    Material updates will be communicated to Customers, and continued use of our services after such updates
+    constitutes acceptance of the revised DPA.
+  </p>
+
+  <h2>18. Contact</h2>
+  <p>
+    For questions about this DPA or data protection matters, please contact:
+  </p>
+  <p>
+    <strong>Email:</strong> <a href="mailto:privacy@shikishatoursandtravels.co.ke">privacy@shikishatoursandtravels.co.ke</a><br>
+    <strong>General enquiries:</strong> <a href="mailto:info@shikishatoursandtravels.co.ke">info@shikishatoursandtravels.co.ke</a>
+  </p>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <ul class="footer-menu">
+    <li><a href="#">Help Center</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#">Supplier Sign Up</a></li>
+    <li><a href="#">Affiliate Program</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="booking-terms.html">Booking Terms &amp; Cancellation Policy</a></li>
+    <li><a href="dpa.html">Data Processing Addendum (DPA)</a></li>
+  </ul>
+
+  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
+</footer>
+
+</body>
+</html>
