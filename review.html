@@ -8,14 +8,55 @@
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
+    /* =========================
+       BLACK MANGO – BRAND FONTS
+       ========================= */
+
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Thin.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-brand: 'Black Mango', sans-serif;
+      --brand-orange: #c75f00;
+      --brand-blue: #22A9E6;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: var(--font-brand);
+      font-weight: 300;
       line-height: 1.6;
       background: #f3f7fb;
       color: #333;
     }
 
+    /* Header */
     header {
       background: #fff;
       padding: 0.8rem 1.5rem;
@@ -28,7 +69,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    .logo { width: 220px; }
+    .logo { width: 220px; height: auto; }
 
     nav ul {
       list-style: none;
@@ -42,14 +83,16 @@
     nav ul li a {
       text-decoration: none;
       color: #333;
-      font-weight: 500;
+      font-weight: 700;
+      font-size: 0.95rem;
       transition: color 0.3s ease;
+      font-family: var(--font-brand);
     }
 
-    nav ul li a:hover { color: #22A9E6; }
+    nav ul li a:hover { color: var(--brand-blue); }
 
     @media (max-width: 768px) {
-      nav { display: none; }
+      nav { display: none; } /* keeping your simple behavior for now */
     }
 
     /* Main Review Section */
@@ -61,15 +104,17 @@
     }
 
     .reviews-page h1 {
-      color: #c75f00;
+      color: var(--brand-orange);
       font-size: 2.2rem;
       margin-bottom: 1rem;
+      font-weight: 900; /* Black */
     }
 
     .reviews-page p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #444;
       margin-bottom: 3rem;
+      font-weight: 300;
     }
 
     .review-links {
@@ -91,6 +136,7 @@
       color: #333;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-family: var(--font-brand);
     }
 
     .review-card:hover {
@@ -107,11 +153,11 @@
     }
 
     .review-card span {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.1rem;
     }
 
-    /* Brand colors */
+    /* Brand colors (icons if used) */
     .review-card:nth-child(1) i { color: #db4437; } /* Google */
     .review-card:nth-child(4) i { color: #00b67a; } /* Trustpilot */
 
@@ -138,7 +184,7 @@
       transition: 0.3s ease;
     }
 
-    .social-icons a:hover { color: #22A9E6; }
+    .social-icons a:hover { color: var(--brand-blue); }
 
     .footer-menu {
       list-style: none;
@@ -155,14 +201,17 @@
       text-decoration: none;
       font-size: 0.95rem;
       transition: 0.3s ease;
+      font-family: var(--font-brand);
+      font-weight: 300;
     }
 
-    .footer-menu a:hover { color: #22A9E6; }
+    .footer-menu a:hover { color: var(--brand-blue); }
 
     .copyright {
       font-size: 0.85rem;
       margin-top: 1.5rem;
       color: #aaa;
+      font-weight: 300;
     }
 
     @media (max-width: 768px) {
@@ -175,7 +224,8 @@
 <!-- Header -->
 <header>
   <a href="index.html">
-    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours Logo" class="logo">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png"
+         alt="Shikisha Tours Logo" class="logo">
   </a>
   <nav>
     <ul>
@@ -183,7 +233,7 @@
       <li><a href="#">Safaris</a></li>
       <li><a href="#">Destinations</a></li>
       <li><a href="#">Experiences</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="about.html">About Us</a></li>
     </ul>
   </nav>
 </header>
@@ -191,12 +241,15 @@
 <!-- Reviews Section -->
 <section class="reviews-page">
   <h1>How was Shikisha Tours and Travel in Nairobi?</h1>
-  <p>We’d be grateful if you would review us on the following platforms, the world’s largest travel sites, helping millions of visitors every month plan the perfect trip.</p>
+  <p>
+    We’d be grateful if you would review us on the following platforms, the world’s largest travel sites,
+    helping millions of visitors every month plan the perfect trip.
+  </p>
 
   <div class="review-links">
     <!-- Google -->
     <a href="https://g.page/r/CcovRiB3cjEpEBM/review" target="_blank" class="review-card">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:175e7f54a276600b4a43cba1f0674e3f/directUpload/download-5.png" alt="Google Logo"> 
+      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:175e7f54a276600b4a43cba1f0674e3f/directUpload/download-5.png" alt="Google Logo">
       <span>Google for Travel</span>
     </a>
 
@@ -232,8 +285,8 @@
 
   <ul class="footer-menu">
     <li><a href="#">Help Center</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="https://shikishatoursandtravels.zohorecruit.com/jobs/careers">Careers</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="careers.html">Careers</a></li>
     <li><a href="#">Supplier Sign Up</a></li>
     <li><a href="#">Affiliate Program</a></li>
     <li><a href="#">News</a></li>
