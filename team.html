@@ -8,13 +8,50 @@
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
 
   <style>
+    /* ----------------------------------------------------
+       BRAND FONTS (served from your GitHub /font folder)
+       ---------------------------------------------------- */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('font/leaguespartan-bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-heading: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: var(--font-body);
+      font-weight: 400;
       line-height: 1.6;
       background: #f7f9fc;
       color: #222;
       overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
     }
 
     /* Header (same style as other pages) */
@@ -448,7 +485,6 @@
           Your first point of contact for updates and assistance – from quick questions to real-time
           support while you’re already on the road.
         </p>
-        <!-- Placeholder LinkedIn (until you have her link) -->
         <div class="team-social">
           <a href="#" onclick="return false;" aria-label="LinkedIn profile unavailable">
             <i class="fab fa-linkedin-in" style="opacity:0.4;"></i>
