@@ -9,28 +9,10 @@
 
   <style>
     /* =========================
-       BLACK MANGO – BRAND FONTS
+       BRAND FONTS
        ========================= */
 
-    /* Thin (200) */
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Thin.woff') format('woff');
-      font-weight: 200;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Light (300) – body text */
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Light.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Bold (700) – subheadings, nav */
+    /* Black Mango – Bold (700) */
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Bold.woff') format('woff');
@@ -39,7 +21,7 @@
       font-display: swap;
     }
 
-    /* Black (900) – main headings */
+    /* Black Mango – Black (900) */
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Black.woff') format('woff');
@@ -48,32 +30,42 @@
       font-display: swap;
     }
 
+    /* League Spartan – used for body text (replaces Thin/Light) */
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('font/leaguespartan-bold.woff') format('woff');
+      font-weight: 400; /* will also be used for 300/500 etc */
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
-      --font-brand: 'Black Mango', sans-serif;
+      --font-heading: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-brand);
-      font-weight: 300; /* Light */
+      font-family: var(--font-body);
+      font-weight: 400;
       line-height: 1.6;
       overflow-x: hidden;
       color: #222;
     }
 
     h1, h2 {
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 900; /* Black */
     }
 
     h3, h4 {
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 700; /* Bold */
     }
 
     p, li, span {
-      font-family: var(--font-brand);
-      font-weight: 300; /* Light */
+      font-family: var(--font-body);
+      font-weight: 400;
       font-size: 1rem;
     }
 
@@ -105,7 +97,7 @@
     nav ul li a {
       text-decoration: none;
       color: #333;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 700; /* Bold for nav */
       font-size: 0.95rem;
       transition: color 0.3s ease;
@@ -209,7 +201,8 @@
     .about-hero-caption h2 {
       margin: 0;
       font-size: 1.1rem;
-      font-weight: 200; /* Thin */
+      font-family: var(--font-body);
+      font-weight: 400; /* previously Thin, now League Spartan body */
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -247,7 +240,8 @@
       font-size: 0.95rem;
       color: #666;
       margin-bottom: 2rem;
-      font-weight: 300; /* Light */
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     /* Mission / Vision / Purpose */
@@ -277,7 +271,8 @@
       margin: 0;
       font-size: 0.95rem;
       color: #444;
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     @media (max-width: 900px) {
@@ -308,7 +303,8 @@
       letter-spacing: 0.08em;
       color: #999;
       margin-bottom: 0.2rem;
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     .value-card h3 {
@@ -322,7 +318,8 @@
       margin: 0;
       font-size: 0.92rem;
       color: #444;
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     @media (max-width: 900px) {
@@ -359,12 +356,15 @@
       gap: 1.2rem;
       font-size: 0.92rem;
       color: #444;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     .behaviour-item strong {
       display: block;
       margin-bottom: 0.3rem;
       font-weight: 700;
+      font-family: var(--font-heading);
     }
 
     @media (max-width: 900px) {
@@ -402,7 +402,8 @@
       font-size: 0.98rem;
       max-width: 550px;
       opacity: 0.95;
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     .team-cta-actions {
@@ -422,7 +423,7 @@
       border: 2px solid transparent;
       transition: 0.25s ease;
       text-align: center;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
     }
 
     .btn-primary {
@@ -477,12 +478,19 @@
 
     .footer-menu a {
       color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
     }
 
     .footer-menu a:hover { color: #22A9E6; }
 
-    .copyright { font-size: 0.85rem; margin-top: 1.5rem; color: #aaa; font-weight: 300; }
+    .copyright {
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      color: #aaa;
+      font-family: var(--font-body);
+      font-weight: 400;
+    }
 
     @media(max-width:768px){
       .footer-menu{flex-direction:column;gap:12px;}
