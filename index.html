@@ -9,28 +9,10 @@
 
   <style>
     /* =========================
-       BLACK MANGO – BRAND FONTS
+       BRAND FONTS
        ========================= */
 
-    /* Thin (200) */
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Thin.woff') format('woff');
-      font-weight: 200;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Light (300) – body text */
-    @font-face {
-      font-family: 'Black Mango';
-      src: url('font/BlackMango-Light.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* Bold (700) – subheadings, nav */
+    /* Black Mango – Bold (700) */
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Bold.woff') format('woff');
@@ -39,7 +21,7 @@
       font-display: swap;
     }
 
-    /* Black (900) – main headings */
+    /* Black Mango – Black (900) */
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Black.woff') format('woff');
@@ -48,32 +30,42 @@
       font-display: swap;
     }
 
+    /* League Spartan – body font (replaces Thin/Light) */
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('font/leaguespartan-bold.woff') format('woff');
+      font-weight: 400; /* used as normal weight */
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
-      --font-brand: 'Black Mango', sans-serif;
+      --font-heading: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-brand);
-      font-weight: 300; /* Light */
+      font-family: var(--font-body);
+      font-weight: 400;
       line-height: 1.6;
       overflow-x: hidden;
       color: #222;
     }
 
     h1, h2 {
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 900; /* Black */
     }
 
     h3, h4 {
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 700; /* Bold */
     }
 
     p, li, span {
-      font-family: var(--font-brand);
-      font-weight: 300;
+      font-family: var(--font-body);
+      font-weight: 400;
       font-size: 1rem;
     }
 
@@ -105,7 +97,7 @@
     nav ul li a {
       text-decoration: none;
       color: #333;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
       font-weight: 700;        /* Bold in nav */
       font-size: 0.95rem;
       transition: color 0.3s ease;
@@ -126,7 +118,9 @@
       font-weight: 700;
       transition: all 0.3s ease;
       display: inline-block;
+      font-family: var(--font-heading);
     }
+
     nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
 
     .hamburger {
@@ -181,10 +175,35 @@
       font-size: 2rem; margin: 0;
       font-weight: 900;         /* Black for hero headline */
       letter-spacing: 0.04em;
+      font-family: var(--font-heading);
     }
     .caption p {
       margin-top: 5px; font-size: 1rem;
-      font-weight: 300;         /* Light for subline */
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.6);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .dots button.active {
+      background: #22A9E6;
     }
 
     /* Why Choose Us */
@@ -207,7 +226,7 @@
     .feature:hover { transform: translateY(-6px); box-shadow: 0 6px 15px rgba(0,0,0,0.12); }
     .feature .icon { width: 60px; height: 60px; margin-bottom: 1rem; }
     .feature h3 { font-size: 1.2rem; color: #c75f00; font-weight: 700; }
-    .feature p { font-size: 0.95rem; color: #444; font-weight: 300; }
+    .feature p { font-size: 0.95rem; color: #444; font-weight: 400; font-family: var(--font-body); }
     .feature a { color: #c75f00; text-decoration: none; font-weight: 600; }
 
     /* Auth Box */
@@ -217,14 +236,14 @@
       background: #f7f9fc; border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
-    .auth-box h2 { font-size: 1.5rem; margin-bottom: 15px; color: #222; font-weight: 900; }
-    .auth-box p { font-size: 1rem; color: #555; margin-bottom: 25px; font-weight: 300; }
+    .auth-box h2 { font-size: 1.5rem; margin-bottom: 15px; color: #222; font-weight: 900; font-family: var(--font-heading); }
+    .auth-box p { font-size: 1rem; color: #555; margin-bottom: 25px; font-weight: 400; font-family: var(--font-body); }
     .auth-box p a { color: #22A9E6; font-weight: 700; text-decoration: none; }
     .auth-btn {
       display: inline-block; background: #22A9E6; color: #fff;
       text-decoration: none; padding: 14px 28px;
       border-radius: 6px; font-weight: 700; transition: 0.3s ease;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
     }
     .auth-btn:hover { background: #1a87b7; transform: scale(1.03); }
 
@@ -244,7 +263,8 @@
       color: #555;
       font-size: 1.05rem;
       margin-bottom: 2rem;
-      font-weight: 300;
+      font-weight: 400;
+      font-family: var(--font-body);
     }
     .review-platforms {
       display: flex;
@@ -264,7 +284,7 @@
       color: #333;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
     }
     .platform-card:hover {
       transform: translateY(-5px);
@@ -285,7 +305,7 @@
       text-decoration: none;
       font-weight: 700;
       transition: 0.3s ease;
-      font-family: var(--font-brand);
+      font-family: var(--font-heading);
     }
     .reviews-preview .cta-btn:hover { background: #1a87b7; transform: scale(1.05); }
 
@@ -299,47 +319,51 @@
     .social-icons a {
       color: #fff; margin: 0 12px; font-size: 1.5rem; transition: 0.3s ease;
     }
+    .social-icons a:hover { color: #22A9E6; }
 
     .footer-legal {
-  margin-top: 0.3rem;
-  font-size: 0.8rem;
-  color: #aaa;
-}
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      font-family: var(--font-body);
+    }
 
-.footer-legal-title {
-  font-weight: 600;
-  margin-right: 0.3rem;
-}
+    .footer-legal-title {
+      font-weight: 600;
+      margin-right: 0.3rem;
+    }
 
-.footer-legal a {
-  color: #aaa;
-  text-decoration: none;
-  margin: 0 0.15rem;
-}
+    .footer-legal a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.15rem;
+      font-family: var(--font-body);
+    }
 
-.footer-legal a:hover {
-  color: #22A9E6;
-}
+    .footer-legal a:hover {
+      color: #22A9E6;
+    }
 
-.footer-legal-separator {
-  color: #555;
-  margin: 0 0.1rem;
-}
-    
-    .social-icons a:hover { color: #22A9E6; }
+    .footer-legal-separator {
+      color: #555;
+      margin: 0 0.1rem;
+    }
+
     .footer-menu {
       list-style: none; padding: 0; margin: 1.5rem 0;
       display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 30px;
     }
     .footer-menu a {
       color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
-      font-weight: 300;
-      font-family: var(--font-brand);
+      font-weight: 400;
+      font-family: var(--font-body);
     }
     .footer-menu a:hover { color: #22A9E6; }
+
     .copyright {
       font-size: 0.85rem; margin-top: 1.5rem; color: #aaa;
-      font-weight: 300;
+      font-weight: 400;
+      font-family: var(--font-body);
     }
 
     @media(max-width:768px){
@@ -456,14 +480,14 @@
 
 <!-- WE'RE HIRING STRIP -->
 <section style="background:#f7f9fc; padding:1.5rem 1rem; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee;">
-  <p style="margin:0 0 0.5rem; font-size:1rem; color:#333; font-family:'Black Mango',sans-serif; font-weight:300;">
+  <p style="margin:0 0 0.5rem; font-size:1rem; color:#333; font-family:'League Spartan',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-weight:400;">
     💼 We’re growing our on-site team at Shikisha Tours and Travel.
   </p>
-  <p style="margin:0 0 1rem; font-size:0.95rem; color:#555; font-family:'Black Mango',sans-serif; font-weight:300;">
+  <p style="margin:0 0 1rem; font-size:0.95rem; color:#555; font-family:'League Spartan',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-weight:400;">
     If you’re passionate about people, travel, East Africa and beyond, explore our open roles and learn how we work.
   </p>
   <a href="careers.html"
-     style="display:inline-block; background:#22A9E6; color:#fff; padding:10px 22px; border-radius:24px; text-decoration:none; font-weight:700; font-size:0.95rem; font-family:'Black Mango',sans-serif;">
+     style="display:inline-block; background:#22A9E6; color:#fff; padding:10px 22px; border-radius:24px; text-decoration:none; font-weight:700; font-size:0.95rem; font-family:'Black Mango',system-ui,sans-serif;">
     View Careers &amp; Workplace Policy
   </a>
 </section>
@@ -488,7 +512,7 @@
     <li><a href="#">Accessibility</a></li>
   </ul>
 
-  <!-- NEW: Legal & Data Protection strip -->
+  <!-- Legal & Data Protection strip -->
   <div class="footer-legal">
     <span class="footer-legal-title">Legal &amp; Data Protection:</span>
     <a href="privacy.html">Privacy Policy</a>
