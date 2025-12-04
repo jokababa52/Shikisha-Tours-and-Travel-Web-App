@@ -39,39 +39,6 @@
       font-display: swap;
     }
 
-    /* TOP TOURS – WETRAVEL WIDGET */
-.top-tours {
-  padding: 3rem 1rem;
-  background: #ffffff;
-  text-align: center;
-}
-
-.top-tours-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.top-tours h2 {
-  font-family: var(--font-heading); /* Black Mango */
-  font-weight: 900;                 /* Uses BlackMango-Black.woff */
-  font-size: 2rem;
-  color: #c75f00;
-  margin-bottom: 1rem;
-}
-
-.top-tours p {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  font-family: var(--font-body);    /* League Spartan */
-  font-weight: 400;
-  font-size: 0.98rem;
-  color: #555;
-}
-
-.wetravel-wrapper {
-  margin: 0 auto;
-}
-
     :root {
       --font-heading: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-body: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -262,6 +229,39 @@
     .feature p { font-size: 0.95rem; color: #444; font-weight: 400; font-family: var(--font-body); }
     .feature a { color: #c75f00; text-decoration: none; font-weight: 600; }
 
+    /* TOP TOURS – WETRAVEL WIDGET */
+    .top-tours {
+      padding: 3rem 1rem;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .top-tours-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .top-tours h2 {
+      font-family: var(--font-heading); /* Black Mango */
+      font-weight: 900;                 /* Uses BlackMango-Black.woff */
+      font-size: 2rem;
+      color: #c75f00;
+      margin-bottom: 1rem;
+    }
+
+    .top-tours p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-family: var(--font-body);    /* League Spartan */
+      font-weight: 400;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    .wetravel-wrapper {
+      margin: 0 auto;
+    }
+
     /* Auth Box */
     .auth-box {
       max-width: 500px; margin: 80px auto;
@@ -279,32 +279,6 @@
       font-family: var(--font-heading);
     }
     .auth-btn:hover { background: #1a87b7; transform: scale(1.03); }
-
-
-    <!-- TOP TOURS -->
-<section class="top-tours">
-  <div class="top-tours-inner">
-    <h2>Top Tours</h2>
-    <p>
-      Browse some of our most-booked itineraries and reserve your spot securely with WeTravel.
-    </p>
-
-    <div class="wetravel-wrapper">
-      <script
-        src="https://cdn.wetravel.com/widgets/embed_all_trip.js"
-        id="wetravel_listing"
-        data-env="https://www.wetravel.com"
-        data-version="v0.3"
-        data-uid="1683020"
-        data-slug="undefined"
-        data-color="22a9e6"
-        data-text="Book"
-        data-name="">
-      </script>
-    </div>
-  </div>
-</section>
-
 
     /* Traveller Reviews Preview */
     .reviews-preview {
@@ -509,6 +483,30 @@
   </div>
 </section>
 
+<!-- TOP TOURS -->
+<section class="top-tours">
+  <div class="top-tours-inner">
+    <h2>Top Tours</h2>
+    <p>
+      Browse some of our most-booked itineraries and reserve your spot securely with WeTravel.
+    </p>
+
+    <div class="wetravel-wrapper">
+      <script
+        src="https://cdn.wetravel.com/widgets/embed_all_trip.js"
+        id="wetravel_listing"
+        data-env="https://www.wetravel.com"
+        data-version="v0.3"
+        data-uid="1683020"
+        data-slug="undefined"
+        data-color="22a9e6"
+        data-text="Book"
+        data-name="">
+      </script>
+    </div>
+  </div>
+</section>
+
 <!-- LOGIN BOX -->
 <section class="auth-box">
   <h2>Log in to manage bookings & Rewards</h2>
@@ -583,7 +581,6 @@
 
   <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
-
 
 <script>
 const hamburger = document.getElementById("hamburger");
