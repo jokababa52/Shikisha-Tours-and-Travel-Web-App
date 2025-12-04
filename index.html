@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,7 +30,7 @@
       font-display: swap;
     }
 
-    /* League Spartan – body font (replaces Thin/Light) */
+    /* League Spartan – body font */
     @font-face {
       font-family: 'League Spartan';
       src: url('font/leaguespartan-bold.woff') format('woff');
@@ -228,7 +228,163 @@
     .feature h3 { font-size: 1.2rem; color: #c75f00; font-weight: 700; }
     .feature p { font-size: 0.95rem; color: #444; font-weight: 400; font-family: var(--font-body); }
     .feature a { color: #c75f00; text-decoration: none; font-weight: 600; }
-    
+
+    /* ✅ POPULAR TRIPS – CARD GRID */
+    .popular-trips {
+      padding: 3rem 1rem 3.5rem;
+      background: #ffffff;
+    }
+
+    .popular-trips-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .popular-trips-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .popular-trips-header h2 {
+      font-family: var(--font-heading);
+      font-weight: 900;               /* BlackMango-Black */
+      font-size: 2rem;
+      color: #c75f00;
+      margin: 0 0 0.5rem;
+    }
+
+    .popular-trips-header p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    .popular-trips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .popular-trips-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .popular-trips-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .trip-card {
+      background: #f7f9fc;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7f0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .trip-card-image img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .trip-card-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex: 1;
+    }
+
+    .trip-card-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #222;
+      margin: 0;
+    }
+
+    .trip-card-meta {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .trip-card-meta span {
+      margin-right: 0.6rem;
+    }
+
+    .trip-card-description {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0.3rem 0 0.6rem;
+      flex-grow: 1;
+    }
+
+    .trip-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.6rem;
+    }
+
+    .trip-card-price {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #c75f00;
+    }
+
+    .trip-card-button {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: #22A9E6;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .trip-card-button:hover {
+      background: #0f8dc0;
+      transform: translateY(-1px);
+    }
+
+    .popular-trips-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .popular-trips-view-all {
+      display: inline-block;
+      padding: 0.8rem 2.2rem;
+      border-radius: 999px;
+      background: #022b3a;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: var(--font-heading);
+      transition: 0.25s ease;
+    }
+
+    .popular-trips-view-all:hover {
+      background: #044864;
+      transform: translateY(-1px);
+    }
 
     /* Auth Box */
     .auth-box {
@@ -450,7 +606,102 @@
     </div>
   </div>
 </section>
- 
+
+<!-- ✅ POPULAR TRIPS – CARD GRID -->
+<section class="popular-trips">
+  <div class="popular-trips-inner">
+    <div class="popular-trips-header">
+      <h2>Popular Trips</h2>
+      <p>
+        A snapshot of the safaris and getaways guests book with us most often – curated by our Nairobi-based team.
+      </p>
+    </div>
+
+    <div class="popular-trips-grid">
+      <!-- Trip 1 -->
+      <article class="trip-card">
+        <div class="trip-card-image">
+          <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:d40fef4edf3bf3a27573e4472a41314c/directUpload/Lioness-in-the-Tree-in-the-Maasai-Mara.png" alt="Maasai Mara Classic Safari">
+        </div>
+        <div class="trip-card-body">
+          <h3 class="trip-card-title">4-Day Maasai Mara Classic Safari</h3>
+          <div class="trip-card-meta">
+            <span>Kenya</span> · <span>4 days / 3 nights</span>
+          </div>
+          <p class="trip-card-description">
+            Ideal for first-time safari-goers. Game drives, Big Five sightings, and cosy camp nights under the stars.
+          </p>
+          <div class="trip-card-footer">
+            <span class="trip-card-price">From $XXX pp</span>
+            <a href="#"
+               class="trip-card-button"
+               target="_blank">
+              View trip
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 2 -->
+      <article class="trip-card">
+        <div class="trip-card-image">
+          <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:030d1db6832111a41531f7be11af0a39/https://shikishatoursandtravels.co.ke/389_1569_16135536483951_diani_beach_ii.jpg" alt="Bush & Beach Escape">
+        </div>
+        <div class="trip-card-body">
+          <h3 class="trip-card-title">7-Day Bush & Beach Escape</h3>
+          <div class="trip-card-meta">
+            <span>Kenya Coast</span> · <span>7 days / 6 nights</span>
+          </div>
+          <p class="trip-card-description">
+            Combine classic safari in the savannah with white-sand relaxation on the coast – one seamless itinerary.
+          </p>
+          <div class="trip-card-footer">
+            <span class="trip-card-price">From $XXX pp</span>
+            <a href="#"
+               class="trip-card-button"
+               target="_blank">
+              View trip
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 3 -->
+      <article class="trip-card">
+        <div class="trip-card-image">
+          <img src="https://partners.angama.com/wp-content/uploads/webpconverter/uploads/2025/08/413_GameWalks_TCunniffe-1920x1280.jpg.webp" alt="Northern Circuit Explorer">
+        </div>
+        <div class="trip-card-body">
+          <h3 class="trip-card-title">6-Day Northern Circuit Explorer</h3>
+          <div class="trip-card-meta">
+            <span>Kenya</span> · <span>6 days / 5 nights</span>
+          </div>
+          <p class="trip-card-description">
+            Venture beyond the usual routes with a mix of lakes, highlands, and wildlife conservancies.
+          </p>
+          <div class="trip-card-footer">
+            <span class="trip-card-price">From $XXX pp</span>
+            <a href="#"
+               class="trip-card-button"
+               target="_blank">
+              View trip
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Bottom-centre CTA -->
+    <div class="popular-trips-cta">
+      <!-- 🔗 Wire this to your WeTravel trips listing page -->
+      <a href="https://shikishatoursandtravel.wetravel.com/trips"
+         class="popular-trips-view-all"
+         target="_blank">
+        View All Trips
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- LOGIN BOX -->
 <section class="auth-box">
@@ -480,6 +731,19 @@
   <a href="review.html" class="cta-btn">Write a Review</a>
 </section>
 
+<!-- WE'RE HIRING STRIP -->
+<section style="background:#f7f9fc; padding:1.5rem 1rem; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee;">
+  <p style="margin:0 0 0.5rem; font-size:1rem; color:#333; font-family:'League Spartan',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-weight:400;">
+    💼 We’re growing our on-site team at Shikisha Tours and Travel.
+  </p>
+  <p style="margin:0 0 1rem; font-size:0.95rem; color:#555; font-family:'League Spartan',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-weight:400;">
+    If you’re passionate about people, travel, East Africa and beyond, explore our open roles and learn how we work.
+  </p>
+  <a href="careers.html"
+     style="display:inline-block; background:#22A9E6; color:#fff; padding:10px 22px; border-radius:24px; text-decoration:none; font-weight:700; font-size:0.95rem; font-family:'Black Mango',system-ui,sans-serif;">
+    View Careers &amp; Workplace Policy
+  </a>
+</section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -513,6 +777,7 @@
 
   <p class="copyright">© 2025 Shikisha Tours and Travel</p>
 </footer>
+
 
 <script>
 const hamburger = document.getElementById("hamburger");
