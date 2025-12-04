@@ -231,20 +231,26 @@
 
     /* TOP TOURS – WETRAVEL WIDGET */
     
-   .top-tours {
-  padding: 3rem 0;          /* remove side padding so it can truly go edge-to-edge */
+/* TOP TOURS – full-bleed section */
+.top-tours {
+  padding: 3rem 0;
   background: #ffffff;
-  text-align: center;
 }
 
+/* Break out of any centered layout and span viewport width */
 .top-tours-inner {
-  width: 100%;              /* full width */
-  max-width: none;          /* remove the 1100px limit */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;            /* full viewport width */
+  text-align: center;
 }
 
 .top-tours h2 {
   font-family: var(--font-heading);
-  font-weight: 900;
+  font-weight: 900;        /* BlackMango-Black */
   font-size: 2rem;
   color: #c75f00;
   margin-bottom: 1rem;
@@ -258,6 +264,7 @@
   font-size: 0.98rem;
   color: #555;
 }
+
 
 /* WRAPPER + WIDGET TO FULL WIDTH */
 .wetravel-wrapper {
