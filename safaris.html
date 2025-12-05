@@ -413,6 +413,26 @@
     main {
       display: block;
     }
+
+    /* Hide header on small screens – show only video + caption slider */
+@media (max-width: 768px) {
+  header {
+    display: none;
+  }
+
+  /* Optional: just in case */
+  #nav-menu,
+  .hamburger {
+    display: none;
+  }
+
+  /* Make sure the hero really fills the full viewport */
+  .safaris-hero {
+    height: 100vh;
+    min-height: 420px;
+  }
+}
+    
   </style>
 </head>
 
