@@ -181,52 +181,59 @@
 .safaris-hero {
   position: relative;
   width: 100%;
-  height: 100vh;      /* full viewport height */
+  height: 100vh;          /* fill the viewport */
   min-height: 460px;
   overflow: hidden;
   background: #000;
 }
 
+/* wrapper that clips the video */
 .safaris-hero-video {
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
 
-/* IMPORTANT: oversize + center the Vimeo iframe so it covers fully */
+/* the “cover” magic happens here */
 .safaris-hero-video-inner {
+  position: absolute;
+  inset: 0;
+}
+
+/* Make the iframe behave like background-size: cover */
+.safaris-hero-video-inner iframe {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120vw;      /* a bit wider than the viewport */
-  height: 120vh;     /* a bit taller than the viewport */
   transform: translate(-50%, -50%);
-}
-
-.safaris-hero-video-inner iframe {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   border: 0;
 }
 
+/* dark gradient on top of video */
+.safaris-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.8)
+  );
+  pointer-events: none;
+}
+
+/* optional: tweak height on smaller screens but still full-bleed */
 @media (max-width: 768px) {
   .safaris-hero {
-    height: 80vh;
+    height: 100vh;
     min-height: 380px;
   }
 }
 
-    .safaris-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.75)
-      );
-      pointer-events: none;
-    }
 
     .safaris-hero-captions {
       position: relative;
@@ -442,24 +449,26 @@
 
 <main>
 
-  <!-- VIDEO HERO -->
   <section class="safaris-hero">
-    <div class="safaris-hero-video">
-      <div class="safaris-hero-video-inner">
-        <!-- Vimeo embed -->
-        
+  <div class="safaris-hero-video">
+    <div class="safaris-hero-video-inner">
       <iframe
-  src="https://player.vimeo.com/video/1143824446?background=1&autoplay=1&muted=1&loop=1&playsinline=1"
-  frameborder="0"
-  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  title="Safaris Teaser">
-</iframe>
-
-      </div>
+        src="https://player.vimeo.com/video/1143824446?background=1&autoplay=1&muted=1&loop=1&playsinline=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Safaris Teaser">
+      </iframe>
     </div>
+  </div>
 
-    <div class="safaris-hero-overlay"></div>
+  <div class="safaris-hero-overlay"></div>
+
+  <!-- your caption slider here -->
+</section>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 
     <!-- Caption Slider -->
     <div class="safaris-hero-captions">
