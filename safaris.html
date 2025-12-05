@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safaris | Shikisha Tours and Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+
+  <style>
+    /* =========================
+       BRAND FONTS
+       ========================= */
+
+    /* Black Mango – Bold (700) */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Black Mango – Black (900) */
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* League Spartan – body font */
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('font/leaguespartan-bold.woff') format('woff');
+      font-weight: 400; /* used as normal weight */
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-heading: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      color: #222;
+      background: #f7f9fc;
+    }
+
+    h1, h2 {
+      font-family: var(--font-heading);
+      font-weight: 900;
+    }
+
+    h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    p, li, span {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    /* =========================
+       HEADER – TRANSPARENT OVER VIDEO
+       ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.5rem;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+      padding: 0.5rem 1.2rem;
+    }
+
+    .logo { width: 230px; height: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    /* When header is scrolled, switch nav links to dark */
+    header.scrolled nav ul li a {
+      color: #333;
+    }
+
+    nav ul li a:hover {
+      color: #22A9E6;
+    }
+
+    nav ul li a.active {
+      color: #22A9E6;
+      font-weight: 900;
+    }
+
+    nav ul li .cta {
+      background: #22A9E6;
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-family: var(--font-heading);
+    }
+
+    nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1001;
+    }
+
+    .hamburger::before { content: "☰"; font-size: 28px; color: #fff; }
+    header.scrolled .hamburger::before { color: #333; }
+    .hamburger.active::before { content: "✖"; color: #fff; }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed; top: 0; left: 100%; width: 100%; height: 100%;
+        background: #22A9E6; padding: 80px 20px;
+        display: flex; flex-direction: column; align-items: flex-start;
+        transition: left 0.3s ease-in-out; z-index: 999;
+      }
+      nav.show { left: 0; }
+      nav ul { flex-direction: column; gap: 20px; width: 100%; }
+      nav ul li a { color: #fff; font-size: 1.3rem; }
+      nav ul li a.active { text-decoration: underline; }
+      .mobile-cta { margin-top: 30px; width: 100%; }
+      .mobile-cta .cta {
+        background: #fff; color: #22A9E6 !important;
+        display: block; width: 100%; text-align: center; padding: 14px 20px;
+      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
+    }
+
+    /* =========================
+       VIDEO HERO
+       ========================= */
+
+    .safaris-hero {
+      position: relative;
+      width: 100%;
+      height: 85vh;
+      min-height: 460px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .safaris-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .safaris-hero-video-inner {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .safaris-hero-video-inner iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .safaris-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.75)
+      );
+      pointer-events: none;
+    }
+
+    .safaris-hero-captions {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-slide {
+      display: none;
+      max-width: 800px;
+    }
+
+    .hero-slide.active {
+      display: block;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .hero-slide h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-slide p {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin: 0;
+      color: #f2f2f2;
+    }
+
+    .hero-slider-dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-slider-dots button {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.55);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .hero-slider-dots button.active {
+      background: #22A9E6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .safaris-hero {
+        height: 75vh;
+        min-height: 380px;
+      }
+      .hero-slide h1 {
+        font-size: 1.8rem;
+      }
+      .hero-slide p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* =========================
+       FEATURED SAFARIS (WeTravel)
+       ========================= */
+
+    .featured-safaris {
+      padding: 3.5rem 1rem 4rem;
+      background: #ffffff;
+    }
+
+    .featured-safaris-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .featured-safaris h2 {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 2rem;
+      color: #c75f00;
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-safaris p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    .wetravel-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .wetravel-wrapper #wetravel_listing {
+      width: 100% !important;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .site-footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .social-icons a {
+      color: #fff; margin: 0 12px; font-size: 1.5rem; transition: 0.3s ease;
+    }
+
+    .social-icons a:hover { color: #22A9E6; }
+
+    .footer-menu {
+      list-style: none; padding: 0; margin: 1.5rem 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 30px;
+    }
+
+    .footer-menu a {
+      color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+
+    .footer-menu a:hover { color: #22A9E6; }
+
+    .footer-legal {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      font-family: var(--font-body);
+    }
+
+    .footer-legal-title {
+      font-weight: 600;
+      margin-right: 0.3rem;
+    }
+
+    .footer-legal a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 0.15rem;
+      font-family: var(--font-body);
+    }
+
+    .footer-legal a:hover {
+      color: #22A9E6;
+    }
+
+    .footer-legal-separator {
+      color: #555;
+      margin: 0 0.1rem;
+    }
+
+    .copyright {
+      font-size: 0.85rem; margin-top: 1.5rem; color: #aaa;
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+
+    @media(max-width:768px){
+      .footer-menu{flex-direction:column;gap:12px;}
+    }
+
+    /* Small spacer so content doesn't hide behind fixed header on very short pages */
+    main {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
+  <button class="hamburger" id="hamburger"></button>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safaris.html" class="active">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="careers.html"><strong>Careers</strong></a></li>
+      <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- VIDEO HERO -->
+  <section class="safaris-hero">
+    <div class="safaris-hero-video">
+      <div class="safaris-hero-video-inner">
+        <!-- Vimeo embed -->
+        <iframe
+          src="https://player.vimeo.com/video/1143824446?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Safaris Teaser">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="safaris-hero-overlay"></div>
+
+    <!-- Caption Slider -->
+    <div class="safaris-hero-captions">
+      <div class="hero-slide active">
+        <h1>Genuine Safaris</h1>
+        <p>
+          Discover our authentic safaris in East Africa’s iconic wilderness that make a genuine
+          difference to local communities and conservation.
+        </p>
+      </div>
+
+      <div class="hero-slide">
+        <h1>Iconic Camps &amp; Lodges</h1>
+        <p>
+          Our tours use camps and lodges located in carefully considered and iconic wilderness areas,
+          from authentic tented safari camps to luxurious lodges.
+        </p>
+      </div>
+
+      <div class="hero-slide">
+        <h1>Our People</h1>
+        <p>
+          When you travel with us, you become part of our family. Our passionate and knowledgeable
+          staff are among the best in the industry – and one of the reasons our guests return
+          time and again.
+        </p>
+      </div>
+    </div>
+
+    <!-- Slider dots -->
+    <div class="hero-slider-dots">
+      <button class="active" aria-label="Slide 1"></button>
+      <button aria-label="Slide 2"></button>
+      <button aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- FEATURED SAFARIS (WeTravel widget, centered) -->
+  <section class="featured-safaris">
+    <div class="featured-safaris-inner">
+      <h2>All Featured Safaris</h2>
+      <p>
+        Explore our featured safaris, handpicked by our consultants and powered by secure
+        bookings on WeTravel.
+      </p>
+
+      <div class="wetravel-wrapper">
+        <script
+          src="https://cdn.wetravel.com/widgets/embed_all_trip.js"
+          id="wetravel_listing"
+          data-env="https://www.wetravel.com"
+          data-version="v0.3"
+          data-uid="1683020"
+          data-slug="undefined"
+          data-color="22a9e6"
+          data-text="Book"
+          data-name="">
+        </script>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <ul class="footer-menu">
+    <li><a href="help-center.html">Help Center</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="#">Supplier Sign Up</a></li>
+    <li><a href="#">Affiliate Program</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Accessibility</a></li>
+  </ul>
+
+  <div class="footer-legal">
+    <span class="footer-legal-title">Legal &amp; Data Protection:</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="footer-legal-separator">·</span>
+    <a href="booking-terms.html">Booking Terms &amp; Cancellation</a>
+    <span class="footer-legal-separator">·</span>
+    <a href="dpa.html">Data Processing Addendum (DPA)</a>
+  </div>
+
+  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
+</footer>
+
+<!-- Vimeo API (from your snippet) -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+  // Mobile nav
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  const header = document.getElementById("site-header");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  // Hero caption slider
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".hero-slider-dots button");
+  let currentSlide = 0;
+  let sliderInterval;
+
+  function showHeroSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextHeroSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    showHeroSlide(nextIndex);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showHeroSlide(index);
+      resetHeroInterval();
+    });
+  });
+
+  function resetHeroInterval() {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(nextHeroSlide, 7000);
+  }
+
+  sliderInterval = setInterval(nextHeroSlide, 7000);
+</script>
+</body>
+</html>
