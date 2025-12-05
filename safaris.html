@@ -178,35 +178,37 @@
        VIDEO HERO
        ========================= */
 
-    .safaris-hero {
-      position: relative;
-      width: 100%;
-      height: 85vh;
-      min-height: 460px;
-      overflow: hidden;
-      background: #000;
-    }
+.safaris-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;      /* full viewport height */
+  min-height: 460px;
+  overflow: hidden;
+  background: #000;
+}
 
-    .safaris-hero-video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+.safaris-hero-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
 
-    .safaris-hero-video-inner {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
+/* IMPORTANT: oversize + center the Vimeo iframe so it covers fully */
+.safaris-hero-video-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;      /* a bit wider than the viewport */
+  height: 120vh;     /* a bit taller than the viewport */
+  transform: translate(-50%, -50%);
+}
 
-    .safaris-hero-video-inner iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+.safaris-hero-video-inner iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+    
 
     .safaris-hero-overlay {
       position: absolute;
@@ -439,13 +441,15 @@
     <div class="safaris-hero-video">
       <div class="safaris-hero-video-inner">
         <!-- Vimeo embed -->
-        <iframe
-          src="https://player.vimeo.com/video/1143824446?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="Safaris Teaser">
-        </iframe>
+        
+      <iframe
+  src="https://player.vimeo.com/video/1143824446?background=1&autoplay=1&muted=1&loop=1&playsinline=1"
+  frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  title="Safaris Teaser">
+</iframe>
+
       </div>
     </div>
 
