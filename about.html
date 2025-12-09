@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,11 +30,11 @@
       font-display: swap;
     }
 
-    /* League Spartan – used for body text (replaces Thin/Light) */
+    /* League Spartan – used for body text */
     @font-face {
       font-family: 'League Spartan';
       src: url('font/leaguespartan-bold.woff') format('woff');
-      font-weight: 400; /* will also be used for 300/500 etc */
+      font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
@@ -55,12 +55,12 @@
 
     h1, h2 {
       font-family: var(--font-heading);
-      font-weight: 900; /* Black */
+      font-weight: 900;
     }
 
     h3, h4 {
       font-family: var(--font-heading);
-      font-weight: 700; /* Bold */
+      font-weight: 700;
     }
 
     p, li, span {
@@ -98,7 +98,7 @@
       text-decoration: none;
       color: #333;
       font-family: var(--font-heading);
-      font-weight: 700; /* Bold for nav */
+      font-weight: 700;
       font-size: 0.95rem;
       transition: color 0.3s ease;
     }
@@ -107,7 +107,7 @@
 
     nav ul li a.active {
       color: #22A9E6;
-      font-weight: 900; /* Black */
+      font-weight: 900;
     }
 
     nav ul li .cta {
@@ -194,7 +194,7 @@
     .about-hero-caption h1 {
       font-size: 2.4rem;
       margin: 0 0 0.4rem;
-      font-weight: 900; /* Black */
+      font-weight: 900;
       letter-spacing: 0.04em;
     }
 
@@ -202,7 +202,7 @@
       margin: 0;
       font-size: 1.1rem;
       font-family: var(--font-body);
-      font-weight: 400; /* previously Thin, now League Spartan body */
+      font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -233,7 +233,7 @@
       font-size: 1.7rem;
       margin-bottom: 0.5rem;
       color: #c75f00;
-      font-weight: 700; /* Bold */
+      font-weight: 700;
     }
 
     .section-subtitle {
@@ -257,6 +257,15 @@
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       border: 1px solid #e4e7f0;
+      text-align: center; /* ✅ Match homepage cards feel */
+    }
+
+    /* ✅ Icon styling aligned with .feature .icon in index.html */
+    .mvp-icon img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      display: inline-block;
     }
 
     .mvp-card h3 {
@@ -536,6 +545,10 @@
 
     <div class="mvp-grid">
       <div class="mvp-card">
+        <div class="mvp-icon">
+          
+          <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f299043540a916975369e79e0af8a1e7/https://shikishatoursandtravels.co.ke/549760_target_arrow_business_goal_darts_icon.svg" alt="Mission Icon">
+        </div>
         <h3>Our Mission</h3>
         <p>
           Our mission is to inspire and connect travellers with unforgettable
@@ -546,6 +559,10 @@
       </div>
 
       <div class="mvp-card">
+        <div class="mvp-icon">
+          
+          <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:89b469d2f2bccb343c70f869b0fe0f0c/https://shikishatoursandtravels.co.ke/6549564_care_ent_eye_eyesight_ophthalmology_icon.svg" alt="Vision Icon">
+        </div>
         <h3>Our Vision</h3>
         <p>
           To be a leading tours and travel company, recognised for delivering exceptional, personalised, and
@@ -555,6 +572,10 @@
       </div>
 
       <div class="mvp-card">
+        <div class="mvp-icon">
+         
+          <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ff2b14404c3150ffd776304386178790/https://shikishatoursandtravels.co.ke/414692_globe_international_internet_travel_world_icon.svg" alt="Purpose Icon">
+        </div>
         <h3>Our Purpose</h3>
         <p>
           To use travel as a force for good, opening doors to new places, people, and possibilities while
@@ -576,7 +597,7 @@
 
     <div class="values-grid">
       <div class="value-card">
-        
+        <div class="value-label">Value 01</div>
         <h3>Customer Satisfaction</h3>
         <p>
           We prioritise our clients by delivering exceptional service and unforgettable experiences.
@@ -691,7 +712,7 @@
     <li><a href="careers.html#workplace-policy">Workplace Policy</a></li>
   </ul>
 
-  <p class="copyright">© 2025 Shikisha Tours and Travel</p>
+  <p class="copyright">© 2025 Shikisha Tours and Travel Limited</p>
 </footer>
 
 <script>
