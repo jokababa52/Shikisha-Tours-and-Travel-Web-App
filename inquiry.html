@@ -5,125 +5,123 @@
   <title>Get a Free Quote | Shikisha Tours and Travel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- TODO: Replace with your actual fonts to match the rest of the site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #22a9e6;
-      --primary-soft: rgba(34, 169, 230, 0.12);
-      --accent: #c75f00;
-      --bg: #f7fafc;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --border: #d1d5db;
-      --error: #dc2626;
-      --radius-pill: 999px;
+      --bg-page: #f8f4ee;
+      --text-main: #021626;
+      --accent: #22a9e6;
+      --accent-dark: #1383b3;
+      --progress-fill: #c75f00;
+      --progress-track: #ffffff;
+      --border-soft: #d5d5d5;
+
+      --heading-font: "Playfair Display", "Times New Roman", serif;
+      --body-font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 980px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #e0f4ff 0, #f9fafb 45%, #f3f4f6 100%);
-      color: var(--text);
+      font-family: var(--body-font);
+      background: var(--bg-page);
+      color: var(--text-main);
     }
 
+    /* PAGE LAYOUT */
     .page {
-      max-width: 960px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
+      width: 100%;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 24px 20px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
+    .site-logo img {
+      display: block;
+      height: 40px;
+      width: auto;
     }
 
     .inquiry-flow {
-      background: #ffffff;
-      border-radius: 1.5rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-      padding: 1.75rem 1.5rem 2rem;
-    }
-
-    @media (min-width: 768px) {
-      .inquiry-flow {
-        padding: 2.25rem 2rem 2.5rem;
-      }
-    }
-
-    /* Progress bar */
-
-    .progress-wrapper {
-      margin-bottom: 1.5rem;
-    }
-
-    .progress-label {
+      flex: 1;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      width: 0;
-      background: var(--accent);
-      transition: width 0.25s ease-out;
-    }
-
-    /* Tiny step indicator dots */
-
-    .inquiry-steps {
-      display: flex;
+      flex-direction: column;
+      align-items: stretch;
       justify-content: center;
-      gap: 0.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.75rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px 40px;
     }
 
-    .inquiry-step-item {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #e5e7eb;
-      transition: all 0.2s ease-out;
+    .inquiry-card {
+      position: relative;
+      padding: 60px 10px 40px;
     }
 
-    .inquiry-step-item.active {
-      width: 24px;
-      background: var(--primary);
+    /* BACK BUTTON (CIRCLE, LEFT) */
+    .step-nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 32px;
     }
 
-    /* Panels */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--text-main);
+      background: transparent;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--text-main);
+      text-transform: none;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
 
+    .btn-back:hover {
+      background: var(--text-main);
+      color: #fff;
+    }
+
+    .btn-back[disabled] {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    /* STEP PANEL */
     .inquiry-step-panel {
       display: none;
-      animation: fadeIn 0.22s ease-out;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .inquiry-step-panel.active {
@@ -131,1231 +129,788 @@
     }
 
     .step-title {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
+      margin: 0 0 40px;
+      font-family: var(--heading-font);
+      font-weight: 500;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
     }
 
-    .step-subtitle {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(4px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Pill button groups */
-
-    .pill-group {
+    /* CHOICES ROW */
+    .choices-row {
       display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
     }
 
-    @media (min-width: 768px) {
-      .pill-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    .pill {
+    .choice-pill {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      padding: 12px 28px;
+      background: var(--accent);
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       cursor: pointer;
-      font-size: 0.95rem;
-      user-select: none;
+      white-space: nowrap;
+      transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
-    .pill input {
+    .choice-pill input {
       position: absolute;
       opacity: 0;
       pointer-events: none;
     }
 
-    .pill span {
-      display: inline-block;
-      padding: 0.7rem 1.3rem;
-      min-width: 140px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--primary);
-      background: var(--primary-soft);
-      color: var(--text);
-      text-align: center;
-      transition: background 0.2s ease-out, color 0.2s ease-out,
-        box-shadow 0.2s ease-out, transform 0.08s ease-out;
-    }
-
-    @media (min-width: 768px) {
-      .pill span {
-        min-width: 160px;
-      }
-    }
-
-    .pill input:checked + span {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 8px 20px rgba(34, 169, 230, 0.35);
+    .choice-pill:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
       transform: translateY(-1px);
     }
 
-    .pill span:hover {
-      box-shadow: 0 4px 12px rgba(148, 163, 184, 0.45);
+    .choice-pill.selected {
+      border-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.05), 0 6px 18px rgba(0,0,0,0.12);
     }
 
-    /* Layout helpers */
+    /* DATE / TEXT / INPUT FIELDS */
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="date"],
+    form select,
+    form textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 12px 18px;
+      font-size: 14px;
+      font-family: var(--body-font);
+      outline: none;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+      background: #fff;
+    }
+
+    form textarea {
+      border-radius: 16px;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34,169,230,0.25);
+    }
 
     .field-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 24px;
+      margin-bottom: 24px;
+      text-align: left;
     }
 
-    @media (min-width: 640px) {
-      .field-grid--two {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .field-full {
+      grid-column: 1 / -1;
     }
 
-    .field {
+    .field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    /* SPECIAL BLOCKS IN STEP 3 (DATES / MONTHS) */
+    #specificDatesBlock,
+    #yearMonthBlock {
+      display: none;
+      margin-top: 28px;
+    }
+
+    #specificDatesBlock {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    #specificDatesBlock label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    #yearMonthBlock {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #yearMonthBlock .choice-pill {
+      width: 100%;
+      padding-inline: 4px;
+    }
+
+    /* FOOTER BUTTONS */
+    .step-footer {
       display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 10px;
     }
 
-    label {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    select,
-    textarea {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      padding: 0.7rem 1.1rem;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
-        background 0.15s ease-out;
-      background: #ffffff;
-    }
-
-    textarea {
-      border-radius: 1rem;
-      min-height: 140px;
-      resize: vertical;
-      padding-top: 0.9rem;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(34, 169, 230, 0.3);
-    }
-
-    .help-text {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    /* Buttons */
-
-    .step-nav {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      padding: 0.7rem 1.6rem;
-      font-size: 0.95rem;
-      border: 1px solid transparent;
-      cursor: pointer;
+    .btn-next-main {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 8px 18px rgba(34, 169, 230, 0.35);
+      min-width: 120px;
+      padding: 12px 32px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
       font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease;
     }
 
-    .btn-primary:hover {
-      filter: brightness(1.05);
+    .btn-next-main:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+
+    .btn-next-main:disabled {
+      opacity: 0.4;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--primary);
-      border-color: var(--primary);
+      color: var(--text-main);
+      border: 1px solid var(--text-main);
     }
 
     .btn-outline:hover {
-      background: rgba(34, 169, 230, 0.04);
+      background: var(--text-main);
+      color: #fff;
     }
 
-    .btn-icon-left {
-      font-size: 1rem;
-      line-height: 1;
+    /* PROGRESS BAR (BOTTOM, FULL-WIDTH STYLE) */
+    .progress-wrapper {
+      max-width: var(--max-width);
+      margin: 40px auto 20px;
+      padding: 0 20px 10px;
     }
 
-    .disclaimer {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-      line-height: 1.4;
+    .progress-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: var(--text-main);
     }
 
-    .disclaimer a {
-      color: var(--primary);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
+    .progress-bar {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--progress-track);
+      overflow: hidden;
     }
 
-    /* Simple error styling hook (if needed later) */
-    .field-error input,
-    .field-error select,
-    .field-error textarea {
-      border-color: var(--error);
+    .progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: var(--progress-fill);
+      transition: width 0.25s ease;
     }
 
-    .error-msg {
-      font-size: 0.8rem;
-      color: var(--error);
-      margin-top: 0.1rem;
+    /* SUCCESS MESSAGE */
+    .success-message {
+      text-align: center;
+      padding: 60px 10px;
     }
 
-    .muted {
-      color: var(--muted);
-      font-size: 0.9rem;
+    .success-message h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(26px, 3.2vw, 34px);
+      margin-bottom: 10px;
+    }
+
+    .success-message p {
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .inquiry-card {
+        padding-top: 40px;
+      }
+
+      .step-title {
+        margin-bottom: 32px;
+      }
+
+      .choices-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .choice-pill {
+        width: 100%;
+      }
+
+      #specificDatesBlock {
+        grid-template-columns: 1fr;
+      }
+
+      #yearMonthBlock {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <h1>Get a Free Safari Quote</h1>
-      <p>Tell us a few details and we’ll send you a personalised safari proposal.</p>
-    </header>
+<div class="page">
 
-    <section class="inquiry-flow">
-      <div class="progress-wrapper">
-        <div class="progress-label">
-          <span>Step <span id="progressStep">1</span> of <span id="progressTotal">7</span></span>
-          <span class="muted">Shikisha Tours &amp; Travel</span>
+  <!-- HEADER WITH LOGO -->
+  <header class="site-header">
+    <a href="/" class="site-logo" aria-label="Shikisha Tours and Travel Home">
+      <!-- Replace src with your real logo path -->
+      <img src="logo-shikisha.svg" alt="Shikisha Tours and Travel">
+    </a>
+  </header>
+
+  <!-- MAIN INQUIRY FLOW -->
+  <main class="inquiry-flow">
+    <form id="quoteForm" novalidate>
+      <div class="inquiry-card">
+
+        <!-- Back icon row -->
+        <div class="step-nav-row">
+          <button type="button" class="btn-back btn-outline" id="btnBack" aria-label="Go back to previous question" disabled>
+            &#8249;
+          </button>
         </div>
-        <div class="progress-bar">
-          <div class="progress-bar-fill" id="progressBarFill"></div>
-        </div>
-      </div>
 
-      <!-- Step dots -->
-      <ol class="inquiry-steps">
-        <li class="inquiry-step-item active" data-step="1"></li>
-        <li class="inquiry-step-item" data-step="2"></li>
-        <li class="inquiry-step-item" data-step="3"></li>
-        <li class="inquiry-step-item" data-step="4"></li>
-        <li class="inquiry-step-item" data-step="5"></li>
-        <li class="inquiry-step-item" data-step="6"></li>
-        <li class="inquiry-step-item" data-step="7"></li>
-      </ol>
-
-      <form id="quoteForm" action="#" method="post" novalidate>
-        <!-- STEP 1: Destination -->
+        <!-- STEP 1: DESTINATION -->
         <section class="inquiry-step-panel active" data-step-panel="1">
           <h2 class="step-title">Where would you like to travel?</h2>
-          <p class="step-subtitle">
-            You can choose more than one destination if you’re open to a multi-country safari.
-          </p>
 
-          <div class="pill-group">
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Kenya" />
-              <span>Kenya</span>
+          <div class="choices-row">
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Kenya">
+              Kenya
             </label>
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Tanzania" />
-              <span>Tanzania</span>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Tanzania">
+              Tanzania
             </label>
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Rwanda" />
-              <span>Rwanda</span>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Rwanda">
+              Rwanda
             </label>
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Uganda" />
-              <span>Uganda</span>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Uganda">
+              Uganda
             </label>
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Zanzibar" />
-              <span>Zanzibar</span>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Zanzibar">
+              Zanzibar
             </label>
-            <label class="pill">
-              <input type="checkbox" name="destinations" value="Open to ideas" />
-              <span>Open to ideas</span>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Open to ideas">
+              Open to Ideas
             </label>
-          </div>
-
-          <div class="step-nav">
-            <span></span>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
           </div>
         </section>
 
-        <!-- STEP 2: Budget -->
+        <!-- STEP 2: BUDGET -->
         <section class="inquiry-step-panel" data-step-panel="2">
           <h2 class="step-title">
-            What is your budget per person (excluding airfare from/to East Africa)?
+            What is your budget per person (excluding airfare from / to East Africa)?
           </h2>
 
-          <div class="pill-group">
-            <label class="pill">
-              <input type="radio" name="budget" value="500-1000" required />
-              <span>$500 – $1,000</span>
+          <div class="choices-row" data-required-radio-group="budget">
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="500-1000">
+              $500–1000
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="1000-1500" required />
-              <span>$1,000 – $1,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="1000-1500">
+              $1000–1500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="2000-2500" required />
-              <span>$2,000 – $2,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="2000-2500">
+              $2000–2500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="2500-3000" required />
-              <span>$2,500 – $3,000</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="2500-3000">
+              $2500–3000
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="3000-3500" required />
-              <span>$3,000 – $3,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="3000-3500">
+              $3000–3500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="3500-4000" required />
-              <span>$3,500 – $4,000</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="3500-4000">
+              $3500–4000
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="4000-4500" required />
-              <span>$4,000 – $4,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="4000-4500">
+              $4000–4500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="5000-5500" required />
-              <span>$5,000 – $5,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="5000-5500">
+              $5000–5500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="6000-6500" required />
-              <span>$6,000 – $6,500</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="6000-6500">
+              $6000–6500
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="7000+" required />
-              <span>$7,000+</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="7000+">
+              $7000+
             </label>
-            <label class="pill">
-              <input type="radio" name="budget" value="Not sure" required />
-              <span>Not sure</span>
+            <label class="choice-pill">
+              <input type="radio" name="budget" value="Not sure">
+              Not Sure
             </label>
-          </div>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
           </div>
         </section>
 
-        <!-- STEP 3: When to travel -->
+        <!-- STEP 3: WHEN TO TRAVEL -->
         <section class="inquiry-step-panel" data-step-panel="3">
           <h2 class="step-title">When do you want to travel?</h2>
 
-          <div class="pill-group">
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_timing"
-                value="specific_dates"
-                required
-              />
-              <span>I have specific dates</span>
+          <div class="choices-row" data-required-radio-group="travel_timing">
+            <label class="choice-pill">
+              <input type="radio" name="travel_timing" value="specific_dates">
+              I Have Specific Dates
             </label>
-            <label class="pill">
-              <input type="radio" name="travel_timing" value="2026" required />
-              <span>2026</span>
+            <label class="choice-pill">
+              <input type="radio" name="travel_timing" value="2025">
+              2025
             </label>
-            <label class="pill">
-              <input type="radio" name="travel_timing" value="2027" required />
-              <span>2027</span>
+            <label class="choice-pill">
+              <input type="radio" name="travel_timing" value="2026">
+              2026
             </label>
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_timing"
-                value="flexible"
-                required
-              />
-              <span>I don't mind (I'm flexible)</span>
+            <label class="choice-pill">
+              <input type="radio" name="travel_timing" value="2027">
+              2027
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="travel_timing" value="flexible">
+              I Don&apos;t Mind (I&apos;m Flexible)
             </label>
           </div>
 
           <!-- Specific dates -->
-          <div
-            id="specificDatesBlock"
-            class="field-grid field-grid--two"
-            style="display: none; margin-top: 0.5rem"
-          >
-            <div class="field">
-              <label for="arrival_date">Arrival date</label>
-              <input
-                type="date"
-                id="arrival_date"
-                name="arrival_date"
-                aria-describedby="arrival_help"
-              />
-              <p id="arrival_help" class="help-text">
-                Approximate is fine if you’re not 100% sure yet.
-              </p>
+          <div id="specificDatesBlock">
+            <div>
+              <label class="field-label" for="arrivalDate">Arrival Date</label>
+              <input type="date" id="arrivalDate" name="arrival_date">
             </div>
-            <div class="field">
-              <label for="departure_date">Departure date</label>
-              <input
-                type="date"
-                id="departure_date"
-                name="departure_date"
-                aria-describedby="departure_help"
-              />
-              <p id="departure_help" class="help-text">
-                We’ll tailor the safari to fit between these dates.
-              </p>
+            <div>
+              <label class="field-label" for="departureDate">Departure Date</label>
+              <input type="date" id="departureDate" name="departure_date">
             </div>
           </div>
 
-          <!-- Year & month / flexible -->
-          <div
-            id="yearMonthBlock"
-            style="display: none; margin-top: 0.75rem"
-            aria-label="Choose a month"
-          >
-            <p class="help-text" style="margin-bottom: 0.6rem">
-              Which month would you prefer?
-            </p>
-
-            <div class="pill-group">
-              <label class="pill">
-                <input type="radio" name="travel_month" value="January" />
-                <span>January</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="February" />
-                <span>February</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="March" />
-                <span>March</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="April" />
-                <span>April</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="May" />
-                <span>May</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="June" />
-                <span>June</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="July" />
-                <span>July</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="August" />
-                <span>August</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="September" />
-                <span>September</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="October" />
-                <span>October</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="November" />
-                <span>November</span>
-              </label>
-              <label class="pill">
-                <input type="radio" name="travel_month" value="December" />
-                <span>December</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
+          <!-- Year / month selection -->
+          <div id="yearMonthBlock">
+            <!-- 12 months as buttons -->
+            <label class="choice-pill">
+              <input type="radio" name="month" value="January">
+              January
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="February">
+              February
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="March">
+              March
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="April">
+              April
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="May">
+              May
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="June">
+              June
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="July">
+              July
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="August">
+              August
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="September">
+              September
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="October">
+              October
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="November">
+              November
+            </label>
+            <label class="choice-pill">
+              <input type="radio" name="month" value="December">
+              December
+            </label>
           </div>
         </section>
 
-        <!-- STEP 4: Trip length -->
+        <!-- STEP 4: TRIP LENGTH -->
         <section class="inquiry-step-panel" data-step-panel="4">
           <h2 class="step-title">How long do you want to travel?</h2>
 
-          <div class="pill-group">
-            <label class="pill">
-              <input
-                type="radio"
-                name="trip_length"
-                value="Less than one week"
-                required
-              />
-              <span>Less than one week</span>
+          <div class="choices-row" data-required-radio-group="trip_length">
+            <label class="choice-pill">
+              <input type="radio" name="trip_length" value="Less than one week">
+              Less Than One Week
             </label>
-            <label class="pill">
-              <input type="radio" name="trip_length" value="One week" required />
-              <span>One week</span>
+            <label class="choice-pill">
+              <input type="radio" name="trip_length" value="One week">
+              One Week
             </label>
-            <label class="pill">
-              <input type="radio" name="trip_length" value="10 days" required />
-              <span>10 days</span>
+            <label class="choice-pill">
+              <input type="radio" name="trip_length" value="10 days">
+              10 Days
             </label>
-            <label class="pill">
-              <input type="radio" name="trip_length" value="2 weeks" required />
-              <span>2 weeks</span>
+            <label class="choice-pill">
+              <input type="radio" name="trip_length" value="2 weeks">
+              2 Weeks
             </label>
-            <label class="pill">
-              <input
-                type="radio"
-                name="trip_length"
-                value="2 weeks +"
-                required
-              />
-              <span>2 weeks +</span>
+            <label class="choice-pill">
+              <input type="radio" name="trip_length" value="2 weeks +">
+              2 Weeks +
             </label>
-          </div>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
           </div>
         </section>
 
-        <!-- STEP 5: Who is travelling -->
+        <!-- STEP 5: TRAVELLING WITH -->
         <section class="inquiry-step-panel" data-step-panel="5">
           <h2 class="step-title">Who will you be travelling with?</h2>
 
-          <div class="pill-group">
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_party"
-                value="Solo"
-                required
-              />
-              <span>I travel solo</span>
+          <div class="choices-row" data-required-radio-group="travelling_with">
+            <label class="choice-pill">
+              <input type="radio" name="travelling_with" value="Solo">
+              I Travel Solo
             </label>
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_party"
-                value="Partner"
-                required
-              />
-              <span>My partner</span>
+            <label class="choice-pill">
+              <input type="radio" name="travelling_with" value="Partner">
+              My Partner
             </label>
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_party"
-                value="Family"
-                required
-              />
-              <span>My family</span>
+            <label class="choice-pill">
+              <input type="radio" name="travelling_with" value="Family">
+              My Family
             </label>
-            <label class="pill">
-              <input
-                type="radio"
-                name="travel_party"
-                value="Friends"
-                required
-              />
-              <span>My friends</span>
+            <label class="choice-pill">
+              <input type="radio" name="travelling_with" value="Friends">
+              My Friends
             </label>
-          </div>
-
-          <div class="field-grid field-grid--two">
-            <div class="field">
-              <label for="adults">Adults (19+ years)</label>
-              <input
-                type="number"
-                min="1"
-                max="20"
-                id="adults"
-                name="adults"
-                value="2"
-              />
-            </div>
-            <div class="field">
-              <label for="children">Children (0–18 years)</label>
-              <input
-                type="number"
-                min="0"
-                max="20"
-                id="children"
-                name="children"
-                value="0"
-              />
-              <p class="help-text">
-                If there are children, we’ll confirm their ages later with you.
-              </p>
-            </div>
-          </div>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
           </div>
         </section>
 
-        <!-- STEP 6: Safari wishes -->
+        <!-- STEP 6: EXPERIENCE DESCRIPTION -->
         <section class="inquiry-step-panel" data-step-panel="6">
           <h2 class="step-title">
             What do you want to see and do on your safari?
           </h2>
-          <p class="step-subtitle">
-            For example, tell us your must-haves, destination ideas, or if it’s a
-            special occasion. The more you tell us, the better we can assist.
+          <p style="max-width:640px;margin:0 auto 32px;font-size:14px;">
+            For example, tell us your must-haves, destination ideas, or if it&apos;s a special occasion.
+            The more you tell us, the better we can assist.
           </p>
-
-          <div class="field">
-            <label for="safari_wishes" class="sr-only">Safari details</label>
-            <textarea
-              id="safari_wishes"
-              name="safari_wishes"
-              maxlength="700"
-              placeholder="Tell us about wildlife you’d love to see, style of camps/lodges, pace of travel, or any special celebrations…"
-            ></textarea>
-            <p class="help-text">
-              Up to 700 characters. It’s okay if you’re not sure yet – just share
-              what you know.
-            </p>
-          </div>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="button" class="btn btn-primary btn-next">
-              Next
-            </button>
+          <div style="max-width:680px;margin:0 auto;">
+            <textarea id="safariDetails" name="safari_details" placeholder="Share any ideas, interests, or special occasions here..."></textarea>
           </div>
         </section>
 
-        <!-- STEP 7: Contact details -->
+        <!-- STEP 7: CONTACT DETAILS -->
         <section class="inquiry-step-panel" data-step-panel="7">
           <h2 class="step-title">Where can we send your trip suggestions?</h2>
-          <p class="step-subtitle">All fields are required.</p>
 
-          <div class="field-grid field-grid--two">
-            <div class="field">
-              <label for="first_name">First name *</label>
-              <input
-                type="text"
-                id="first_name"
-                name="first_name"
-                required
-                autocomplete="given-name"
-              />
+          <div class="field-grid">
+            <div>
+              <label class="field-label" for="firstName">First Name *</label>
+              <input id="firstName" name="first_name" type="text" required>
             </div>
-            <div class="field">
-              <label for="last_name">Last name *</label>
-              <input
-                type="text"
-                id="last_name"
-                name="last_name"
-                required
-                autocomplete="family-name"
-              />
+            <div>
+              <label class="field-label" for="lastName">Last Name *</label>
+              <input id="lastName" name="last_name" type="text" required>
             </div>
-          </div>
-
-          <div class="field-grid field-grid--two">
-            <div class="field">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-              />
+            <div class="field-full">
+              <label class="field-label" for="email">Email *</label>
+              <input id="email" name="email" type="email" required>
             </div>
-
-            <div class="field">
-              <label for="phone">Phone *</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                value="+254"
-                autocomplete="tel"
-              />
+            <div>
+              <label class="field-label" for="country">Country of Residence *</label>
+              <select id="country" name="country" required>
+                <option value="">Please Select an Option</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="South Africa">South Africa</option>
+                <!-- Add / adjust full list as needed -->
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" value="+254" required>
             </div>
           </div>
 
-          <div class="field">
-            <label for="country">Country of residence *</label>
-            <select id="country" name="country" required>
-              <option value="">Please select an option</option>
-              <option value="Australia">Australia</option>
-              <option value="Kenya">Kenya</option>
-              <option value="Singapore">Singapore</option>
-              <option value="South Africa">South Africa</option>
-              <option value="Spain">Spain</option>
-              <option value="Tanzania">Tanzania</option>
-              <option value="United Arab Emirates">United Arab Emirates</option>
-              <option value="United States">United States</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="">- - -</option>
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Albania">Albania</option>
-              <option value="Algeria">Algeria</option>
-              <option value="American Samoa">American Samoa</option>
-              <option value="Andorra">Andorra</option>
-              <option value="Angola">Angola</option>
-              <option value="Anguilla">Anguilla</option>
-              <option value="Antarctica">Antarctica</option>
-              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Armenia">Armenia</option>
-              <option value="Aruba">Aruba</option>
-              <option value="Austria">Austria</option>
-              <option value="Azerbaijan">Azerbaijan</option>
-              <option value="Bahamas">Bahamas</option>
-              <option value="Bahrain">Bahrain</option>
-              <option value="Bangladesh">Bangladesh</option>
-              <option value="Barbados">Barbados</option>
-              <option value="Belarus">Belarus</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Belize">Belize</option>
-              <option value="Benin">Benin</option>
-              <option value="Bermuda">Bermuda</option>
-              <option value="Bhutan">Bhutan</option>
-              <option value="Bolivia">Bolivia</option>
-              <option value="Bonaire, Sint Eustatius and Saba">
-                Bonaire, Sint Eustatius and Saba
-              </option>
-              <option value="Bosnia and Herzegovina">
-                Bosnia and Herzegovina
-              </option>
-              <option value="Botswana">Botswana</option>
-              <option value="Bouvet Island">Bouvet Island</option>
-              <option value="Brazil">Brazil</option>
-              <option value="British Indian Ocean Territory">
-                British Indian Ocean Territory
-              </option>
-              <option value="Brunei Darussalam">Brunei Darussalam</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <option value="Burkina Faso">Burkina Faso</option>
-              <option value="Burundi">Burundi</option>
-              <option value="Cabo Verde">Cabo Verde</option>
-              <option value="Cambodia">Cambodia</option>
-              <option value="Cameroon">Cameroon</option>
-              <option value="Canada">Canada</option>
-              <option value="Cayman Islands">Cayman Islands</option>
-              <option value="Central African Republic">
-                Central African Republic
-              </option>
-              <option value="Chad">Chad</option>
-              <option value="Chile">Chile</option>
-              <option value="China">China</option>
-              <option value="Christmas Island">Christmas Island</option>
-              <option value="Cocos Islands">Cocos Islands</option>
-              <option value="Colombia">Colombia</option>
-              <option value="Comoros">Comoros</option>
-              <option value="Congo">Congo</option>
-              <option value="Congo, Democratic Republic of the">
-                Congo, Democratic Republic of the
-              </option>
-              <option value="Cook Islands">Cook Islands</option>
-              <option value="Costa Rica">Costa Rica</option>
-              <option value="Croatia">Croatia</option>
-              <option value="Cuba">Cuba</option>
-              <option value="Curaçao">Curaçao</option>
-              <option value="Cyprus">Cyprus</option>
-              <option value="Czechia">Czechia</option>
-              <option value="Côte d'Ivoire">Côte d'Ivoire</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Djibouti">Djibouti</option>
-              <option value="Dominica">Dominica</option>
-              <option value="Dominican Republic">Dominican Republic</option>
-              <option value="Ecuador">Ecuador</option>
-              <option value="Egypt">Egypt</option>
-              <option value="El Salvador">El Salvador</option>
-              <option value="Equatorial Guinea">Equatorial Guinea</option>
-              <option value="Eritrea">Eritrea</option>
-              <option value="Estonia">Estonia</option>
-              <option value="Eswatini">Eswatini</option>
-              <option value="Ethiopia">Ethiopia</option>
-              <option value="Falkland Islands">Falkland Islands</option>
-              <option value="Faroe Islands">Faroe Islands</option>
-              <option value="Fiji">Fiji</option>
-              <option value="Finland">Finland</option>
-              <option value="France">France</option>
-              <option value="French Guiana">French Guiana</option>
-              <option value="French Polynesia">French Polynesia</option>
-              <option value="French Southern Territories">
-                French Southern Territories
-              </option>
-              <option value="Gabon">Gabon</option>
-              <option value="Gambia">Gambia</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Germany">Germany</option>
-              <option value="Ghana">Ghana</option>
-              <option value="Gibraltar">Gibraltar</option>
-              <option value="Greece">Greece</option>
-              <option value="Greenland">Greenland</option>
-              <option value="Grenada">Grenada</option>
-              <option value="Guadeloupe">Guadeloupe</option>
-              <option value="Guam">Guam</option>
-              <option value="Guatemala">Guatemala</option>
-              <option value="Guernsey">Guernsey</option>
-              <option value="Guinea">Guinea</option>
-              <option value="Guinea-Bissau">Guinea-Bissau</option>
-              <option value="Guyana">Guyana</option>
-              <option value="Haiti">Haiti</option>
-              <option value="Heard Island and McDonald Islands">
-                Heard Island and McDonald Islands
-              </option>
-              <option value="Holy See">Holy See</option>
-              <option value="Honduras">Honduras</option>
-              <option value="Hong Kong">Hong Kong</option>
-              <option value="Hungary">Hungary</option>
-              <option value="Iceland">Iceland</option>
-              <option value="India">India</option>
-              <option value="Indonesia">Indonesia</option>
-              <option value="Iran">Iran</option>
-              <option value="Iraq">Iraq</option>
-              <option value="Ireland">Ireland</option>
-              <option value="Isle of Man">Isle of Man</option>
-              <option value="Israel">Israel</option>
-              <option value="Italy">Italy</option>
-              <option value="Jamaica">Jamaica</option>
-              <option value="Japan">Japan</option>
-              <option value="Jersey">Jersey</option>
-              <option value="Jordan">Jordan</option>
-              <option value="Kazakhstan">Kazakhstan</option>
-              <option value="Kiribati">Kiribati</option>
-              <option value="Korea, Democratic People's Republic of">
-                Korea, Democratic People's Republic of
-              </option>
-              <option value="Korea, Republic of">Korea, Republic of</option>
-              <option value="Kuwait">Kuwait</option>
-              <option value="Kyrgyzstan">Kyrgyzstan</option>
-              <option value="Lao People's Democratic Republic">
-                Lao People's Democratic Republic
-              </option>
-              <option value="Latvia">Latvia</option>
-              <option value="Lebanon">Lebanon</option>
-              <option value="Lesotho">Lesotho</option>
-              <option value="Liberia">Liberia</option>
-              <option value="Libya">Libya</option>
-              <option value="Liechtenstein">Liechtenstein</option>
-              <option value="Lithuania">Lithuania</option>
-              <option value="Luxembourg">Luxembourg</option>
-              <option value="Macao">Macao</option>
-              <option value="Madagascar">Madagascar</option>
-              <option value="Malawi">Malawi</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="Maldives">Maldives</option>
-              <option value="Mali">Mali</option>
-              <option value="Malta">Malta</option>
-              <option value="Marshall Islands">Marshall Islands</option>
-              <option value="Martinique">Martinique</option>
-              <option value="Mauritania">Mauritania</option>
-              <option value="Mauritius">Mauritius</option>
-              <option value="Mayotte">Mayotte</option>
-              <option value="Mexico">Mexico</option>
-              <option value="Micronesia">Micronesia</option>
-              <option value="Moldova">Moldova</option>
-              <option value="Monaco">Monaco</option>
-              <option value="Mongolia">Mongolia</option>
-              <option value="Montenegro">Montenegro</option>
-              <option value="Montserrat">Montserrat</option>
-              <option value="Morocco">Morocco</option>
-              <option value="Mozambique">Mozambique</option>
-              <option value="Myanmar">Myanmar</option>
-              <option value="Namibia">Namibia</option>
-              <option value="Nauru">Nauru</option>
-              <option value="Nepal">Nepal</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="New Caledonia">New Caledonia</option>
-              <option value="New Zealand">New Zealand</option>
-              <option value="Nicaragua">Nicaragua</option>
-              <option value="Niger">Niger</option>
-              <option value="Nigeria">Nigeria</option>
-              <option value="Niue">Niue</option>
-              <option value="Norfolk Island">Norfolk Island</option>
-              <option value="North Macedonia">North Macedonia</option>
-              <option value="Northern Mariana Islands">
-                Northern Mariana Islands
-              </option>
-              <option value="Norway">Norway</option>
-              <option value="Oman">Oman</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Palau">Palau</option>
-              <option value="Palestine, State of">Palestine, State of</option>
-              <option value="Panama">Panama</option>
-              <option value="Papua New Guinea">Papua New Guinea</option>
-              <option value="Paraguay">Paraguay</option>
-              <option value="Peru">Peru</option>
-              <option value="Philippines">Philippines</option>
-              <option value="Pitcairn">Pitcairn</option>
-              <option value="Poland">Poland</option>
-              <option value="Portugal">Portugal</option>
-              <option value="Puerto Rico">Puerto Rico</option>
-              <option value="Qatar">Qatar</option>
-              <option value="Romania">Romania</option>
-              <option value="Russian Federation">Russian Federation</option>
-              <option value="Rwanda">Rwanda</option>
-              <option value="Réunion">Réunion</option>
-              <option value="Saint Barthélemy">Saint Barthélemy</option>
-              <option
-                value="Saint Helena, Ascension and Tristan da Cunha"
-              >
-                Saint Helena, Ascension and Tristan da Cunha
-              </option>
-              <option value="Saint Kitts and Nevis">
-                Saint Kitts and Nevis
-              </option>
-              <option value="Saint Lucia">Saint Lucia</option>
-              <option value="Saint Martin">Saint Martin</option>
-              <option value="Saint Pierre and Miquelon">
-                Saint Pierre and Miquelon
-              </option>
-              <option value="Saint Vincent and the Grenadines">
-                Saint Vincent and the Grenadines
-              </option>
-              <option value="Samoa">Samoa</option>
-              <option value="San Marino">San Marino</option>
-              <option value="Sao Tome and Principe">
-                Sao Tome and Principe
-              </option>
-              <option value="Saudi Arabia">Saudi Arabia</option>
-              <option value="Senegal">Senegal</option>
-              <option value="Serbia">Serbia</option>
-              <option value="Seychelles">Seychelles</option>
-              <option value="Sierra Leone">Sierra Leone</option>
-              <option value="Sint Maarten">Sint Maarten</option>
-              <option value="Slovakia">Slovakia</option>
-              <option value="Slovenia">Slovenia</option>
-              <option value="Solomon Islands">Solomon Islands</option>
-              <option value="Somalia">Somalia</option>
-              <option value="South Georgia and the South Sandwich Islands">
-                South Georgia and the South Sandwich Islands
-              </option>
-              <option value="South Sudan">South Sudan</option>
-              <option value="Sri Lanka">Sri Lanka</option>
-              <option value="Sudan">Sudan</option>
-              <option value="Suriname">Suriname</option>
-              <option value="Svalbard and Jan Mayen">
-                Svalbard and Jan Mayen
-              </option>
-              <option value="Sweden">Sweden</option>
-              <option value="Switzerland">Switzerland</option>
-              <option value="Syria Arab Republic">Syria Arab Republic</option>
-              <option value="Taiwan">Taiwan</option>
-              <option value="Tajikistan">Tajikistan</option>
-              <option value="Thailand">Thailand</option>
-              <option value="Timor-Leste">Timor-Leste</option>
-              <option value="Togo">Togo</option>
-              <option value="Tokelau">Tokelau</option>
-              <option value="Tonga">Tonga</option>
-              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-              <option value="Tunisia">Tunisia</option>
-              <option value="Turkmenistan">Turkmenistan</option>
-              <option value="Turks and Caicos Islands">
-                Turks and Caicos Islands
-              </option>
-              <option value="Tuvalu">Tuvalu</option>
-              <option value="Türkiye">Türkiye</option>
-              <option value="US Minor Outlying Islands">
-                US Minor Outlying Islands
-              </option>
-              <option value="Uganda">Uganda</option>
-              <option value="Ukraine">Ukraine</option>
-              <option value="Uruguay">Uruguay</option>
-              <option value="Uzbekistan">Uzbekistan</option>
-              <option value="Vanuatu">Vanuatu</option>
-              <option value="Venezuela">Venezuela</option>
-              <option value="Viet Nam">Viet Nam</option>
-              <option value="Virgin Islands, British">
-                Virgin Islands, British
-              </option>
-              <option value="Virgin Islands, U.S.">
-                Virgin Islands, U.S.
-              </option>
-              <option value="Wallis and Futuna">Wallis and Futuna</option>
-              <option value="Western Sahara">Western Sahara</option>
-              <option value="Yemen">Yemen</option>
-              <option value="Zambia">Zambia</option>
-              <option value="Zimbabwe">Zimbabwe</option>
-              <option value="Åland Islands">Åland Islands</option>
-            </select>
-          </div>
-
-          <p class="disclaimer">
-            We protect your personal information. By submitting, you agree to the
-            use of it as described in our
-            <a href="/privacy-policy" target="_blank">Privacy Policy</a>. You may
-            opt out of our communications at any time.
+          <p style="font-size:12px;max-width:720px;margin:0 auto;">
+            We protect your personal information. By submitting, you agree to the use of it as described in our
+            <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.
+            You may opt out of our communications at any time.
           </p>
-
-          <div class="step-nav">
-            <button type="button" class="btn btn-outline btn-back">
-              <span class="btn-icon-left">&#8592;</span> Back
-            </button>
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </div>
         </section>
-      </form>
-    </section>
+
+        <!-- FOOTER BUTTONS (NEXT / SUBMIT) -->
+        <div class="step-footer">
+          <button type="button" class="btn-next-main btn-outline" id="btnBackBottom">
+            Back
+          </button>
+          <button type="button" class="btn-next-main" id="btnNext">
+            Next
+          </button>
+          <button type="submit" class="btn-next-main" id="btnSubmit" style="display:none;">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- PROGRESS BAR AT BOTTOM -->
+    <div class="progress-wrapper">
+      <div class="progress-label">Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
   </main>
+</div>
 
-  <script>
-    (function () {
-      const stepItems = document.querySelectorAll(".inquiry-step-item");
-      const stepPanels = document.querySelectorAll(".inquiry-step-panel");
-      const nextButtons = document.querySelectorAll(".btn-next");
-      const backButtons = document.querySelectorAll(".btn-back");
-      const progressStepEl = document.getElementById("progressStep");
-      const progressTotalEl = document.getElementById("progressTotal");
-      const progressBarFill = document.getElementById("progressBarFill");
+<script>
+  (function () {
+    const panels = document.querySelectorAll(".inquiry-step-panel");
+    const maxStep = panels.length;
 
-      let currentStep = 1;
-      const maxStep = stepPanels.length;
-      progressTotalEl.textContent = String(maxStep);
+    let currentStep = 1;
 
-      function updateProgress(step) {
-        progressStepEl.textContent = String(step);
-        const percent = (step / maxStep) * 100;
-        progressBarFill.style.width = percent + "%";
-      }
+    const btnBackTop    = document.getElementById("btnBack");
+    const btnBackBottom = document.getElementById("btnBackBottom");
+    const btnNext       = document.getElementById("btnNext");
+    const btnSubmit     = document.getElementById("btnSubmit");
+    const progressFill  = document.getElementById("progressFill");
+    const form          = document.getElementById("quoteForm");
 
-      function goToStep(step) {
-        if (step < 1 || step > maxStep) return;
-        currentStep = step;
+    function showStep(step) {
+      if (step < 1 || step > maxStep) return;
+      currentStep = step;
 
-        stepItems.forEach((item) => {
-          const s = Number(item.getAttribute("data-step"));
-          item.classList.toggle("active", s === step);
+      panels.forEach(panel => {
+        const s = Number(panel.getAttribute("data-step-panel"));
+        panel.classList.toggle("active", s === currentStep);
+      });
+
+      // Back button states
+      const atFirst = currentStep === 1;
+      btnBackTop.disabled = atFirst;
+
+      // Bottom back
+      btnBackBottom.disabled = atFirst;
+
+      // Next vs Submit
+      const atLast = currentStep === maxStep;
+      btnNext.style.display   = atLast ? "none" : "inline-flex";
+      btnSubmit.style.display = atLast ? "inline-flex" : "none";
+
+      // Progress (0% at step 1, 100% at step max)
+      const pct = ((currentStep - 1) / (maxStep - 1)) * 100;
+      progressFill.style.width = pct + "%";
+
+      // Scroll to card
+      const wrapper = document.querySelector(".inquiry-flow");
+      if (wrapper) {
+        window.scrollTo({
+          top: wrapper.offsetTop - 40,
+          behavior: "smooth"
         });
-
-        stepPanels.forEach((panel) => {
-          const s = Number(panel.getAttribute("data-step-panel"));
-          panel.classList.toggle("active", s === step);
-        });
-
-        updateProgress(step);
-
-        const wrapper = document.querySelector(".inquiry-flow");
-        if (wrapper) {
-          window.scrollTo({
-            top: wrapper.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
       }
+    }
 
-      // Simple extra validation for step 1 (destinations)
-      function validateStep1() {
-        const activePanel = document.querySelector(
-          '.inquiry-step-panel[data-step-panel="1"]'
-        );
-        if (!activePanel) return true;
-        const checkboxes = activePanel.querySelectorAll(
-          'input[type="checkbox"][name="destinations"]'
-        );
-        const anyChecked = Array.from(checkboxes).some((c) => c.checked);
-        if (!anyChecked) {
-          // focus the first pill
-          if (checkboxes[0]) {
-            checkboxes[0].focus();
-          }
+    function validateCurrentStep() {
+      const activePanel = document.querySelector(
+        `.inquiry-step-panel[data-step-panel="${currentStep}"]`
+      );
+      if (!activePanel) return true;
+
+      // Required radio groups
+      const requiredGroup = activePanel.querySelector("[data-required-radio-group]");
+      if (requiredGroup) {
+        const groupName = requiredGroup.getAttribute("data-required-radio-group");
+        const radios = requiredGroup.querySelectorAll(`input[type="radio"][name="${groupName}"]`);
+        const checked = Array.from(radios).some(r => r.checked);
+        if (!checked) {
+          // focus first
+          if (radios[0]) radios[0].focus();
           return false;
         }
-        return true;
       }
 
-      // Reuse your radio-required idea for the other steps:
-      function validateRadiosInCurrentStep() {
-        const activePanel = document.querySelector(
-          `.inquiry-step-panel[data-step-panel="${currentStep}"]`
-        );
-        if (!activePanel) return true;
-
-        const requiredRadios = activePanel.querySelectorAll(
-          'input[type="radio"][required]'
-        );
-        if (!requiredRadios.length) return true;
-
-        const nameSet = new Set();
-        requiredRadios.forEach((r) => nameSet.add(r.name));
-
-        for (const name of nameSet) {
-          const group = activePanel.querySelectorAll(
-            `input[type="radio"][name="${name}"]`
-          );
-          const checked = Array.from(group).some((r) => r.checked);
-          if (!checked) {
-            if (group[0]) group[0].focus();
-            return false;
-          }
-        }
-
-        return true;
+      // Step 1: require at least one destination
+      if (currentStep === 1) {
+        const dests = activePanel.querySelectorAll('input[name="destinations"]:checked');
+        if (!dests.length) return false;
       }
 
-      nextButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          if (currentStep === 1 && !validateStep1()) {
-            return;
-          }
+      // You can add extra validation for dates/month here as needed
 
-          // radio-group validation on steps that use required radios
-          if (!validateRadiosInCurrentStep()) {
-            return;
-          }
+      return true;
+    }
 
-          if (currentStep < maxStep) goToStep(currentStep + 1);
-        });
-      });
-
-      backButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          if (currentStep > 1) goToStep(currentStep - 1);
-        });
-      });
-
-      // Travel timing conditional UI
-      const travelTimingRadios = document.querySelectorAll(
-        'input[name="travel_timing"]'
-      );
+    function toggleTravelTimingUI() {
+      const travelTimingRadios = document.querySelectorAll('input[name="travel_timing"]');
       const specificDatesBlock = document.getElementById("specificDatesBlock");
-      const yearMonthBlock = document.getElementById("yearMonthBlock");
-      const arrivalInput = document.getElementById("arrival_date");
-      const departureInput = document.getElementById("departure_date");
-      const monthRadios = yearMonthBlock
-        ? yearMonthBlock.querySelectorAll('input[name="travel_month"]')
-        : [];
+      const yearMonthBlock     = document.getElementById("yearMonthBlock");
 
-      function setMonthRequired(isRequired) {
-        if (!monthRadios.length) return;
-        monthRadios.forEach((radio, index) => {
-          if (isRequired && index === 0) {
-            radio.setAttribute("required", "required");
-          } else {
-            radio.removeAttribute("required");
-          }
-        });
+      let value = "";
+      travelTimingRadios.forEach(r => { if (r.checked) value = r.value; });
+
+      if (value === "specific_dates") {
+        if (specificDatesBlock) specificDatesBlock.style.display = "grid";
+        if (yearMonthBlock) yearMonthBlock.style.display = "none";
+      } else if (value === "2025" || value === "2026" || value === "2027" || value === "flexible") {
+        if (specificDatesBlock) specificDatesBlock.style.display = "none";
+        if (yearMonthBlock) yearMonthBlock.style.display = "grid";
+      } else {
+        if (specificDatesBlock) specificDatesBlock.style.display = "none";
+        if (yearMonthBlock) yearMonthBlock.style.display = "none";
       }
+    }
 
-      function updateTravelTimingUI() {
-        let value = "";
-        travelTimingRadios.forEach((radio) => {
-          if (radio.checked) value = radio.value;
-        });
+    // Set up click handling for choice pills to add "selected" class
+    document.querySelectorAll(".choice-pill input").forEach(input => {
+      input.addEventListener("change", () => {
+        const label = input.closest(".choice-pill");
+        if (!label) return;
 
-        if (value === "specific_dates") {
-          if (specificDatesBlock) specificDatesBlock.style.display = "grid";
-          if (yearMonthBlock) yearMonthBlock.style.display = "none";
-          if (arrivalInput) arrivalInput.required = false; // keep optional
-          if (departureInput) departureInput.required = false;
-          setMonthRequired(false);
-        } else if (
-          value === "2026" ||
-          value === "2027" ||
-          value === "flexible"
-        ) {
-          if (specificDatesBlock) specificDatesBlock.style.display = "none";
-          if (yearMonthBlock) yearMonthBlock.style.display = "block";
-          if (arrivalInput) arrivalInput.required = false;
-          if (departureInput) departureInput.required = false;
-          // make month selection required for this branch
-          setMonthRequired(true);
-        } else {
-          if (specificDatesBlock) specificDatesBlock.style.display = "none";
-          if (yearMonthBlock) yearMonthBlock.style.display = "none";
-          if (arrivalInput) arrivalInput.required = false;
-          if (departureInput) departureInput.required = false;
-          setMonthRequired(false);
-        }
-      }
-
-      travelTimingRadios.forEach((radio) => {
-        radio.addEventListener("change", updateTravelTimingUI);
-      });
-
-      updateTravelTimingUI();
-      updateProgress(currentStep);
-
-      // Form submission handling – customise as needed
-      const form = document.getElementById("quoteForm");
-      form.addEventListener("submit", function (e) {
-        // Let browser do basic HTML5 validation first
-        if (!form.checkValidity()) {
-          e.preventDefault();
-          form.reportValidity();
-          return;
+        if (input.type === "checkbox") {
+          label.classList.toggle("selected", input.checked);
+        } else if (input.type === "radio") {
+          // clear siblings
+          const name = input.name;
+          document.querySelectorAll(`.choice-pill input[type="radio"][name="${name}"]`).forEach(r => {
+            const l = r.closest(".choice-pill");
+            if (l) l.classList.toggle("selected", r.checked);
+          });
         }
 
-        // TODO: replace this with real submission if using AJAX / API.
-        // For now, this just lets the normal form POST happen.
+        // Travel timing conditional UI
+        if (input.name === "travel_timing") {
+          toggleTravelTimingUI();
+        }
       });
-    })();
-  </script>
+    });
+
+    // Next / Back buttons
+    btnNext.addEventListener("click", () => {
+      if (!validateCurrentStep()) return;
+      if (currentStep < maxStep) showStep(currentStep + 1);
+    });
+
+    function goBack() {
+      if (currentStep > 1) showStep(currentStep - 1);
+    }
+
+    btnBackTop.addEventListener("click", goBack);
+    btnBackBottom.addEventListener("click", goBack);
+
+    // Travel timing listeners for initial state
+    document.querySelectorAll('input[name="travel_timing"]').forEach(radio => {
+      radio.addEventListener("change", toggleTravelTimingUI);
+    });
+    toggleTravelTimingUI();
+
+    // Handle submit (send to your backend / Zendesk / etc)
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Final simple check
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // TODO: hook into your backend or Zendesk here.
+      // For now, just replace form with a success message.
+      form.innerHTML = `
+        <div class="success-message">
+          <h2>Thank you for your enquiry</h2>
+          <p>Our team will review your preferences and get back to you with tailored safari suggestions shortly.</p>
+        </div>
+      `;
+      progressFill.style.width = "100%";
+    });
+
+    // Init
+    showStep(1);
+  })();
+</script>
 </body>
 </html>
