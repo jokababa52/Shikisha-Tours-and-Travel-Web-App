@@ -466,68 +466,238 @@
     }
     .reviews-preview .cta-btn:hover { background: #1a87b7; transform: scale(1.05); }
 
-    /* Footer */
-    .site-footer {
-      background: #000;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    .social-icons a {
-      color: #fff; margin: 0 12px; font-size: 1.5rem; transition: 0.3s ease;
-    }
-    .social-icons a:hover { color: #22A9E6; }
+   /* =========================
+   FOOTER – ASILIA-STYLE LAYOUT
+   ========================= */
 
-    .footer-legal {
-      margin-top: 0.3rem;
-      font-size: 0.8rem;
-      color: #aaa;
-      font-family: var(--font-body);
-    }
+.site-footer {
+  margin-top: 0;
+  background: #d7cbb3;           /* warm beige similar to screenshot */
+  color: #022b3a;
+  font-family: var(--font-body);
+}
 
-    .footer-legal-title {
-      font-weight: 600;
-      margin-right: 0.3rem;
-    }
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+}
 
-    .footer-legal a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 0.15rem;
-      font-family: var(--font-body);
-    }
+/* Top grid: Travel / Impact / About / Support / Connect */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 1.1fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(2, 43, 58, 0.16);
+}
 
-    .footer-legal a:hover {
-      color: #22A9E6;
-    }
+.footer-heading {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
 
-    .footer-legal-separator {
-      color: #555;
-      margin: 0 0.1rem;
-    }
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .footer-menu {
-      list-style: none; padding: 0; margin: 1.5rem 0;
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 30px;
-    }
-    .footer-menu a {
-      color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s ease;
-      font-weight: 400;
-      font-family: var(--font-body);
-    }
-    .footer-menu a:hover { color: #22A9E6; }
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
 
-    .copyright {
-      font-size: 0.85rem; margin-top: 1.5rem; color: #aaa;
-      font-weight: 400;
-      font-family: var(--font-body);
-    }
+.footer-links a {
+  text-decoration: none;
+  color: #022b3a;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: var(--font-body);
+}
 
-    @media(max-width:768px){
-      .review-platforms{flex-direction:column;align-items:center;}
-      .platform-card{width:90%;}
-      .footer-menu{flex-direction:column;gap:12px;}
-    }
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Right-hand connect column */
+.footer-connect-heading {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.9rem;
+  margin: 0 0 0.6rem;
+}
+
+.footer-connect-sub {
+  font-size: 1rem;
+  margin: 0 0 1.4rem;
+}
+
+.footer-newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.footer-newsletter input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 43, 58, 0.35);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.footer-newsletter input[type="email"]:focus {
+  border-color: #22a9e6;
+  box-shadow: 0 0 0 1px rgba(34, 169, 230, 0.3);
+}
+
+.footer-newsletter button {
+  border-radius: 999px;
+  border: 1px solid #022b3a;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer-newsletter button:hover {
+  background: #022b3a;
+  color: #fff;
+}
+
+/* Follow us row */
+.footer-connect-follow-label {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin: 0 0 0.6rem;
+}
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.social-icons a {
+  color: #022b3a;
+  font-size: 1.4rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #22a9e6;
+  transform: translateY(-1px);
+}
+
+/* Awards strip */
+.footer-awards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.2rem 1.5rem 2.8rem;
+}
+
+.footer-award {
+  border-radius: 999px;
+  border: 2px solid #022b3a;
+  padding: 1.1rem 1.9rem;
+  max-width: 210px;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background: #022b3a;
+  color: #fff;
+  margin-top: 0;
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-links span {
+  opacity: 0.7;
+  margin: 0 0.4rem;
+}
+
+/* Footer responsive tweaks */
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    padding-inline: 1.25rem;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-left: 0;
+  }
+
+  .footer-bottom-links a {
+    margin-left: 0;
+  }
+
+  .footer-awards {
+    padding-inline: 1.25rem;
+  }
+}
+
   </style>
 </head>
 
@@ -750,36 +920,126 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="social-icons">
-    <a href="https://www.facebook.com/shikishatourstravel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://instagram.com/shikisha_tours/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank"><i class="fab fa-youtube"></i></a>
+  <div class="footer-inner">
+    <!-- Top grid -->
+    <div class="footer-grid">
+      <!-- Travel -->
+      <div>
+        <h3 class="footer-heading">Travel</h3>
+        <ul class="footer-links">
+          <li><a href="safaris.html">Our Camps &amp; Lodges</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Experiences</a></li>
+          <li><a href="#">Itineraries</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">Partner Properties</a></li>
+        </ul>
+      </div>
+
+      <!-- Impact -->
+      <div>
+        <h3 class="footer-heading">Impact</h3>
+        <ul class="footer-links">
+          <li><a href="#">Community &amp; Conservation</a></li>
+          <li><a href="#">Responsible Travel</a></li>
+          <li><a href="#">Travel With Purpose</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div>
+        <h3 class="footer-heading">About Us</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Awards</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="#">Agent Partnerships</a></li>
+          <li><a href="booking-terms.html">Booking T&amp;Cs</a></li>
+          <li><a href="help-center.html">Contact &amp; Enquiry</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect / Newsletter -->
+      <div>
+        <h3 class="footer-connect-heading">Let&apos;s connect…</h3>
+        <p class="footer-connect-sub">
+          Join our newsletter. Stay in touch, be travel ready.
+        </p>
+
+        <form class="footer-newsletter" action="#" method="post">
+          <input type="email" name="footer_email" placeholder="Your email address">
+          <button type="submit">Join here</button>
+        </form>
+
+        <p class="footer-connect-follow-label">Follow us</p>
+        <div class="footer-social-row">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/shikishatourstravel/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/shikisha_tours/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards row – swap text for logos when you have them -->
+    <div class="footer-awards">
+      <div class="footer-award">
+        Travel &amp; Leisure<br>
+        World&apos;s Best Awards<br>
+        2024
+      </div>
+      <div class="footer-award">
+        Lux Life Magazine<br>
+        Most Authentic Safari Tour Company<br>
+        2024
+      </div>
+      <div class="footer-award">
+        TripAdvisor<br>
+        Travellers&apos; Choice Award<br>
+        2023
+      </div>
+      <div class="footer-award">
+        World Luxury Hotel Award<br>
+        2023
+      </div>
+      <div class="footer-award">
+        Global Brand Awards<br>
+        Most Prominent Tourism Company<br>
+        2023
+      </div>
+    </div>
   </div>
 
-  <ul class="footer-menu">
-    <li><a href="help-center.html">Help Center</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="careers.html">Careers</a></li>
-    <li><a href="#">Supplier Sign Up</a></li>
-    <li><a href="#">Affiliate Program</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Accessibility</a></li>
-  </ul>
-
-  <!-- Legal & Data Protection strip -->
-  <div class="footer-legal">
-    <span class="footer-legal-title">Legal &amp; Data Protection:</span>
-    <a href="privacy.html">Privacy Policy</a>
-    <span class="footer-legal-separator">·</span>
-    <a href="booking-terms.html">Booking, Cancellation & Refund Policy</a>
-    <span class="footer-legal-separator">·</span>
-    <a href="dpa.html">Data Processing Addendum (DPA)</a>
+  <!-- Bottom teal strip -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>
+        © 2025 Shikisha Tours and Travel Limited. All rights reserved.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="booking-terms.html">Website T&amp;Cs</a>
+        <span>•</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span>•</span>
+        <a href="dpa.html">Notice of Collection / DPA</a>
+      </div>
+    </div>
   </div>
-
-  <p class="copyright">© 2025 Shikisha Tours and Travel Limited</p>
 </footer>
+
 
 
 <script>
