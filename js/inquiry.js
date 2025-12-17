@@ -30,3 +30,7 @@
     });
   }
 </script>
+
+<script src="/js/nav.js" defer></script>
+<script src="/js/inquiry.js" defer></script>
+
