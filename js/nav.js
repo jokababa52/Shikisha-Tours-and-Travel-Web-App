@@ -150,6 +150,14 @@
         return;
       }
 
+      
+      } else if (value === "2025" || value === "2026" || value === "2027") {
+  if (specificDatesBlock) specificDatesBlock.style.display = "none";
+  if (yearMonthBlock) yearMonthBlock.style.display = "grid";
+
+  updateMonthAvailability(value);
+}
+
       // TODO: hook into your backend or Zendesk here.
       // For now, just replace form with a success message.
       form.innerHTML = `
