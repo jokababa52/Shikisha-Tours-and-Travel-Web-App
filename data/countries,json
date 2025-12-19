@@ -1,16 +1,9 @@
 [
-  { "name": "Kenya", "code": "KE" },
-  { "name": "Tanzania", "code": "TZ" },
-  { "name": "Uganda", "code": "UG" },
-  { "name": "Rwanda", "code": "RW" },
-  { "name": "South Africa", "code": "ZA" },
-  { "name": "United States of America", "code": "US" },
-  { "name": "United Kingdom", "code": "GB" },
-  { "name": "Canada", "code": "CA" },
-  { "name": "Germany", "code": "DE" },
-  { "name": "France", "code": "FR" },
-  { "name": "Netherlands", "code": "NL" },
-  { "name": "Australia", "code": "AU" },
-  { "name": "United Arab Emirates", "code": "AE" },
-  { "name": "India", "code": "IN" }
+  { "name": "Kenya", "dial": "+254" },
+  { "name": "Tanzania", "dial": "+255" },
+  { "name": "Uganda", "dial": "+256" },
+  { "name": "Rwanda", "dial": "+250" },
+  { "name": "United States", "dial": "+1" },
+  { "name": "United Kingdom", "dial": "+44" },
+  { "name": "Australia", "dial": "+61" }
 ]
