@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Get a Free Quote | Shikisha Tours and Travel</title>
+  <title>Get a Free Quote | Shikisha Tours & Travel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/inquiry.css">
   <link rel="stylesheet" href="/css/footer.css">
 
   <!-- Favicon -->
@@ -19,165 +17,110 @@
 </head>
 
 <body>
-<div class="page">
 
 <header class="site-header">
-  <a href="/" class="site-logo">
-    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png" alt="Shikisha Tours">
+  <a href="/">
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png" class="logo">
   </a>
 </header>
 
-<main class="inquiry-flow">
-  <form id="quoteForm" novalidate>
+<nav class="breadcrumbs">
+  <a href="/">Home</a> › <span>Inquiry</span>
+</nav>
 
-    <div class="inquiry-card">
+<main class="inquiry-container">
+<form id="quoteForm">
 
-      <div class="step-nav-row">
-        <button type="button" id="btnBack" class="btn-back" disabled>&lsaquo;</button>
-      </div>
-
-      <!-- STEP 1: DESTINATION -->
-<section class="inquiry-step-panel active" data-step-panel="1">
-  <h2 class="step-title">Where would you like to travel?</h2>
-
-  <div class="choices-row">
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Kenya"> Kenya</label>
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Tanzania"> Tanzania</label>
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Rwanda"> Rwanda</label>
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Uganda"> Uganda</label>
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Zanzibar"> Zanzibar</label>
-    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Open to ideas"> Open to ideas</label>
+<!-- STEP 1 -->
+<section class="step active">
+  <h2>Where would you like to travel?</h2>
+  <div class="options">
+    <label><input type="checkbox" name="destination" value="Kenya"> Kenya</label>
+    <label><input type="checkbox" name="destination" value="Tanzania"> Tanzania</label>
+    <label><input type="checkbox" name="destination" value="Uganda"> Uganda</label>
+    <label><input type="checkbox" name="destination" value="Rwanda"> Rwanda</label>
+    <label><input type="checkbox" name="destination" value="Zanzibar"> Zanzibar</label>
+    <label><input type="checkbox" name="destination" value="Open"> Open to ideas</label>
   </div>
 </section>
 
-<!-- STEP 2: BUDGET -->
-<section class="inquiry-step-panel" data-step-panel="2">
-  <h2 class="step-title">What is your budget per person?</h2>
-
-  <div class="choices-row" data-required-radio-group="budget">
-    <label class="choice-pill"><input type="radio" name="budget" value="500–1000"> $500–1,000</label>
-    <label class="choice-pill"><input type="radio" name="budget" value="1000–1500"> $1,000–1,500</label>
-    <label class="choice-pill"><input type="radio" name="budget" value="2000–2500"> $2,000–2,500</label>
-    <label class="choice-pill"><input type="radio" name="budget" value="3000–3500"> $3,000–3,500</label>
-    <label class="choice-pill"><input type="radio" name="budget" value="4000–4500"> $4,000–4,500</label>
-    <label class="choice-pill"><input type="radio" name="budget" value="Not sure"> Not sure</label>
+<!-- STEP 2 -->
+<section class="step">
+  <h2>What type of trip is this?</h2>
+  <div class="options">
+    <label><input type="radio" name="tripType" value="Safari"> Safari</label>
+    <label><input type="radio" name="tripType" value="Beach"> Beach</label>
+    <label><input type="radio" name="tripType" value="Honeymoon"> Honeymoon</label>
+    <label><input type="radio" name="tripType" value="Group"> Group</label>
   </div>
 </section>
 
-<!-- STEP 3: WHEN TO TRAVEL -->
-<section class="inquiry-step-panel" data-step-panel="3">
-  <h2 class="step-title">When do you want to travel?</h2>
-
-  <div class="choices-row" data-required-radio-group="travel_timing">
-    <label class="choice-pill"><input type="radio" name="travel_timing" value="specific"> I have specific dates</label>
-    <label class="choice-pill"><input type="radio" name="travel_timing" value="2025"> 2025</label>
-    <label class="choice-pill"><input type="radio" name="travel_timing" value="2026"> 2026</label>
-    <label class="choice-pill"><input type="radio" name="travel_timing" value="flexible"> I’m flexible</label>
-  </div>
-
-  <div id="specificDatesBlock">
-    <label class="field-label">Arrival Date</label>
-    <input type="date" name="arrival_date">
-
-    <label class="field-label">Departure Date</label>
-    <input type="date" name="departure_date">
-  </div>
+<!-- STEP 3 -->
+<section class="step">
+  <h2>When do you plan to travel?</h2>
+  <input type="month" name="travelMonth" required>
 </section>
 
-<!-- STEP 4: TRIP LENGTH -->
-<section class="inquiry-step-panel" data-step-panel="4">
-  <h2 class="step-title">How long do you want to travel?</h2>
-
-  <div class="choices-row" data-required-radio-group="trip_length">
-    <label class="choice-pill"><input type="radio" name="trip_length" value="Less than 1 week"> Less than 1 week</label>
-    <label class="choice-pill"><input type="radio" name="trip_length" value="1 week"> 1 week</label>
-    <label class="choice-pill"><input type="radio" name="trip_length" value="10 days"> 10 days</label>
-    <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks"> 2 weeks</label>
-    <label class="choice-pill"><input type="radio" name="trip_length" value="2+ weeks"> 2+ weeks</label>
-  </div>
+<!-- STEP 4 -->
+<section class="step">
+  <h2>How many travelers?</h2>
+  <input type="number" name="adults" placeholder="Adults" min="1" required>
+  <input type="number" name="children" placeholder="Children (optional)" min="0">
 </section>
 
-<!-- STEP 5: TRAVELLING WITH -->
-<section class="inquiry-step-panel" data-step-panel="5">
-  <h2 class="step-title">Who will you be travelling with?</h2>
-
-  <div class="choices-row" data-required-radio-group="travelling_with">
-    <label class="choice-pill"><input type="radio" name="travelling_with" value="Solo"> Solo</label>
-    <label class="choice-pill"><input type="radio" name="travelling_with" value="Partner"> Partner</label>
-    <label class="choice-pill"><input type="radio" name="travelling_with" value="Family"> Family</label>
-    <label class="choice-pill"><input type="radio" name="travelling_with" value="Friends"> Friends</label>
-  </div>
+<!-- STEP 5 -->
+<section class="step">
+  <h2>Your budget per person (USD)</h2>
+  <select name="budget" required>
+    <option value="">Select budget</option>
+    <option value="500-1000">$500 – $1,000</option>
+    <option value="1000-2000">$1,000 – $2,000</option>
+    <option value="2000+">$2,000+</option>
+  </select>
 </section>
 
-<!-- STEP 6: EXPERIENCE DETAILS -->
-<section class="inquiry-step-panel" data-step-panel="6">
-  <h2 class="step-title">What do you want to see and do?</h2>
+<!-- STEP 6 -->
+<section class="step">
+  <h2>Your Country of Residence</h2>
+  <select id="residence" name="residence" required></select>
 
-  <textarea
-    name="safari_details"
-    placeholder="Tell us about must-see parks, activities, celebrations, or special requests..."
-    rows="6"></textarea>
+  <h2>Country You Wish to Visit</h2>
+  <select id="visit" name="visit" required></select>
 </section>
 
-<!-- STEP 7: CONTACT DETAILS -->
-<section class="inquiry-step-panel" data-step-panel="7">
-  <h2 class="step-title">Where can we send your trip ideas?</h2>
-
-  <div class="field-grid">
-    <div>
-      <label class="field-label">First Name *</label>
-      <input name="first_name" type="text" required>
-    </div>
-
-    <div>
-      <label class="field-label">Last Name *</label>
-      <input name="last_name" type="text" required>
-    </div>
-
-    <div class="field-full">
-      <label class="field-label">Email *</label>
-      <input name="email" type="email" required>
-    </div>
-
-    <div>
-      <label class="field-label">Country of Residence *</label>
-      <select id="residence" name="residence" required>
-        <option value="">Select your country</option>
-      </select>
-    </div>
-
-    <div>
-      <label class="field-label">Country to Visit *</label>
-      <select id="visit" name="visit" required>
-        <option value="">Select destination</option>
-      </select>
-    </div>
-  </div>
+<!-- STEP 7 -->
+<section class="step">
+  <h2>Your contact details</h2>
+  <input type="text" name="fullName" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+  <textarea name="message" placeholder="Anything you'd like us to know?"></textarea>
 </section>
 
-
-      <!-- STEP FOOTER -->
-      <div class="step-footer">
-        <button type="button" id="btnBackBottom" class="btn-outline">Back</button>
-        <button type="button" id="btnNext">Next</button>
-        <button type="submit" id="btnSubmit" style="display:none;">Submit</button>
-      </div>
-
-    </div>
-  </form>
-
-  <div class="progress-wrapper">
-    <div class="progress-bar">
-      <div id="progressFill"></div>
-    </div>
-  </div>
-</main>
-
+<!-- NAV -->
+<div class="nav-buttons">
+  <button type="button" id="backBtn">Back</button>
+  <button type="button" id="nextBtn">Next</button>
+  <button type="submit" id="submitBtn" hidden>Submit Inquiry</button>
 </div>
 
-<!-- JS (DEFERRED) -->
-<script src="/js/nav.js" defer></script>
-<script src="/js/inquiry.js" defer></script>
+</form>
+
+<!-- Consultant -->
+<div class="consultant">
+  <img src="https://YOUR-CDN-CONSULTANT-IMAGE.png" alt="Travel Consultant">
+  <p>Your personal travel consultant will respond within 24 hours.</p>
+</div>
+
+</main>
+
+<!-- Footer (reuse your index.html footer exactly) -->
+<footer>
+  <!-- PASTE YOUR EXISTING FOOTER CODE HERE -->
+</footer>
+
+<script src="/js/inquiry.js"></script>
+<script src="/js/countries.js"></script>
 
 </body>
 </html>
