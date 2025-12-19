@@ -1,40 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const residenceSelect = document.getElementById("residence");
-  const visitSelect = document.getElementById("visit");
-
-  fetch("/data/countries.json")
+fetch("/data/countries.json")
   .then(res => res.json())
   .then(countries => {
-    const residence = document.getElementById("residence");
-    const visit = document.getElementById("visit");
+    const select = document.getElementById("country");
+    const phone  = document.getElementById("phone");
 
-    residence.innerHTML = `<option value="">Select your country</option>`;
-    visit.innerHTML = `<option value="">Select country to visit</option>`;
+    select.innerHTML = `<option value="">Please Select an Option</option>`;
 
-    countries.forEach(country => {
-      residence.innerHTML += `<option value="${country}">${country}</option>`;
-      visit.innerHTML += `<option value="${country}">${country}</option>`;
+    countries.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c.name;
+      opt.textContent = c.name;
+      opt.dataset.dial = c.dial;
+      select.appendChild(opt);
+    });
+
+    select.addEventListener("change", () => {
+      const dial = select.selectedOptions[0]?.dataset.dial;
+      if (dial && !phone.value.startsWith(dial)) {
+        phone.value = dial + " ";
+      }
     });
   });
-
-
-      // Sort alphabetically
-      countries.sort((a, b) => a.name.localeCompare(b.name));
-
-      countries.forEach(country => {
-        const option1 = document.createElement("option");
-        option1.value = country.name;
-        option1.textContent = country.name;
-
-        const option2 = option1.cloneNode(true);
-
-        residenceSelect.appendChild(option1);
-        visitSelect.appendChild(option2);
-      });
-    })
-    .catch(error => {
-      console.error("Country loading error:", error);
-    });
-
-});
