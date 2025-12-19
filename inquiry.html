@@ -36,8 +36,125 @@
         <button type="button" id="btnBack" class="btn-back" disabled>&lsaquo;</button>
       </div>
 
-      <!-- ALL YOUR STEPS REMAIN UNCHANGED -->
-      <!-- (No JS here – only HTML) -->
+      <!-- STEP 1: DESTINATION -->
+<section class="inquiry-step-panel active" data-step-panel="1">
+  <h2 class="step-title">Where would you like to travel?</h2>
+
+  <div class="choices-row">
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Kenya"> Kenya</label>
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Tanzania"> Tanzania</label>
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Rwanda"> Rwanda</label>
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Uganda"> Uganda</label>
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Zanzibar"> Zanzibar</label>
+    <label class="choice-pill"><input type="checkbox" name="destinations[]" value="Open to ideas"> Open to ideas</label>
+  </div>
+</section>
+
+<!-- STEP 2: BUDGET -->
+<section class="inquiry-step-panel" data-step-panel="2">
+  <h2 class="step-title">What is your budget per person?</h2>
+
+  <div class="choices-row" data-required-radio-group="budget">
+    <label class="choice-pill"><input type="radio" name="budget" value="500–1000"> $500–1,000</label>
+    <label class="choice-pill"><input type="radio" name="budget" value="1000–1500"> $1,000–1,500</label>
+    <label class="choice-pill"><input type="radio" name="budget" value="2000–2500"> $2,000–2,500</label>
+    <label class="choice-pill"><input type="radio" name="budget" value="3000–3500"> $3,000–3,500</label>
+    <label class="choice-pill"><input type="radio" name="budget" value="4000–4500"> $4,000–4,500</label>
+    <label class="choice-pill"><input type="radio" name="budget" value="Not sure"> Not sure</label>
+  </div>
+</section>
+
+<!-- STEP 3: WHEN TO TRAVEL -->
+<section class="inquiry-step-panel" data-step-panel="3">
+  <h2 class="step-title">When do you want to travel?</h2>
+
+  <div class="choices-row" data-required-radio-group="travel_timing">
+    <label class="choice-pill"><input type="radio" name="travel_timing" value="specific"> I have specific dates</label>
+    <label class="choice-pill"><input type="radio" name="travel_timing" value="2025"> 2025</label>
+    <label class="choice-pill"><input type="radio" name="travel_timing" value="2026"> 2026</label>
+    <label class="choice-pill"><input type="radio" name="travel_timing" value="flexible"> I’m flexible</label>
+  </div>
+
+  <div id="specificDatesBlock">
+    <label class="field-label">Arrival Date</label>
+    <input type="date" name="arrival_date">
+
+    <label class="field-label">Departure Date</label>
+    <input type="date" name="departure_date">
+  </div>
+</section>
+
+<!-- STEP 4: TRIP LENGTH -->
+<section class="inquiry-step-panel" data-step-panel="4">
+  <h2 class="step-title">How long do you want to travel?</h2>
+
+  <div class="choices-row" data-required-radio-group="trip_length">
+    <label class="choice-pill"><input type="radio" name="trip_length" value="Less than 1 week"> Less than 1 week</label>
+    <label class="choice-pill"><input type="radio" name="trip_length" value="1 week"> 1 week</label>
+    <label class="choice-pill"><input type="radio" name="trip_length" value="10 days"> 10 days</label>
+    <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks"> 2 weeks</label>
+    <label class="choice-pill"><input type="radio" name="trip_length" value="2+ weeks"> 2+ weeks</label>
+  </div>
+</section>
+
+<!-- STEP 5: TRAVELLING WITH -->
+<section class="inquiry-step-panel" data-step-panel="5">
+  <h2 class="step-title">Who will you be travelling with?</h2>
+
+  <div class="choices-row" data-required-radio-group="travelling_with">
+    <label class="choice-pill"><input type="radio" name="travelling_with" value="Solo"> Solo</label>
+    <label class="choice-pill"><input type="radio" name="travelling_with" value="Partner"> Partner</label>
+    <label class="choice-pill"><input type="radio" name="travelling_with" value="Family"> Family</label>
+    <label class="choice-pill"><input type="radio" name="travelling_with" value="Friends"> Friends</label>
+  </div>
+</section>
+
+<!-- STEP 6: EXPERIENCE DETAILS -->
+<section class="inquiry-step-panel" data-step-panel="6">
+  <h2 class="step-title">What do you want to see and do?</h2>
+
+  <textarea
+    name="safari_details"
+    placeholder="Tell us about must-see parks, activities, celebrations, or special requests..."
+    rows="6"></textarea>
+</section>
+
+<!-- STEP 7: CONTACT DETAILS -->
+<section class="inquiry-step-panel" data-step-panel="7">
+  <h2 class="step-title">Where can we send your trip ideas?</h2>
+
+  <div class="field-grid">
+    <div>
+      <label class="field-label">First Name *</label>
+      <input name="first_name" type="text" required>
+    </div>
+
+    <div>
+      <label class="field-label">Last Name *</label>
+      <input name="last_name" type="text" required>
+    </div>
+
+    <div class="field-full">
+      <label class="field-label">Email *</label>
+      <input name="email" type="email" required>
+    </div>
+
+    <div>
+      <label class="field-label">Country of Residence *</label>
+      <select id="residence" name="residence" required>
+        <option value="">Select your country</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="field-label">Country to Visit *</label>
+      <select id="visit" name="visit" required>
+        <option value="">Select destination</option>
+      </select>
+    </div>
+  </div>
+</section>
+
 
       <!-- STEP FOOTER -->
       <div class="step-footer">
