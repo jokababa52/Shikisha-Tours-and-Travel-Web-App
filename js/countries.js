@@ -4,11 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const visitSelect = document.getElementById("visit");
 
   fetch("/data/countries.json")
-    .then(response => {
-      if (!response.ok) throw new Error("Failed to load countries");
-      return response.json();
-    })
-    .then(countries => {
+  .then(res => res.json())
+  .then(countries => {
+    const residence = document.getElementById("residence");
+    const visit = document.getElementById("visit");
+
+    residence.innerHTML = `<option value="">Select your country</option>`;
+    visit.innerHTML = `<option value="">Select country to visit</option>`;
+
+    countries.forEach(country => {
+      residence.innerHTML += `<option value="${country}">${country}</option>`;
+      visit.innerHTML += `<option value="${country}">${country}</option>`;
+    });
+  });
+
 
       // Sort alphabetically
       countries.sort((a, b) => a.name.localeCompare(b.name));
