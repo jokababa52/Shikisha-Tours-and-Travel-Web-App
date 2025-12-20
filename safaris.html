@@ -203,6 +203,20 @@
   transform: translate(-50%, -50%);
 }
 
+    .safaris-hero-video-inner {
+  position: absolute;
+  inset: 0;
+}
+
+.safaris-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+
 .safaris-hero-video-inner iframe {
   width: 100%;
   height: 100%;
@@ -444,15 +458,17 @@
     <div class="safaris-hero-video">
       <div class="safaris-hero-video-inner">
            
-        <!-- Vimeo embed -->
-        <iframe
-  src="https://www.youtube-nocookie.com/embed/HY_LKM6WLFg?autoplay=1&mute=1&loop=1&playlist=HY_LKM6WLFg&controls=0&modestbranding=1&rel=0&playsinline=1&disablekb=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media; picture-in-picture"
-  referrerpolicy="strict-origin-when-cross-origin"
-  title="Lake Naivasha Boat-ride | Shikisha Tours & Travel"
-  allowfullscreen>
-</iframe>
+        <video
+  class="safaris-hero-bg"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+>
+  <source src="https://mlksm2ek1k1e.i.optimole.com/files/id:8e9b91d079a59d1c1e519578963228db/directUpload/safaris_teaser_v1-2160p.mp4" type="video/mp4">
+</video>
+
         
 
       </div>
