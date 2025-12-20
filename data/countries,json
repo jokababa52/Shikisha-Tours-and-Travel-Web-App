@@ -1,9 +1,0 @@
-[
-  { "name": "Kenya", "dial": "+254" },
-  { "name": "Tanzania", "dial": "+255" },
-  { "name": "Uganda", "dial": "+256" },
-  { "name": "Rwanda", "dial": "+250" },
-  { "name": "United States", "dial": "+1" },
-  { "name": "United Kingdom", "dial": "+44" },
-  { "name": "Australia", "dial": "+61" }
-]
