@@ -1,8 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Enquire | Shikisha Tours and Travel</title>
-      <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+  <title>Get a Free Quote | Shikisha Tours and Travel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
@@ -15,11 +14,11 @@
       --accent: #22a9e6;
       --accent-dark: #1383b3;
 
-      /* Outline + selected fill for pills */
-      --pill-outline: #021626;
-      --pill-fill: #9aa2a8;
+      /* NEW: Outline + selected fill for pills */
+      --pill-outline: #021626;   /* same “ink” feel as back button */
+      --pill-fill: #9aa2a8;      /* selected fill */
 
-      /* Progress */
+      /* Progress (you can keep your existing values) */
       --progress-fill: #8a3e27;
       --progress-track: #ffffff;
 
@@ -105,9 +104,7 @@
       justify-content: center;
       max-width: var(--max-width);
       margin: 0 auto;
-
-      /* ✅ tighter bottom spacing before footer */
-      padding: 0 20px 18px;
+      padding: 0 20px 40px;
     }
 
     .inquiry-card {
@@ -167,7 +164,11 @@
       line-height: 1.25;
     }
 
-    /* CHOICES */
+    /* =========================
+       CHOICES ROW (UPDATED UX)
+       - outline only
+       - fill with #9aa2a8 when selected
+       ========================= */
     .choices-row {
       display: flex;
       flex-wrap: wrap;
@@ -181,9 +182,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       padding: 12px 28px;
       border-radius: 999px;
 
+      /* outline style */
       background: transparent;
       border: 1px solid var(--pill-outline);
       color: var(--pill-outline);
@@ -211,6 +214,7 @@
       transform: translateY(-1px);
     }
 
+    /* Selected state */
     .choice-pill.selected {
       background: var(--pill-fill);
       border-color: var(--pill-fill);
@@ -218,7 +222,7 @@
       box-shadow: 0 0 0 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.12);
     }
 
-    /* INPUTS */
+    /* DATE / TEXT / INPUT FIELDS */
     form input[type="text"],
     form input[type="email"],
     form input[type="tel"],
@@ -268,7 +272,7 @@
       text-transform: uppercase;
     }
 
-    /* SPECIAL BLOCKS STEP 3 */
+    /* SPECIAL BLOCKS IN STEP 3 (DATES / MONTHS) */
     #specificDatesBlock,
     #yearMonthBlock {
       display: none;
@@ -354,11 +358,8 @@
     /* PROGRESS BAR */
     .progress-wrapper {
       max-width: var(--max-width);
-
-      /* ✅ tighter spacing */
-      margin: 22px auto 10px;
-
-      padding: 0 20px 8px;
+      margin: 40px auto 20px;
+      padding: 0 20px 10px;
     }
 
     .progress-label {
@@ -391,21 +392,6 @@
       transition: width 0.25s ease;
     }
 
-    /* ✅ subtle divider above footer */
-    .footer-divider {
-      width: 100%;
-      max-width: 1200px;
-      margin: 10px auto 0;
-      padding: 0 1.5rem;
-    }
-    .footer-divider::before {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 100%;
-      background: rgba(2, 43, 58, 0.14);
-    }
-
     /* SUCCESS MESSAGE */
     .success-message {
       text-align: center;
@@ -436,8 +422,6 @@
       #specificDatesBlock { grid-template-columns: 1fr; }
       #yearMonthBlock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .field-grid { grid-template-columns: 1fr; }
-
-      .footer-divider { padding: 0 1.25rem; }
     }
 
     /* =========================
@@ -453,7 +437,7 @@
     .footer-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2.2rem 1.5rem 0;
+      padding: 3rem 1.5rem 0;
     }
 
     .footer-grid {
@@ -631,7 +615,7 @@
   <!-- HEADER WITH LOGO -->
   <header class="site-header">
     <a href="/" class="site-logo" aria-label="Shikisha Tours and Travel Home">
-      <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:34dbef7c136ac7bc5a7b4b37b73159ec/directUpload/LOGO.png" alt="Shikisha Tours and Travel">
+      <img src="logo-shikisha.svg" alt="Shikisha Tours and Travel">
     </a>
   </header>
 
@@ -640,28 +624,51 @@
     <form id="quoteForm" novalidate>
       <div class="inquiry-card">
 
+        <!-- Back icon row -->
         <div class="step-nav-row">
           <button type="button" class="btn-back" id="btnBack" aria-label="Go back to previous question" disabled>
             &#8249;
           </button>
         </div>
 
-        <!-- STEP 1 -->
+        <!-- STEP 1: DESTINATION -->
         <section class="inquiry-step-panel active" data-step-panel="1">
           <h2 class="step-title">Where would you like to travel?</h2>
+
           <div class="choices-row">
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Kenya">Kenya</label>
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Tanzania">Tanzania</label>
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Rwanda">Rwanda</label>
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Uganda">Uganda</label>
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Zanzibar">Zanzibar</label>
-            <label class="choice-pill"><input type="checkbox" name="destinations" value="Open to ideas">Open to Ideas</label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Kenya">
+              Kenya
+            </label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Tanzania">
+              Tanzania
+            </label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Rwanda">
+              Rwanda
+            </label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Uganda">
+              Uganda
+            </label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Zanzibar">
+              Zanzibar
+            </label>
+            <label class="choice-pill">
+              <input type="checkbox" name="destinations" value="Open to ideas">
+              Open to Ideas
+            </label>
           </div>
         </section>
 
-        <!-- STEP 2 -->
+        <!-- STEP 2: BUDGET -->
         <section class="inquiry-step-panel" data-step-panel="2">
-          <h2 class="step-title">What is your budget per person (excluding airfare from / to East Africa)?</h2>
+          <h2 class="step-title">
+            What is your budget per person (excluding airfare from / to East Africa)?
+          </h2>
+
           <div class="choices-row" data-required-radio-group="budget">
             <label class="choice-pill"><input type="radio" name="budget" value="500-1000">$500–1000</label>
             <label class="choice-pill"><input type="radio" name="budget" value="1000-1500">$1000–1500</label>
@@ -677,7 +684,7 @@
           </div>
         </section>
 
-        <!-- STEP 3 -->
+        <!-- STEP 3: WHEN TO TRAVEL -->
         <section class="inquiry-step-panel" data-step-panel="3">
           <h2 class="step-title">When do you want to travel?</h2>
 
@@ -689,6 +696,7 @@
             <label class="choice-pill"><input type="radio" name="travel_timing" value="flexible">I Don&apos;t Mind (I&apos;m Flexible)</label>
           </div>
 
+          <!-- Specific dates -->
           <div id="specificDatesBlock">
             <div>
               <label class="field-label" for="arrivalDate">Arrival Date</label>
@@ -700,6 +708,7 @@
             </div>
           </div>
 
+          <!-- Year / month selection -->
           <div id="yearMonthBlock">
             <label class="choice-pill"><input type="radio" name="month" value="January">January</label>
             <label class="choice-pill"><input type="radio" name="month" value="February">February</label>
@@ -716,9 +725,10 @@
           </div>
         </section>
 
-        <!-- STEP 4 -->
+        <!-- STEP 4: TRIP LENGTH -->
         <section class="inquiry-step-panel" data-step-panel="4">
           <h2 class="step-title">How long do you want to travel?</h2>
+
           <div class="choices-row" data-required-radio-group="trip_length">
             <label class="choice-pill"><input type="radio" name="trip_length" value="Less than one week">Less Than One Week</label>
             <label class="choice-pill"><input type="radio" name="trip_length" value="One week">One Week</label>
@@ -728,9 +738,10 @@
           </div>
         </section>
 
-        <!-- STEP 5 -->
+        <!-- STEP 5: TRAVELLING WITH -->
         <section class="inquiry-step-panel" data-step-panel="5">
           <h2 class="step-title">Who will you be travelling with?</h2>
+
           <div class="choices-row" data-required-radio-group="travelling_with">
             <label class="choice-pill"><input type="radio" name="travelling_with" value="Solo">I Travel Solo</label>
             <label class="choice-pill"><input type="radio" name="travelling_with" value="Partner">My Partner</label>
@@ -739,7 +750,7 @@
           </div>
         </section>
 
-        <!-- STEP 6 -->
+        <!-- STEP 6: EXPERIENCE DESCRIPTION -->
         <section class="inquiry-step-panel" data-step-panel="6">
           <h2 class="step-title">What do you want to see and do on your safari?</h2>
           <p style="max-width:640px;margin:0 auto 32px;font-size:14px;">
@@ -751,9 +762,10 @@
           </div>
         </section>
 
-        <!-- STEP 7 -->
+        <!-- STEP 7: CONTACT DETAILS -->
         <section class="inquiry-step-panel" data-step-panel="7">
           <h2 class="step-title">Where can we send your trip suggestions?</h2>
+
           <div class="field-grid">
             <div>
               <label class="field-label" for="firstName">First Name *</label>
@@ -794,7 +806,7 @@
           </p>
         </section>
 
-        <!-- FOOTER BUTTONS -->
+        <!-- FOOTER BUTTONS (NEXT / SUBMIT) -->
         <div class="step-footer">
           <button type="button" class="btn-next-main btn-outline" id="btnBackBottom">Back</button>
           <button type="button" class="btn-next-main" id="btnNext">Next</button>
@@ -803,6 +815,7 @@
       </div>
     </form>
 
+    <!-- PROGRESS BAR AT BOTTOM -->
     <div class="progress-wrapper">
       <div class="progress-label">Progress</div>
       <div class="progress-bar">
@@ -810,9 +823,6 @@
       </div>
     </div>
   </main>
-
-  <!-- ✅ subtle divider above footer -->
-  <div class="footer-divider"></div>
 
   <!-- FOOTER (same as index.html) -->
   <footer class="site-footer">
@@ -872,7 +882,7 @@
             <div class="social-icons">
               <a href="https://www.facebook.com/shikishatourstravel/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
               <a href="https://instagram.com/shikisha_tours/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/shikishatoursandtravelsandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
               <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
@@ -980,6 +990,7 @@
       }
     }
 
+    // Choice-pill selection handling
     document.querySelectorAll(".choice-pill input").forEach(input => {
       input.addEventListener("change", () => {
         const label = input.closest(".choice-pill");
@@ -1033,7 +1044,7 @@
       progressFill.style.width = "100%";
     });
 
-    // Init selection visuals
+    // Init selection visuals (in case browser preserves inputs)
     document.querySelectorAll(".choice-pill input").forEach(input => {
       const label = input.closest(".choice-pill");
       if (!label) return;
