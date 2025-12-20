@@ -1,34 +1,33 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Get a Free Quote | Shikisha Tours and Travel</title>
-    <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
-      /* === NEW VISUAL SYSTEM === */
-      --bg-page: #ffffff;              /* page background should be white */
+      /* Page */
+      --bg-page: #ffffff;
       --text-main: #021626;
 
+      /* Buttons / selection */
       --accent: #22a9e6;
       --accent-dark: #1383b3;
 
-      --header-bg: #647580;            /* NEW header color */
-      --progress-fill: #8a3e27;        /* NEW progress bar fill */
-      --progress-track: #eef2f4;       /* subtle track on white */
+      /* Outline + selected fill for pills */
+      --pill-outline: #021626;
+      --pill-fill: #9aa2a8;
+
+      /* Progress */
+      --progress-fill: #8a3e27;
+      --progress-track: #ffffff;
+
       --border-soft: #d5d5d5;
 
       --heading-font: 'Black Mango', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --body-font: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
       --max-width: 980px;
-
-      /* === Background banner image settings === */
-      --header-height: 80px; /* controls where the banner starts (just after header) */
-      --banner-height: 273px;
-      --banner-image: url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:49c03749447a4e7cfa292a226f0d9903/directUpload/bg-gradient-white-1280x273.png");
     }
 
     /* =========================
@@ -64,11 +63,11 @@
       margin: 0;
       padding: 0;
       min-height: 100%;
+      background: var(--bg-page);
     }
 
     body {
       font-family: var(--body-font);
-      background: var(--bg-page);
       color: var(--text-main);
     }
 
@@ -77,49 +76,15 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      position: relative;
       background: var(--bg-page);
-      overflow: hidden;
-    }
-
-    /* Background banner starts just after header bottom and fades into white */
-    .page::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: var(--header-height);
-      height: var(--banner-height);
-
-      background-image: var(--banner-image);
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: cover;
-
-      /* mask so it blends smoothly into white */
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
-
-      pointer-events: none;
-      z-index: 1;
     }
 
     /* HEADER */
     .site-header {
       width: 100%;
-      height: var(--header-height);
-      background: var(--header-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      position: relative;
-      z-index: 3; /* sits above banner */
-    }
-
-    .site-logo {
-      width: 100%;
       max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 12px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -131,20 +96,17 @@
       width: auto;
     }
 
-    /* MAIN FLOW */
     .inquiry-flow {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: stretch;
       justify-content: center;
-
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 20px 40px;
 
-      position: relative;
-      z-index: 2; /* above banner */
+      /* ✅ tighter bottom spacing before footer */
+      padding: 0 20px 18px;
     }
 
     .inquiry-card {
@@ -173,7 +135,6 @@
       font-size: 18px;
       line-height: 1;
       color: var(--text-main);
-      text-transform: none;
       transition: background 0.18s ease, color 0.18s ease;
     }
 
@@ -200,12 +161,12 @@
     .step-title {
       margin: 0 0 40px;
       font-family: var(--heading-font);
-      font-weight: 900; /* closer to safaris.html look */
+      font-weight: 900;
       font-size: clamp(28px, 4vw, 40px);
       line-height: 1.25;
     }
 
-    /* CHOICES ROW */
+    /* CHOICES */
     .choices-row {
       display: flex;
       flex-wrap: wrap;
@@ -220,17 +181,22 @@
       align-items: center;
       justify-content: center;
       padding: 12px 28px;
-      background: var(--accent);
       border-radius: 999px;
-      border: 1px solid transparent;
-      color: #ffffff;
+
+      background: transparent;
+      border: 1px solid var(--pill-outline);
+      color: var(--pill-outline);
+
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
       white-space: nowrap;
-      transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+
+      transition: background 0.18s ease, color 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .choice-pill input {
@@ -240,14 +206,15 @@
     }
 
     .choice-pill:hover {
-      background: var(--accent-dark);
       box-shadow: 0 6px 12px rgba(0,0,0,0.08);
       transform: translateY(-1px);
     }
 
     .choice-pill.selected {
-      border-color: #ffffff;
-      box-shadow: 0 0 0 2px rgba(0,0,0,0.05), 0 6px 18px rgba(0,0,0,0.12);
+      background: var(--pill-fill);
+      border-color: var(--pill-fill);
+      color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.12);
     }
 
     /* INPUTS */
@@ -294,13 +261,13 @@
     .field-label {
       display: block;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.09em;
       margin-bottom: 8px;
       text-transform: uppercase;
     }
 
-    /* SPECIAL BLOCKS IN STEP 3 */
+    /* SPECIAL BLOCKS STEP 3 */
     #specificDatesBlock,
     #yearMonthBlock {
       display: none;
@@ -315,14 +282,6 @@
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-    }
-
-    #specificDatesBlock label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
     }
 
     #yearMonthBlock {
@@ -357,12 +316,13 @@
       background: var(--accent);
       color: #fff;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.09em;
       text-transform: uppercase;
       border: none;
       cursor: pointer;
       transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease;
+      font-family: var(--heading-font);
     }
 
     .btn-next-main:hover {
@@ -382,6 +342,7 @@
       background: transparent;
       color: var(--text-main);
       border: 1px solid var(--text-main);
+      font-family: var(--heading-font);
     }
 
     .btn-outline:hover {
@@ -392,15 +353,16 @@
     /* PROGRESS BAR */
     .progress-wrapper {
       max-width: var(--max-width);
-      margin: 40px auto 20px;
-      padding: 0 20px 10px;
-      position: relative;
-      z-index: 2;
+
+      /* ✅ tighter spacing */
+      margin: 22px auto 10px;
+
+      padding: 0 20px 8px;
     }
 
     .progress-label {
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -414,6 +376,7 @@
       border-radius: 999px;
       background: var(--progress-track);
       overflow: hidden;
+      border: 1px solid rgba(2,22,38,0.10);
     }
 
     .progress-fill {
@@ -425,6 +388,21 @@
       border-radius: inherit;
       background: var(--progress-fill);
       transition: width 0.25s ease;
+    }
+
+    /* ✅ subtle divider above footer */
+    .footer-divider {
+      width: 100%;
+      max-width: 1200px;
+      margin: 10px auto 0;
+      padding: 0 1.5rem;
+    }
+    .footer-divider::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: rgba(2, 43, 58, 0.14);
     }
 
     /* SUCCESS MESSAGE */
@@ -444,10 +422,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      :root { --header-height: 72px; }
-
       .inquiry-card { padding-top: 40px; }
-
       .step-title { margin-bottom: 32px; }
 
       .choices-row {
@@ -458,372 +433,619 @@
       .choice-pill { width: 100%; }
 
       #specificDatesBlock { grid-template-columns: 1fr; }
-
       #yearMonthBlock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
       .field-grid { grid-template-columns: 1fr; }
+
+      .footer-divider { padding: 0 1.25rem; }
+    }
+
+    /* =========================
+       FOOTER – SAME AS index.html
+       ========================= */
+    .site-footer {
+      margin-top: 0;
+      background: #d7cbb3;
+      color: #022b3a;
+      font-family: var(--body-font);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) 1.1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(2, 43, 58, 0.16);
+    }
+
+    .footer-heading {
+      font-family: var(--heading-font);
+      font-weight: 900;
+      font-size: 1.25rem;
+      margin: 0 0 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li { margin-bottom: 0.45rem; }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #022b3a;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: var(--body-font);
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
+    .footer-connect-heading {
+      font-family: var(--heading-font);
+      font-weight: 900;
+      font-size: 1.9rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .footer-connect-sub {
+      font-size: 1rem;
+      margin: 0 0 1.4rem;
+    }
+
+    .footer-newsletter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .footer-newsletter input[type="email"] {
+      flex: 1 1 180px;
+      min-width: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(2, 43, 58, 0.35);
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-family: var(--body-font);
+      outline: none;
+      background: #fff;
+    }
+
+    .footer-newsletter input[type="email"]:focus {
+      border-color: #22a9e6;
+      box-shadow: 0 0 0 1px rgba(34, 169, 230, 0.3);
+    }
+
+    .footer-newsletter button {
+      border-radius: 999px;
+      border: 1px solid #022b3a;
+      background: transparent;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--body-font);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-newsletter button:hover {
+      background: #022b3a;
+      color: #fff;
+    }
+
+    .footer-connect-follow-label {
+      font-family: var(--heading-font);
+      font-weight: 900;
+      font-size: 1.4rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .social-icons a {
+      color: #022b3a;
+      font-size: 1.4rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #22a9e6;
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom {
+      background: #022b3a;
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .footer-bottom-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom-links a:hover { text-decoration: underline; }
+
+    .footer-bottom-links span {
+      opacity: 0.7;
+      margin: 0 0.4rem;
+    }
+
+    @media (max-width: 960px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-inner { padding-inline: 1.25rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
+      .footer-bottom-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-left: 0;
+      }
+      .footer-bottom-links a { margin-left: 0; }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <!-- HEADER WITH LOGO -->
-    <header class="site-header">
-      <a href="/" class="site-logo" aria-label="Shikisha Tours and Travel Home">
-        <img src="logo-shikisha.svg" alt="Shikisha Tours and Travel">
-      </a>
-    </header>
+<div class="page">
 
-    <!-- MAIN INQUIRY FLOW -->
-    <main class="inquiry-flow">
-      <form id="quoteForm" novalidate>
-        <div class="inquiry-card">
+  <!-- HEADER WITH LOGO -->
+  <header class="site-header">
+    <a href="/" class="site-logo" aria-label="Shikisha Tours and Travel Home">
+      <img src="logo-shikisha.svg" alt="Shikisha Tours and Travel">
+    </a>
+  </header>
 
-          <!-- Back icon row -->
-          <div class="step-nav-row">
-            <button type="button" class="btn-back btn-outline" id="btnBack" aria-label="Go back to previous question" disabled>
-              &#8249;
-            </button>
-          </div>
+  <!-- MAIN INQUIRY FLOW -->
+  <main class="inquiry-flow">
+    <form id="quoteForm" novalidate>
+      <div class="inquiry-card">
 
-          <!-- STEP 1: DESTINATION -->
-          <section class="inquiry-step-panel active" data-step-panel="1">
-            <h2 class="step-title">Where would you like to travel?</h2>
-
-            <div class="choices-row">
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Kenya">
-                Kenya
-              </label>
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Tanzania">
-                Tanzania
-              </label>
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Rwanda">
-                Rwanda
-              </label>
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Uganda">
-                Uganda
-              </label>
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Zanzibar">
-                Zanzibar
-              </label>
-              <label class="choice-pill">
-                <input type="checkbox" name="destinations" value="Open to ideas">
-                Open to Ideas
-              </label>
-            </div>
-          </section>
-
-          <!-- STEP 2: BUDGET -->
-          <section class="inquiry-step-panel" data-step-panel="2">
-            <h2 class="step-title">
-              What is your budget per person (excluding airfare from / to East Africa)?
-            </h2>
-
-            <div class="choices-row" data-required-radio-group="budget">
-              <label class="choice-pill"><input type="radio" name="budget" value="500-1000">$500–1000</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="1000-1500">$1000–1500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="2000-2500">$2000–2500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="2500-3000">$2500–3000</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="3000-3500">$3000–3500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="3500-4000">$3500–4000</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="4000-4500">$4000–4500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="5000-5500">$5000–5500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="6000-6500">$6000–6500</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="7000+">$7000+</label>
-              <label class="choice-pill"><input type="radio" name="budget" value="Not sure">Not Sure</label>
-            </div>
-          </section>
-
-          <!-- STEP 3: WHEN TO TRAVEL -->
-          <section class="inquiry-step-panel" data-step-panel="3">
-            <h2 class="step-title">When do you want to travel?</h2>
-
-            <div class="choices-row" data-required-radio-group="travel_timing">
-              <label class="choice-pill"><input type="radio" name="travel_timing" value="specific_dates">I Have Specific Dates</label>
-              <label class="choice-pill"><input type="radio" name="travel_timing" value="2025">2025</label>
-              <label class="choice-pill"><input type="radio" name="travel_timing" value="2026">2026</label>
-              <label class="choice-pill"><input type="radio" name="travel_timing" value="2027">2027</label>
-              <label class="choice-pill"><input type="radio" name="travel_timing" value="flexible">I Don&apos;t Mind (I&apos;m Flexible)</label>
-            </div>
-
-            <div id="specificDatesBlock">
-              <div>
-                <label class="field-label" for="arrivalDate">Arrival Date</label>
-                <input type="date" id="arrivalDate" name="arrival_date">
-              </div>
-              <div>
-                <label class="field-label" for="departureDate">Departure Date</label>
-                <input type="date" id="departureDate" name="departure_date">
-              </div>
-            </div>
-
-            <div id="yearMonthBlock">
-              <label class="choice-pill"><input type="radio" name="month" value="January">January</label>
-              <label class="choice-pill"><input type="radio" name="month" value="February">February</label>
-              <label class="choice-pill"><input type="radio" name="month" value="March">March</label>
-              <label class="choice-pill"><input type="radio" name="month" value="April">April</label>
-              <label class="choice-pill"><input type="radio" name="month" value="May">May</label>
-              <label class="choice-pill"><input type="radio" name="month" value="June">June</label>
-              <label class="choice-pill"><input type="radio" name="month" value="July">July</label>
-              <label class="choice-pill"><input type="radio" name="month" value="August">August</label>
-              <label class="choice-pill"><input type="radio" name="month" value="September">September</label>
-              <label class="choice-pill"><input type="radio" name="month" value="October">October</label>
-              <label class="choice-pill"><input type="radio" name="month" value="November">November</label>
-              <label class="choice-pill"><input type="radio" name="month" value="December">December</label>
-            </div>
-          </section>
-
-          <!-- STEP 4: TRIP LENGTH -->
-          <section class="inquiry-step-panel" data-step-panel="4">
-            <h2 class="step-title">How long do you want to travel?</h2>
-
-            <div class="choices-row" data-required-radio-group="trip_length">
-              <label class="choice-pill"><input type="radio" name="trip_length" value="Less than one week">Less Than One Week</label>
-              <label class="choice-pill"><input type="radio" name="trip_length" value="One week">One Week</label>
-              <label class="choice-pill"><input type="radio" name="trip_length" value="10 days">10 Days</label>
-              <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks">2 Weeks</label>
-              <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks +">2 Weeks +</label>
-            </div>
-          </section>
-
-          <!-- STEP 5: TRAVELLING WITH -->
-          <section class="inquiry-step-panel" data-step-panel="5">
-            <h2 class="step-title">Who will you be travelling with?</h2>
-
-            <div class="choices-row" data-required-radio-group="travelling_with">
-              <label class="choice-pill"><input type="radio" name="travelling_with" value="Solo">I Travel Solo</label>
-              <label class="choice-pill"><input type="radio" name="travelling_with" value="Partner">My Partner</label>
-              <label class="choice-pill"><input type="radio" name="travelling_with" value="Family">My Family</label>
-              <label class="choice-pill"><input type="radio" name="travelling_with" value="Friends">My Friends</label>
-            </div>
-          </section>
-
-          <!-- STEP 6: EXPERIENCE DESCRIPTION -->
-          <section class="inquiry-step-panel" data-step-panel="6">
-            <h2 class="step-title">What do you want to see and do on your safari?</h2>
-            <p style="max-width:640px;margin:0 auto 32px;font-size:14px;">
-              For example, tell us your must-haves, destination ideas, or if it&apos;s a special occasion.
-              The more you tell us, the better we can assist.
-            </p>
-            <div style="max-width:680px;margin:0 auto;">
-              <textarea id="safariDetails" name="safari_details" placeholder="Share any ideas, interests, or special occasions here..."></textarea>
-            </div>
-          </section>
-
-          <!-- STEP 7: CONTACT DETAILS -->
-          <section class="inquiry-step-panel" data-step-panel="7">
-            <h2 class="step-title">Where can we send your trip suggestions?</h2>
-
-            <div class="field-grid">
-              <div>
-                <label class="field-label" for="firstName">First Name *</label>
-                <input id="firstName" name="first_name" type="text" required>
-              </div>
-              <div>
-                <label class="field-label" for="lastName">Last Name *</label>
-                <input id="lastName" name="last_name" type="text" required>
-              </div>
-              <div class="field-full">
-                <label class="field-label" for="email">Email *</label>
-                <input id="email" name="email" type="email" required>
-              </div>
-              <div>
-                <label class="field-label" for="country">Country of Residence *</label>
-                <select id="country" name="country" required>
-                  <option value="">Please Select an Option</option>
-                  <option value="Kenya">Kenya</option>
-                  <option value="Tanzania">Tanzania</option>
-                  <option value="Uganda">Uganda</option>
-                  <option value="Rwanda">Rwanda</option>
-                  <option value="United States">United States</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="Australia">Australia</option>
-                  <option value="South Africa">South Africa</option>
-                </select>
-              </div>
-              <div>
-                <label class="field-label" for="phone">Phone *</label>
-                <input id="phone" name="phone" type="tel" value="+254" required>
-              </div>
-            </div>
-
-            <p style="font-size:12px;max-width:720px;margin:0 auto;">
-              We protect your personal information. By submitting, you agree to the use of it as described in our
-              <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.
-              You may opt out of our communications at any time.
-            </p>
-          </section>
-
-          <!-- FOOTER BUTTONS -->
-          <div class="step-footer">
-            <button type="button" class="btn-next-main btn-outline" id="btnBackBottom">Back</button>
-            <button type="button" class="btn-next-main" id="btnNext">Next</button>
-            <button type="submit" class="btn-next-main" id="btnSubmit" style="display:none;">Submit</button>
-          </div>
+        <div class="step-nav-row">
+          <button type="button" class="btn-back" id="btnBack" aria-label="Go back to previous question" disabled>
+            &#8249;
+          </button>
         </div>
-      </form>
 
-      <!-- PROGRESS BAR -->
-      <div class="progress-wrapper">
-        <div class="progress-label">Progress</div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progressFill"></div>
+        <!-- STEP 1 -->
+        <section class="inquiry-step-panel active" data-step-panel="1">
+          <h2 class="step-title">Where would you like to travel?</h2>
+          <div class="choices-row">
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Kenya">Kenya</label>
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Tanzania">Tanzania</label>
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Rwanda">Rwanda</label>
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Uganda">Uganda</label>
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Zanzibar">Zanzibar</label>
+            <label class="choice-pill"><input type="checkbox" name="destinations" value="Open to ideas">Open to Ideas</label>
+          </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="inquiry-step-panel" data-step-panel="2">
+          <h2 class="step-title">What is your budget per person (excluding airfare from / to East Africa)?</h2>
+          <div class="choices-row" data-required-radio-group="budget">
+            <label class="choice-pill"><input type="radio" name="budget" value="500-1000">$500–1000</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="1000-1500">$1000–1500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="2000-2500">$2000–2500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="2500-3000">$2500–3000</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="3000-3500">$3000–3500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="3500-4000">$3500–4000</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="4000-4500">$4000–4500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="5000-5500">$5000–5500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="6000-6500">$6000–6500</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="7000+">$7000+</label>
+            <label class="choice-pill"><input type="radio" name="budget" value="Not sure">Not Sure</label>
+          </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="inquiry-step-panel" data-step-panel="3">
+          <h2 class="step-title">When do you want to travel?</h2>
+
+          <div class="choices-row" data-required-radio-group="travel_timing">
+            <label class="choice-pill"><input type="radio" name="travel_timing" value="specific_dates">I Have Specific Dates</label>
+            <label class="choice-pill"><input type="radio" name="travel_timing" value="2025">2025</label>
+            <label class="choice-pill"><input type="radio" name="travel_timing" value="2026">2026</label>
+            <label class="choice-pill"><input type="radio" name="travel_timing" value="2027">2027</label>
+            <label class="choice-pill"><input type="radio" name="travel_timing" value="flexible">I Don&apos;t Mind (I&apos;m Flexible)</label>
+          </div>
+
+          <div id="specificDatesBlock">
+            <div>
+              <label class="field-label" for="arrivalDate">Arrival Date</label>
+              <input type="date" id="arrivalDate" name="arrival_date">
+            </div>
+            <div>
+              <label class="field-label" for="departureDate">Departure Date</label>
+              <input type="date" id="departureDate" name="departure_date">
+            </div>
+          </div>
+
+          <div id="yearMonthBlock">
+            <label class="choice-pill"><input type="radio" name="month" value="January">January</label>
+            <label class="choice-pill"><input type="radio" name="month" value="February">February</label>
+            <label class="choice-pill"><input type="radio" name="month" value="March">March</label>
+            <label class="choice-pill"><input type="radio" name="month" value="April">April</label>
+            <label class="choice-pill"><input type="radio" name="month" value="May">May</label>
+            <label class="choice-pill"><input type="radio" name="month" value="June">June</label>
+            <label class="choice-pill"><input type="radio" name="month" value="July">July</label>
+            <label class="choice-pill"><input type="radio" name="month" value="August">August</label>
+            <label class="choice-pill"><input type="radio" name="month" value="September">September</label>
+            <label class="choice-pill"><input type="radio" name="month" value="October">October</label>
+            <label class="choice-pill"><input type="radio" name="month" value="November">November</label>
+            <label class="choice-pill"><input type="radio" name="month" value="December">December</label>
+          </div>
+        </section>
+
+        <!-- STEP 4 -->
+        <section class="inquiry-step-panel" data-step-panel="4">
+          <h2 class="step-title">How long do you want to travel?</h2>
+          <div class="choices-row" data-required-radio-group="trip_length">
+            <label class="choice-pill"><input type="radio" name="trip_length" value="Less than one week">Less Than One Week</label>
+            <label class="choice-pill"><input type="radio" name="trip_length" value="One week">One Week</label>
+            <label class="choice-pill"><input type="radio" name="trip_length" value="10 days">10 Days</label>
+            <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks">2 Weeks</label>
+            <label class="choice-pill"><input type="radio" name="trip_length" value="2 weeks +">2 Weeks +</label>
+          </div>
+        </section>
+
+        <!-- STEP 5 -->
+        <section class="inquiry-step-panel" data-step-panel="5">
+          <h2 class="step-title">Who will you be travelling with?</h2>
+          <div class="choices-row" data-required-radio-group="travelling_with">
+            <label class="choice-pill"><input type="radio" name="travelling_with" value="Solo">I Travel Solo</label>
+            <label class="choice-pill"><input type="radio" name="travelling_with" value="Partner">My Partner</label>
+            <label class="choice-pill"><input type="radio" name="travelling_with" value="Family">My Family</label>
+            <label class="choice-pill"><input type="radio" name="travelling_with" value="Friends">My Friends</label>
+          </div>
+        </section>
+
+        <!-- STEP 6 -->
+        <section class="inquiry-step-panel" data-step-panel="6">
+          <h2 class="step-title">What do you want to see and do on your safari?</h2>
+          <p style="max-width:640px;margin:0 auto 32px;font-size:14px;">
+            For example, tell us your must-haves, destination ideas, or if it&apos;s a special occasion.
+            The more you tell us, the better we can assist.
+          </p>
+          <div style="max-width:680px;margin:0 auto;">
+            <textarea id="safariDetails" name="safari_details" placeholder="Share any ideas, interests, or special occasions here..."></textarea>
+          </div>
+        </section>
+
+        <!-- STEP 7 -->
+        <section class="inquiry-step-panel" data-step-panel="7">
+          <h2 class="step-title">Where can we send your trip suggestions?</h2>
+          <div class="field-grid">
+            <div>
+              <label class="field-label" for="firstName">First Name *</label>
+              <input id="firstName" name="first_name" type="text" required>
+            </div>
+            <div>
+              <label class="field-label" for="lastName">Last Name *</label>
+              <input id="lastName" name="last_name" type="text" required>
+            </div>
+            <div class="field-full">
+              <label class="field-label" for="email">Email *</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div>
+              <label class="field-label" for="country">Country of Residence *</label>
+              <select id="country" name="country" required>
+                <option value="">Please Select an Option</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="South Africa">South Africa</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" value="+254" required>
+            </div>
+          </div>
+
+          <p style="font-size:12px;max-width:720px;margin:0 auto;">
+            We protect your personal information. By submitting, you agree to the use of it as described in our
+            <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.
+            You may opt out of our communications at any time.
+          </p>
+        </section>
+
+        <!-- FOOTER BUTTONS -->
+        <div class="step-footer">
+          <button type="button" class="btn-next-main btn-outline" id="btnBackBottom">Back</button>
+          <button type="button" class="btn-next-main" id="btnNext">Next</button>
+          <button type="submit" class="btn-next-main" id="btnSubmit" style="display:none;">Submit</button>
         </div>
       </div>
-    </main>
-  </div>
+    </form>
 
-  <script>
-    (function () {
-      const panels = document.querySelectorAll(".inquiry-step-panel");
-      const maxStep = panels.length;
+    <div class="progress-wrapper">
+      <div class="progress-label">Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </main>
 
-      let currentStep = 1;
+  <!-- ✅ subtle divider above footer -->
+  <div class="footer-divider"></div>
 
-      const btnBackTop    = document.getElementById("btnBack");
-      const btnBackBottom = document.getElementById("btnBackBottom");
-      const btnNext       = document.getElementById("btnNext");
-      const btnSubmit     = document.getElementById("btnSubmit");
-      const progressFill  = document.getElementById("progressFill");
-      const form          = document.getElementById("quoteForm");
+  <!-- FOOTER (same as index.html) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading">Travel</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="safaris.html">Itineraries</a></li>
+            <li><a href="special-offers.html">Offers</a></li>
+            <li><a href="hotels, lodges & resorts.html">Partner Properties</a></li>
+          </ul>
+        </div>
 
-      function showStep(step) {
-        if (step < 1 || step > maxStep) return;
-        currentStep = step;
+        <div>
+          <h3 class="footer-heading">Impact</h3>
+          <ul class="footer-links">
+            <li><a href="#">Community &amp; Conservation</a></li>
+            <li><a href="#">Responsible Travel</a></li>
+            <li><a href="#">Travel With Purpose</a></li>
+          </ul>
+        </div>
 
-        panels.forEach(panel => {
-          const s = Number(panel.getAttribute("data-step-panel"));
-          panel.classList.toggle("active", s === currentStep);
-        });
+        <div>
+          <h3 class="footer-heading">About Us</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
 
-        const atFirst = currentStep === 1;
-        btnBackTop.disabled = atFirst;
-        btnBackBottom.disabled = atFirst;
+        <div>
+          <h3 class="footer-heading">Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="booking-terms.html">Booking T&amp;Cs</a></li>
+            <li><a href="help-center.html">Contact &amp; Enquiry</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
 
-        const atLast = currentStep === maxStep;
-        btnNext.style.display   = atLast ? "none" : "inline-flex";
-        btnSubmit.style.display = atLast ? "inline-flex" : "none";
+        <div>
+          <h3 class="footer-connect-heading">Let&apos;s connect…</h3>
+          <p class="footer-connect-sub">Join our newsletter. Stay in touch, be travel ready.</p>
 
-        const pct = ((currentStep - 1) / (maxStep - 1)) * 100;
-        progressFill.style.width = pct + "%";
+          <form class="footer-newsletter" action="#" method="post">
+            <input type="email" name="footer_email" placeholder="Your email address">
+            <button type="submit">Join here</button>
+          </form>
 
-        const wrapper = document.querySelector(".inquiry-flow");
-        if (wrapper) {
-          window.scrollTo({
-            top: wrapper.offsetTop - 40,
-            behavior: "smooth"
+          <p class="footer-connect-follow-label">Follow us</p>
+          <div class="footer-social-row">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/shikishatourstravel/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com/shikisha_tours/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/shikishatoursandtravelsandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div>© SHIKISHA TOURS AND TRAVEL 2025. ALL RIGHTS RESERVED.</div>
+          <div class="footer-bottom-links">
+            <a href="booking-terms.html">TERMS & CONDITIONS</a>
+            <span>•</span>
+            <a href="privacy.html">PRIVACY POLICY</a>
+            <span>•</span>
+            <a href="dpa.html">NOTICE OF COLLECTION / DPA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    const panels = document.querySelectorAll(".inquiry-step-panel");
+    const maxStep = panels.length;
+
+    let currentStep = 1;
+
+    const btnBackTop    = document.getElementById("btnBack");
+    const btnBackBottom = document.getElementById("btnBackBottom");
+    const btnNext       = document.getElementById("btnNext");
+    const btnSubmit     = document.getElementById("btnSubmit");
+    const progressFill  = document.getElementById("progressFill");
+    const form          = document.getElementById("quoteForm");
+
+    function showStep(step) {
+      if (step < 1 || step > maxStep) return;
+      currentStep = step;
+
+      panels.forEach(panel => {
+        const s = Number(panel.getAttribute("data-step-panel"));
+        panel.classList.toggle("active", s === currentStep);
+      });
+
+      const atFirst = currentStep === 1;
+      btnBackTop.disabled = atFirst;
+      btnBackBottom.disabled = atFirst;
+
+      const atLast = currentStep === maxStep;
+      btnNext.style.display   = atLast ? "none" : "inline-flex";
+      btnSubmit.style.display = atLast ? "inline-flex" : "none";
+
+      const pct = ((currentStep - 1) / (maxStep - 1)) * 100;
+      progressFill.style.width = pct + "%";
+
+      const wrapper = document.querySelector(".inquiry-flow");
+      if (wrapper) {
+        window.scrollTo({ top: wrapper.offsetTop - 40, behavior: "smooth" });
+      }
+    }
+
+    function validateCurrentStep() {
+      const activePanel = document.querySelector(`.inquiry-step-panel[data-step-panel="${currentStep}"]`);
+      if (!activePanel) return true;
+
+      const requiredGroup = activePanel.querySelector("[data-required-radio-group]");
+      if (requiredGroup) {
+        const groupName = requiredGroup.getAttribute("data-required-radio-group");
+        const radios = requiredGroup.querySelectorAll(`input[type="radio"][name="${groupName}"]`);
+        const checked = Array.from(radios).some(r => r.checked);
+        if (!checked) {
+          if (radios[0]) radios[0].focus();
+          return false;
+        }
+      }
+
+      if (currentStep === 1) {
+        const dests = activePanel.querySelectorAll('input[name="destinations"]:checked');
+        if (!dests.length) return false;
+      }
+
+      return true;
+    }
+
+    function toggleTravelTimingUI() {
+      const travelTimingRadios = document.querySelectorAll('input[name="travel_timing"]');
+      const specificDatesBlock = document.getElementById("specificDatesBlock");
+      const yearMonthBlock     = document.getElementById("yearMonthBlock");
+
+      let value = "";
+      travelTimingRadios.forEach(r => { if (r.checked) value = r.value; });
+
+      if (value === "specific_dates") {
+        if (specificDatesBlock) specificDatesBlock.style.display = "grid";
+        if (yearMonthBlock) yearMonthBlock.style.display = "none";
+      } else if (value === "2025" || value === "2026" || value === "2027" || value === "flexible") {
+        if (specificDatesBlock) specificDatesBlock.style.display = "none";
+        if (yearMonthBlock) yearMonthBlock.style.display = "grid";
+      } else {
+        if (specificDatesBlock) specificDatesBlock.style.display = "none";
+        if (yearMonthBlock) yearMonthBlock.style.display = "none";
+      }
+    }
+
+    document.querySelectorAll(".choice-pill input").forEach(input => {
+      input.addEventListener("change", () => {
+        const label = input.closest(".choice-pill");
+        if (!label) return;
+
+        if (input.type === "checkbox") {
+          label.classList.toggle("selected", input.checked);
+        } else if (input.type === "radio") {
+          const name = input.name;
+          document.querySelectorAll(`.choice-pill input[type="radio"][name="${name}"]`).forEach(r => {
+            const l = r.closest(".choice-pill");
+            if (l) l.classList.toggle("selected", r.checked);
           });
         }
+
+        if (input.name === "travel_timing") toggleTravelTimingUI();
+      });
+    });
+
+    btnNext.addEventListener("click", () => {
+      if (!validateCurrentStep()) return;
+      if (currentStep < maxStep) showStep(currentStep + 1);
+    });
+
+    function goBack() {
+      if (currentStep > 1) showStep(currentStep - 1);
+    }
+
+    btnBackTop.addEventListener("click", goBack);
+    btnBackBottom.addEventListener("click", goBack);
+
+    document.querySelectorAll('input[name="travel_timing"]').forEach(radio => {
+      radio.addEventListener("change", toggleTravelTimingUI);
+    });
+    toggleTravelTimingUI();
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
       }
 
-      function validateCurrentStep() {
-        const activePanel = document.querySelector(
-          `.inquiry-step-panel[data-step-panel="${currentStep}"]`
-        );
-        if (!activePanel) return true;
+      form.innerHTML = `
+        <div class="success-message">
+          <h2>Thank you for your enquiry</h2>
+          <p>Our team will review your preferences and get back to you with tailored safari suggestions shortly.</p>
+        </div>
+      `;
+      progressFill.style.width = "100%";
+    });
 
-        const requiredGroup = activePanel.querySelector("[data-required-radio-group]");
-        if (requiredGroup) {
-          const groupName = requiredGroup.getAttribute("data-required-radio-group");
-          const radios = requiredGroup.querySelectorAll(`input[type="radio"][name="${groupName}"]`);
-          const checked = Array.from(radios).some(r => r.checked);
-          if (!checked) {
-            if (radios[0]) radios[0].focus();
-            return false;
-          }
-        }
+    // Init selection visuals
+    document.querySelectorAll(".choice-pill input").forEach(input => {
+      const label = input.closest(".choice-pill");
+      if (!label) return;
+      if (input.type === "checkbox") label.classList.toggle("selected", input.checked);
+    });
+    document.querySelectorAll(".choice-pill input[type='radio']").forEach(r => {
+      const label = r.closest(".choice-pill");
+      if (!label) return;
+      label.classList.toggle("selected", r.checked);
+    });
 
-        if (currentStep === 1) {
-          const dests = activePanel.querySelectorAll('input[name="destinations"]:checked');
-          if (!dests.length) return false;
-        }
-
-        return true;
-      }
-
-      function toggleTravelTimingUI() {
-        const travelTimingRadios = document.querySelectorAll('input[name="travel_timing"]');
-        const specificDatesBlock = document.getElementById("specificDatesBlock");
-        const yearMonthBlock     = document.getElementById("yearMonthBlock");
-
-        let value = "";
-        travelTimingRadios.forEach(r => { if (r.checked) value = r.value; });
-
-        if (value === "specific_dates") {
-          if (specificDatesBlock) specificDatesBlock.style.display = "grid";
-          if (yearMonthBlock) yearMonthBlock.style.display = "none";
-        } else if (value === "2025" || value === "2026" || value === "2027" || value === "flexible") {
-          if (specificDatesBlock) specificDatesBlock.style.display = "none";
-          if (yearMonthBlock) yearMonthBlock.style.display = "grid";
-        } else {
-          if (specificDatesBlock) specificDatesBlock.style.display = "none";
-          if (yearMonthBlock) yearMonthBlock.style.display = "none";
-        }
-      }
-
-      document.querySelectorAll(".choice-pill input").forEach(input => {
-        input.addEventListener("change", () => {
-          const label = input.closest(".choice-pill");
-          if (!label) return;
-
-          if (input.type === "checkbox") {
-            label.classList.toggle("selected", input.checked);
-          } else if (input.type === "radio") {
-            const name = input.name;
-            document.querySelectorAll(`.choice-pill input[type="radio"][name="${name}"]`).forEach(r => {
-              const l = r.closest(".choice-pill");
-              if (l) l.classList.toggle("selected", r.checked);
-            });
-          }
-
-          if (input.name === "travel_timing") {
-            toggleTravelTimingUI();
-          }
-        });
-      });
-
-      btnNext.addEventListener("click", () => {
-        if (!validateCurrentStep()) return;
-        if (currentStep < maxStep) showStep(currentStep + 1);
-      });
-
-      function goBack() {
-        if (currentStep > 1) showStep(currentStep - 1);
-      }
-
-      btnBackTop.addEventListener("click", goBack);
-      btnBackBottom.addEventListener("click", goBack);
-
-      document.querySelectorAll('input[name="travel_timing"]').forEach(radio => {
-        radio.addEventListener("change", toggleTravelTimingUI);
-      });
-      toggleTravelTimingUI();
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
-
-        form.innerHTML = `
-          <div class="success-message">
-            <h2>Thank you for your enquiry</h2>
-            <p>Our team will review your preferences and get back to you with tailored safari suggestions shortly.</p>
-          </div>
-        `;
-        progressFill.style.width = "100%";
-      });
-
-      showStep(1);
-    })();
-  </script>
+    showStep(1);
+  })();
+</script>
 </body>
 </html>
