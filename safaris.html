@@ -174,57 +174,43 @@
       .hamburger { display: block; margin-left: auto; }
     }
 
-    /* =========================
-       VIDEO HERO
-       ========================= */
+  /* =========================
+   VIDEO HERO
+   ========================= */
 
-    .safaris-hero {
+.safaris-hero{
   position: relative;
   width: 100%;
-  height: 100vh;      /* full viewport height */
+  height: 100vh;
   min-height: 460px;
   overflow: hidden;
   background: #000;
 }
 
-.safaris-hero-video {
+.safaris-hero-video{
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
 
-/* IMPORTANT: oversize + center the Vimeo iframe so it covers fully */
-.safaris-hero-video-inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120vw;      /* a bit wider than the viewport */
-  height: 120vh;     /* a bit taller than the viewport */
-  transform: translate(-50%, -50%);
-}
-
-    .safaris-hero-video-inner {
+/* single definition only */
+.safaris-hero-video-inner{
   position: absolute;
   inset: 0;
 }
 
-.safaris-hero-bg {
+/* make the video itself fill the container */
+.safaris-hero-bg{
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
 }
 
-
-.safaris-hero-video-inner iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-
-  .safaris-hero-overlay {
+/* overlay stays the same */
+.safaris-hero-overlay{
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -235,6 +221,7 @@
   );
   pointer-events: none;
 }
+
        
 
     .safaris-hero-captions {
