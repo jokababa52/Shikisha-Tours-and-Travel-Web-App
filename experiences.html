@@ -6,26 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
-  
+
   <!-- Font Awesome (for footer icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- BRAND FONTS -->
   <style>
+    /* =========================
+       BRAND FONTS
+       ========================= */
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Bold.woff') format('woff');
       font-weight: 700;
       font-display: swap;
     }
-
     @font-face {
       font-family: 'Black Mango';
       src: url('font/BlackMango-Black.woff') format('woff');
       font-weight: 900;
       font-display: swap;
     }
-
     @font-face {
       font-family: 'League Spartan';
       src: url('font/leaguespartan-bold.woff') format('woff');
@@ -48,25 +48,130 @@
       color: #222;
       background: #ffffff;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3 { font-family: var(--font-heading); }
+
+    /* =========================
+       HEADER – MATCH SAFARIS.HTML
+       ========================= */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.5rem;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+      padding: 0.5rem 1.2rem;
+    }
+
+    .logo { width: 230px; height: auto; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
       font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    header.scrolled nav ul li a { color: #333; }
+
+    nav ul li a:hover { color: var(--brand-accent); }
+
+    nav ul li a.active {
+      color: var(--brand-accent);
+      font-weight: 900;
+    }
+
+    nav ul li .cta {
+      background: var(--brand-accent);
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-family: var(--font-heading);
+    }
+
+    nav ul li .cta:hover { background: #0f8dc0; transform: scale(1.05); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1001;
+    }
+
+    .hamburger::before { content: "☰"; font-size: 28px; color: #fff; }
+    header.scrolled .hamburger::before { color: #333; }
+    .hamburger.active::before { content: "✖"; color: #fff; }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: var(--brand-accent);
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+      }
+      nav.show { left: 0; }
+      nav ul { flex-direction: column; gap: 20px; width: 100%; }
+      nav ul li a { color: #fff; font-size: 1.3rem; }
+      nav ul li a.active { text-decoration: underline; }
+      .mobile-cta { margin-top: 30px; width: 100%; }
+      .mobile-cta .cta {
+        background: #fff;
+        color: var(--brand-accent) !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+      }
+      header .logo { width: 200px; }
+      .hamburger { display: block; margin-left: auto; }
     }
 
     /* =========================
        HERO
        ========================= */
-
     .experience-hero {
       position: relative;
       height: 85vh;
       min-height: 520px;
       background:
-        linear-gradient(
-          rgba(2, 43, 58, 0.55),
-          rgba(2, 43, 58, 0.65)
-        ),
+        linear-gradient(rgba(2, 43, 58, 0.55), rgba(2, 43, 58, 0.65)),
         url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:1079efb1041c3749bb7254bbb43560d4/directUpload/Asilia-Ol-Pejeta-Bush-Camp-Guests-enjoying-drinks-around-the-camp-fire.jpg")
         center / cover no-repeat;
       display: flex;
@@ -91,12 +196,12 @@
       max-width: 620px;
       font-size: 1.1rem;
       color: #f2f2f2;
+      margin: 0;
     }
 
     /* =========================
        INTRO
        ========================= */
-
     .experience-intro {
       max-width: 820px;
       margin: 4rem auto 2.5rem;
@@ -119,7 +224,6 @@
     /* =========================
        GRID
        ========================= */
-
     .experience-grid {
       max-width: 1200px;
       margin: 0 auto 5rem;
@@ -130,15 +234,10 @@
     }
 
     @media (max-width: 992px) {
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .experience-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 640px) {
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
+      .experience-grid { grid-template-columns: 1fr; }
     }
 
     .experience-card {
@@ -193,244 +292,182 @@
     /* =========================
        SUBTLE DIVIDER ABOVE FOOTER
        ========================= */
-
     .footer-divider {
       border-top: 1px solid rgba(2,43,58,0.12);
       margin: 0;
     }
 
     /* =========================
-   FOOTER – ASILIA-STYLE LAYOUT
-   ========================= */
+       FOOTER – ASILIA-STYLE LAYOUT
+       ========================= */
+    .site-footer {
+      margin-top: 0;
+      background: #d7cbb3;
+      color: #022b3a;
+      font-family: var(--font-body);
+    }
 
-.site-footer {
-  margin-top: 0;
-  background: #d7cbb3;           /* warm beige similar to screenshot */
-  color: #022b3a;
-  font-family: var(--font-body);
-}
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 0;
+    }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 0;
-}
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) 1.1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(2, 43, 58, 0.16);
+    }
 
-/* Top grid: Travel / Impact / About / Support / Connect */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) 1.1fr;
-  gap: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(2, 43, 58, 0.16);
-}
+    .footer-heading {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.25rem;
+      margin: 0 0 1rem;
+    }
 
-.footer-heading {
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1.25rem;
-  margin: 0 0 1rem;
-}
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 0.45rem; }
 
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .footer-links a {
+      text-decoration: none;
+      color: #022b3a;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+    .footer-links a:hover { text-decoration: underline; }
 
-.footer-links li {
-  margin-bottom: 0.45rem;
-}
+    .footer-connect-heading {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.9rem;
+      margin: 0 0 0.6rem;
+    }
 
-.footer-links a {
-  text-decoration: none;
-  color: #022b3a;
-  font-size: 0.9rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-family: var(--font-body);
-}
+    .footer-connect-sub {
+      font-size: 1rem;
+      margin: 0 0 1.4rem;
+    }
 
-.footer-links a:hover {
-  text-decoration: underline;
-}
+    .footer-newsletter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 1.6rem;
+    }
 
-/* Right-hand connect column */
-.footer-connect-heading {
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1.9rem;
-  margin: 0 0 0.6rem;
-}
+    .footer-newsletter input[type="email"] {
+      flex: 1 1 180px;
+      min-width: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(2, 43, 58, 0.35);
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      outline: none;
+    }
 
-.footer-connect-sub {
-  font-size: 1rem;
-  margin: 0 0 1.4rem;
-}
+    .footer-newsletter input[type="email"]:focus {
+      border-color: #22a9e6;
+      box-shadow: 0 0 0 1px rgba(34, 169, 230, 0.3);
+    }
 
-.footer-newsletter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  align-items: center;
-  margin-bottom: 1.6rem;
-}
+    .footer-newsletter button {
+      border-radius: 999px;
+      border: 1px solid #022b3a;
+      background: transparent;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
 
-.footer-newsletter input[type="email"] {
-  flex: 1 1 180px;
-  min-width: 0;
-  border-radius: 999px;
-  border: 1px solid rgba(2, 43, 58, 0.35);
-  padding: 10px 16px;
-  font-size: 0.9rem;
-  font-family: var(--font-body);
-  outline: none;
-}
+    .footer-newsletter button:hover {
+      background: #022b3a;
+      color: #fff;
+    }
 
-.footer-newsletter input[type="email"]:focus {
-  border-color: #22a9e6;
-  box-shadow: 0 0 0 1px rgba(34, 169, 230, 0.3);
-}
+    .footer-connect-follow-label {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.4rem;
+      margin: 0 0 0.6rem;
+    }
 
-.footer-newsletter button {
-  border-radius: 999px;
-  border: 1px solid #022b3a;
-  background: transparent;
-  padding: 10px 20px;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: var(--font-body);
-  transition: background 0.2s ease, color 0.2s ease;
-}
+    .footer-social-row { display: flex; align-items: center; gap: 0.8rem; }
 
-.footer-newsletter button:hover {
-  background: #022b3a;
-  color: #fff;
-}
+    .social-icons a {
+      color: #022b3a;
+      font-size: 1.4rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
 
-/* Follow us row */
-.footer-connect-follow-label {
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1.4rem;
-  margin: 0 0 0.6rem;
-}
+    .social-icons a:hover {
+      color: #22a9e6;
+      transform: translateY(-1px);
+    }
 
-.footer-social-row {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
+    .footer-bottom {
+      background: #022b3a;
+      color: #fff;
+      margin-top: 0;
+    }
 
-.social-icons a {
-  color: #022b3a;
-  font-size: 1.4rem;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
+    .footer-bottom-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+    }
 
-.social-icons a:hover {
-  color: #22a9e6;
-  transform: translateY(-1px);
-}
+    .footer-bottom-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-size: 0.82rem;
+    }
 
-/* Awards strip */
-.footer-awards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2.2rem 1.5rem 2.8rem;
-}
+    .footer-bottom-links a:hover { text-decoration: underline; }
 
-.footer-award {
-  border-radius: 999px;
-  border: 2px solid #022b3a;
-  padding: 1.1rem 1.9rem;
-  max-width: 210px;
-  text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
+    .footer-bottom-links span {
+      opacity: 0.7;
+      margin: 0 0.4rem;
+    }
 
-/* Bottom bar */
-.footer-bottom {
-  background: #022b3a;
-  color: #fff;
-  margin-top: 0;
-}
+    @media (max-width: 960px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+      }
+    }
 
-.footer-bottom-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.3rem 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  font-size: 0.82rem;
-}
-
-.footer-bottom-links a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1.2rem;
-  font-size: 0.82rem;
-}
-
-.footer-bottom-links a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom-links span {
-  opacity: 0.7;
-  margin: 0 0.4rem;
-}
-
-/* Footer responsive tweaks */
-@media (max-width: 960px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto auto;
-  }
-}
-
-@media (max-width: 720px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-inner {
-    padding-inline: 1.25rem;
-  }
-
-  .footer-bottom-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-bottom-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-left: 0;
-  }
-
-  .footer-bottom-links a {
-    margin-left: 0;
-  }
-
-  .footer-awards {
-    padding-inline: 1.25rem;
-  }
-}
-    
+    @media (max-width: 720px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-inner { padding-inline: 1.25rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
+      .footer-bottom-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-left: 0;
+      }
+      .footer-bottom-links a { margin-left: 0; }
+    }
   </style>
 </head>
 
@@ -440,13 +477,13 @@
   <a href="index.html" class="logo-link">
     <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
   </a>
-  <button class="hamburger" id="hamburger"></button>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"></button>
   <nav id="nav-menu">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="safaris.html">Safaris</a></li>
       <li><a href="#">Destinations</a></li>
-      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="experiences.html" class="active">Experiences</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="careers.html"><strong>Careers</strong></a></li>
       <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
@@ -511,9 +548,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <!-- Top grid -->
     <div class="footer-grid">
-      <!-- Travel -->
       <div>
         <h3 class="footer-heading">Travel</h3>
         <ul class="footer-links">
@@ -525,7 +560,6 @@
         </ul>
       </div>
 
-      <!-- Impact -->
       <div>
         <h3 class="footer-heading">Impact</h3>
         <ul class="footer-links">
@@ -535,7 +569,6 @@
         </ul>
       </div>
 
-      <!-- About Us -->
       <div>
         <h3 class="footer-heading">About Us</h3>
         <ul class="footer-links">
@@ -545,7 +578,6 @@
         </ul>
       </div>
 
-      <!-- Support -->
       <div>
         <h3 class="footer-heading">Support</h3>
         <ul class="footer-links">
@@ -557,7 +589,6 @@
         </ul>
       </div>
 
-      <!-- Connect / Newsletter -->
       <div>
         <h3 class="footer-connect-heading">Let&apos;s connect…</h3>
         <p class="footer-connect-sub">
@@ -574,7 +605,7 @@
           <div class="social-icons">
             <a href="https://www.facebook.com/shikishatourstravel/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://instagram.com/shikisha_tours/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/company/shikishatoursandtravels/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
@@ -582,23 +613,40 @@
       </div>
     </div>
 
-
-  <!-- Bottom teal strip -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-inner">
-      <div>
-        © SHIKISHA TOURS AND TRAVEL 2025. ALL RIGHTS RESERVED.
-      </div>
-      <div class="footer-bottom-links">
-        <a href="booking-terms.html">TERMS & CONDITIONS</a>
-        <span>•</span>
-        <a href="privacy.html">PRIVACY POLICY</a>
-        <span>•</span>
-        <a href="dpa.html">NOTICE OF COLLECTION / DPA</a>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <div>© SHIKISHA TOURS AND TRAVEL 2025. ALL RIGHTS RESERVED.</div>
+        <div class="footer-bottom-links">
+          <a href="booking-terms.html">TERMS & CONDITIONS</a>
+          <span>•</span>
+          <a href="privacy.html">PRIVACY POLICY</a>
+          <span>•</span>
+          <a href="dpa.html">NOTICE OF COLLECTION / DPA</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  // Mobile nav + scroll header (match safaris.html)
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  const header = document.getElementById("site-header");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
 
 </body>
 </html>
