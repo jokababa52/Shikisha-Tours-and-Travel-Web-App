@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>African Safari Experiences | What's on offer with Shikisha Tours and Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+  
+  <!-- Font Awesome (for footer icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- BRAND FONTS -->
+  <style>
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Bold.woff') format('woff');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Black Mango';
+      src: url('font/BlackMango-Black.woff') format('woff');
+      font-weight: 900;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('font/leaguespartan-bold.woff') format('woff');
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      --font-heading: 'Black Mango', system-ui, sans-serif;
+      --font-body: 'League Spartan', system-ui, sans-serif;
+
+      --brand-dark: #022b3a;
+      --brand-accent: #22a9e6;
+      --brand-muted: #647580;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: #222;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .experience-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 520px;
+      background:
+        linear-gradient(
+          rgba(2, 43, 58, 0.55),
+          rgba(2, 43, 58, 0.65)
+        ),
+        url("https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:d40fef4edf3bf3a27573e4472a41314c/directUpload/Lioness-in-the-Tree-in-the-Maasai-Mara.png")
+        center / cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .experience-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      color: #fff;
+    }
+
+    .experience-hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 900;
+      margin: 0 0 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .experience-hero p {
+      max-width: 620px;
+      font-size: 1.1rem;
+      color: #f2f2f2;
+    }
+
+    /* =========================
+       INTRO
+       ========================= */
+
+    .experience-intro {
+      max-width: 820px;
+      margin: 4rem auto 2.5rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .experience-intro h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--brand-dark);
+    }
+
+    .experience-intro p {
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    /* =========================
+       GRID
+       ========================= */
+
+    .experience-grid {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .experience-card {
+      background: #f7f9fc;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5e7f0;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .experience-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .experience-card-body {
+      padding: 1.4rem 1.6rem 1.8rem;
+    }
+
+    .experience-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--brand-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .experience-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 0.6rem;
+      color: #222;
+    }
+
+    .experience-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+    }
+
+    /* =========================
+       SUBTLE DIVIDER ABOVE FOOTER
+       ========================= */
+
+    .footer-divider {
+      border-top: 1px solid rgba(2,43,58,0.12);
+      margin: 0;
+    }
+
+    /* =========================
+   FOOTER – ASILIA-STYLE LAYOUT
+   ========================= */
+
+.site-footer {
+  margin-top: 0;
+  background: #d7cbb3;           /* warm beige similar to screenshot */
+  color: #022b3a;
+  font-family: var(--font-body);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+}
+
+/* Top grid: Travel / Impact / About / Support / Connect */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 1.1fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(2, 43, 58, 0.16);
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #022b3a;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Right-hand connect column */
+.footer-connect-heading {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.9rem;
+  margin: 0 0 0.6rem;
+}
+
+.footer-connect-sub {
+  font-size: 1rem;
+  margin: 0 0 1.4rem;
+}
+
+.footer-newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.footer-newsletter input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 43, 58, 0.35);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+.footer-newsletter input[type="email"]:focus {
+  border-color: #22a9e6;
+  box-shadow: 0 0 0 1px rgba(34, 169, 230, 0.3);
+}
+
+.footer-newsletter button {
+  border-radius: 999px;
+  border: 1px solid #022b3a;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer-newsletter button:hover {
+  background: #022b3a;
+  color: #fff;
+}
+
+/* Follow us row */
+.footer-connect-follow-label {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin: 0 0 0.6rem;
+}
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.social-icons a {
+  color: #022b3a;
+  font-size: 1.4rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #22a9e6;
+  transform: translateY(-1px);
+}
+
+/* Awards strip */
+.footer-awards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.2rem 1.5rem 2.8rem;
+}
+
+.footer-award {
+  border-radius: 999px;
+  border: 2px solid #022b3a;
+  padding: 1.1rem 1.9rem;
+  max-width: 210px;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background: #022b3a;
+  color: #fff;
+  margin-top: 0;
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-links span {
+  opacity: 0.7;
+  margin: 0 0.4rem;
+}
+
+/* Footer responsive tweaks */
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    padding-inline: 1.25rem;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-left: 0;
+  }
+
+  .footer-bottom-links a {
+    margin-left: 0;
+  }
+
+  .footer-awards {
+    padding-inline: 1.25rem;
+  }
+}
+    
+  </style>
+</head>
+
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
+  <button class="hamburger" id="hamburger"></button>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="safaris.html">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="careers.html"><strong>Careers</strong></a></li>
+      <li class="mobile-cta"><a href="inquiry.html" class="cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="experience-hero">
+  <div class="experience-hero-inner">
+    <h1>Experiences</h1>
+    <p>
+      Carefully crafted journeys that connect you with wildlife, landscapes,
+      and cultures across East Africa.
+    </p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="experience-intro">
+  <h2>Journeys with Meaning</h2>
+  <p>
+    Our experiences go beyond sightseeing. Each journey is designed to immerse
+    you in the rhythms of nature, local culture, and unforgettable moments —
+    whether it’s tracking wildlife, connecting with communities, or unwinding
+    in extraordinary places.
+  </p>
+</section>
+
+<!-- GRID -->
+<section class="experience-grid">
+  <article class="experience-card">
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:f4a92477036392d5ada86e6386e43d1d/directUpload/Lion-During-the-Migration-in-the-Maasai-Mara.png" alt="">
+    <div class="experience-card-body">
+      <span class="experience-label">Wildlife</span>
+      <h3>Great Migration Safaris</h3>
+      <p>Witness one of nature’s greatest spectacles across the Mara and Serengeti.</p>
+    </div>
+  </article>
+
+  <article class="experience-card">
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:ea15bbc7ec389b4b8a74bb1c09b1ad23/directUpload/Angama-Mara-Boma-photographed-by-Sammy-Njoroge.png" alt="">
+    <div class="experience-card-body">
+      <span class="experience-label">Culture</span>
+      <h3>Community & Cultural Encounters</h3>
+      <p>Connect with local communities and experience authentic traditions.</p>
+    </div>
+  </article>
+
+  <article class="experience-card">
+    <img src="https://mlksm2ek1k1e.i.optimole.com/w:auto/h:auto/q:auto/id:030d1db6832111a41531f7be11af0a39/https://shikishatoursandtravels.co.ke/389_1569_16135536483951_diani_beach_ii.jpg" alt="">
+    <div class="experience-card-body">
+      <span class="experience-label">Relaxation</span>
+      <h3>Beach & Island Escapes</h3>
+      <p>Slow down on pristine shores and turquoise waters along the Indian Ocean.</p>
+    </div>
+  </article>
+</section>
+
+<hr class="footer-divider">
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <!-- Top grid -->
+    <div class="footer-grid">
+      <!-- Travel -->
+      <div>
+        <h3 class="footer-heading">Travel</h3>
+        <ul class="footer-links">
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="safaris.html">Itineraries</a></li>
+          <li><a href="special-offers.html">Offers</a></li>
+          <li><a href="hotels, lodges & resorts.html">Partner Properties</a></li>
+        </ul>
+      </div>
+
+      <!-- Impact -->
+      <div>
+        <h3 class="footer-heading">Impact</h3>
+        <ul class="footer-links">
+          <li><a href="#">Community &amp; Conservation</a></li>
+          <li><a href="#">Responsible Travel</a></li>
+          <li><a href="#">Travel With Purpose</a></li>
+        </ul>
+      </div>
+
+      <!-- About Us -->
+      <div>
+        <h3 class="footer-heading">About Us</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="booking-terms.html">Booking T&amp;Cs</a></li>
+          <li><a href="help-center.html">Contact &amp; Enquiry</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect / Newsletter -->
+      <div>
+        <h3 class="footer-connect-heading">Let&apos;s connect…</h3>
+        <p class="footer-connect-sub">
+          Join our newsletter. Stay in touch, be travel ready.
+        </p>
+
+        <form class="footer-newsletter" action="#" method="post">
+          <input type="email" name="footer_email" placeholder="Your email address">
+          <button type="submit">Join here</button>
+        </form>
+
+        <p class="footer-connect-follow-label">Follow us</p>
+        <div class="footer-social-row">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/shikishatourstravel/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/shikisha_tours/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/shikishatoursandtravel/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.tiktok.com/@shikisha_tours/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@shikishatourstravel/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Bottom teal strip -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>
+        © SHIKISHA TOURS AND TRAVEL 2025. ALL RIGHTS RESERVED.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="booking-terms.html">TERMS & CONDITIONS</a>
+        <span>•</span>
+        <a href="privacy.html">PRIVACY POLICY</a>
+        <span>•</span>
+        <a href="dpa.html">NOTICE OF COLLECTION / DPA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
