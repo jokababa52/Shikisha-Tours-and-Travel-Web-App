@@ -1029,22 +1029,54 @@
     });
     toggleTravelTimingUI();
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    form.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
 
-      form.innerHTML = `
-        <div class="success-message">
-          <h2>Thank you for your enquiry</h2>
-          <p>Our team will review your preferences and get back to you with tailored safari suggestions shortly.</p>
-        </div>
-      `;
-      progressFill.style.width = "100%";
+  const fd = new FormData(form);
+  const data = {};
+
+  fd.forEach((value, key) => {
+    if (key === "destinations") {
+      if (!data.destinations) data.destinations = [];
+      data.destinations.push(value);
+    } else {
+      data[key] = value;
+    }
+  });
+
+  try {
+    btnSubmit.disabled = true;
+    btnSubmit.textContent = "Submitting...";
+
+    const res = await fetch("/api/quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
     });
+
+    const out = await res.json();
+    if (!res.ok) throw new Error(out.error || "Request failed");
+
+    form.innerHTML = `
+      <div class="success-message">
+        <h2>Thank you for your enquiry</h2>
+        <p>We will get back to you with tailored safari suggestions shortly.</p>
+      </div>
+    `;
+    progressFill.style.width = "100%";
+  } catch (err) {
+    console.error(err);
+    alert("Sorry — something went wrong. Please try again.");
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = "Submit";
+  }
+});
+
 
     // Init selection visuals (in case browser preserves inputs)
     document.querySelectorAll(".choice-pill input").forEach(input => {
