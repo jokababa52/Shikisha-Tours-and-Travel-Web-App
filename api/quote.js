@@ -6,35 +6,25 @@ export async function handler(req, context) {
 
     const data = await req.json();
 
-    // Basic validation
+    // Required fields
     if (!data.email || !data.first_name || !data.last_name) {
-      return {
-        status: 400,
-        body: JSON.stringify({ error: "Missing required fields" }),
-        headers: { "Content-Type": "application/json" }
-      };
+      return json(400, { error: "Missing required fields" });
     }
 
-    const subdomain = process.env.ZENDESK_SUBDOMAIN; // e.g. "shikisha"
-    const agentEmail = process.env.ZENDESK_EMAIL;    // Zendesk admin/agent email
-    const apiToken = process.env.ZENDESK_API_TOKEN;  // Zendesk API Token
+    const subdomain = process.env.ZENDESK_SUBDOMAIN;
+    const agentEmail = process.env.ZENDESK_EMAIL;
+    const apiToken = process.env.ZENDESK_API_TOKEN;
 
     if (!subdomain || !agentEmail || !apiToken) {
-      return {
-        status: 500,
-        body: JSON.stringify({ error: "Zendesk env vars not set" }),
-        headers: { "Content-Type": "application/json" }
-      };
+      return json(500, { error: "Zendesk env vars not set" });
     }
 
     const auth = Buffer.from(`${agentEmail}/token:${apiToken}`).toString("base64");
 
-    const bodyText = buildTicketBody(data);
-
     const payload = {
       ticket: {
         subject: `New Safari Quote Request — ${data.first_name} ${data.last_name}`,
-        comment: { body: bodyText },
+        comment: { body: buildTicketBody(data) },
         requester: {
           name: `${data.first_name} ${data.last_name}`,
           email: data.email
@@ -56,27 +46,23 @@ export async function handler(req, context) {
 
     if (!zdRes.ok) {
       context.log("Zendesk Error:", zdData);
-      return {
-        status: 502,
-        body: JSON.stringify({ error: "Zendesk ticket creation failed", details: zdData }),
-        headers: { "Content-Type": "application/json" }
-      };
+      return json(502, { error: "Zendesk ticket creation failed", details: zdData });
     }
 
-    return {
-      status: 200,
-      body: JSON.stringify({ ok: true, ticket_id: zdData.ticket.id }),
-      headers: { "Content-Type": "application/json" }
-    };
+    return json(200, { ok: true, ticket_id: zdData.ticket.id });
 
   } catch (err) {
     context.log("Server Error:", err);
-    return {
-      status: 500,
-      body: JSON.stringify({ error: "Server error" }),
-      headers: { "Content-Type": "application/json" }
-    };
+    return json(500, { error: "Server error" });
   }
+}
+
+function json(status, obj) {
+  return {
+    status,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(obj)
+  };
 }
 
 function buildTicketBody(data) {
