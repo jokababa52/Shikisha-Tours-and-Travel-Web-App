@@ -1,0 +1,5 @@
+{
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; base-uri 'self'; font-src 'self' https: data:; form-action 'self'; frame-ancestors 'self'; img-src 'self' https: data:; object-src 'none'; script-src 'self' https://tourtask-booking.pages.dev; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline' https://tourtask-booking.pages.dev; connect-src 'self' https://inbound.tourtask.com https://tourtask-booking.pages.dev; frame-src 'self' https://inbound.tourtask.com; upgrade-insecure-requests"
+  }
+}
