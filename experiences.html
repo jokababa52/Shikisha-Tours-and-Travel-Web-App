@@ -10,6 +10,9 @@
   <!-- Font Awesome (for footer icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- TourTask Booking (Activities Embed) -->
+  <link rel="stylesheet" href="https://tourtask-booking.pages.dev/static/css/main.css">
+
   <style>
     /* =========================
        BRAND FONTS
@@ -290,6 +293,20 @@
     }
 
     /* =========================
+       TOURTASK EMBED
+       ========================= */
+    .tt-booking-wrap {
+      width: 100%;
+      margin: 0 auto 4rem;
+      padding: 0;
+    }
+
+    #tourtask-booking-root {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* =========================
        SUBTLE DIVIDER ABOVE FOOTER
        ========================= */
     .footer-divider {
@@ -543,6 +560,23 @@
   </article>
 </section>
 
+<!-- TOURTASK ACTIVITIES EMBED -->
+<section class="tt-booking-wrap" aria-label="Browse and Book Activities">
+  <noscript>You need to enable JavaScript to run this booking app.</noscript>
+  <div
+    id="tourtask-booking-root"
+    data-page="activities"
+    data-lang="en"
+    data-business-slug="inbound"
+    data-business-token="DlzGa1w5"
+    data-is-embedded="true"
+    data-header-type="id"
+    data-header-name="site-header"
+    data-header-is-sticky="true"
+    data-limited-category-ids="328,336,343,360"
+  ></div>
+</section>
+
 <hr class="footer-divider">
 
 <!-- FOOTER -->
@@ -627,6 +661,9 @@
     </div>
   </div>
 </footer>
+
+<!-- TourTask Booking JS -->
+<script defer src="https://tourtask-booking.pages.dev/static/js/main.js"></script>
 
 <script>
   // Mobile nav + scroll header (match safaris.html)
