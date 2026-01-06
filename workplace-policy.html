@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+  <meta name="title" content="Shikisha Tours & Travel - Workplace & Health Policy (Jan 2026)">
+  <link
+    rel="icon"
+    href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png"
+    type="image/png"
+  />
   <title>Shikisha Tours & Travel – Workplace & Safety Policy</title>
 
   <style>
@@ -20,14 +25,11 @@
       --transition-fast: 0.2s ease-out;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #e4eeff 0, #f5f7fb 52%, #ffffff 100%);
       color: var(--text-main);
       line-height: 1.6;
@@ -39,10 +41,7 @@
       padding: 0 16px 40px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
+    header { text-align: center; margin-bottom: 24px; }
 
     .logo-text {
       display: inline-flex;
@@ -74,14 +73,50 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-top: 6px;
-      max-width: 560px;
+      max-width: 620px;
       margin-left: auto;
       margin-right: auto;
     }
 
+    /* Policy meta banner */
+    .policy-banner {
+      margin: 14px auto 0;
+      max-width: 760px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 16px;
+      padding: 12px 12px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .policy-banner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      text-align: left;
+    }
+
+    .policy-banner-item {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #fbfcff;
+      border: 1px dashed var(--border);
+      font-size: 0.9rem;
+    }
+
+    .policy-banner-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 750;
+    }
+
     /* Tabs / navigation */
     .tab-bar {
-      margin-top: 28px;
+      margin-top: 18px;
       display: flex;
       justify-content: center;
       gap: 8px;
@@ -108,9 +143,7 @@
       gap: 6px;
     }
 
-    .tab-btn span.icon {
-      font-size: 1rem;
-    }
+    .tab-btn span.icon { font-size: 1rem; }
 
     .tab-btn.active {
       background: var(--primary);
@@ -121,6 +154,57 @@
     .tab-btn:not(.active):hover {
       background: #edf1ff;
       color: var(--primary);
+    }
+
+    /* Action buttons row */
+    .action-row {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .pdf-btn {
+      border: 1px solid rgba(20, 86, 184, 0.25);
+      background: #ffffff;
+      color: var(--primary);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 650;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pdf-btn:hover {
+      background: #edf1ff;
+      transform: translateY(-1px);
+    }
+
+    .pdf-btn:active { transform: translateY(0); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      color: var(--text-muted);
+    }
+
+    .pill span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
     }
 
     /* Card layout */
@@ -141,10 +225,7 @@
       margin-bottom: 18px;
     }
 
-    .card-header h2 {
-      margin: 0;
-      font-size: 1.25rem;
-    }
+    .card-header h2 { margin: 0; font-size: 1.25rem; }
 
     .badge {
       padding: 4px 10px;
@@ -165,10 +246,7 @@
       padding-top: 16px;
     }
 
-    .section:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
+    .section:first-of-type { border-top: none; padding-top: 0; }
 
     .section-title {
       font-size: 0.95rem;
@@ -176,60 +254,14 @@
       letter-spacing: 0.08em;
       color: var(--text-muted);
       margin-bottom: 6px;
-      font-weight: 600;
+      font-weight: 750;
     }
 
-    p {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
-    }
+    p { margin: 0 0 10px; font-size: 0.95rem; }
 
-    ul {
-      margin: 6px 0 10px 1.2rem;
-      padding: 0;
-      font-size: 0.95rem;
-    }
+    ul { margin: 6px 0 10px 1.2rem; padding: 0; font-size: 0.95rem; }
 
-    li + li {
-      margin-top: 4px;
-    }
-
-    .link-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .link-row a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .link-row a:hover {
-      text-decoration: underline;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #f3f4ff;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .pill span.dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-    }
+    li + li { margin-top: 4px; }
 
     .highlight-box {
       margin-top: 10px;
@@ -237,6 +269,7 @@
       background: #f3f4ff;
       border-radius: 12px;
       font-size: 0.9rem;
+      border: 1px solid rgba(20, 86, 184, 0.12);
     }
 
     .meta-grid {
@@ -260,7 +293,33 @@
       letter-spacing: 0.08em;
       color: var(--text-muted);
       margin-bottom: 4px;
-      font-weight: 600;
+      font-weight: 800;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .link-row a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .link-row a:hover { text-decoration: underline; }
+
+    .legal-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: #fbfcff;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     footer {
@@ -270,22 +329,64 @@
       color: var(--text-muted);
     }
 
+    /* ======= PRINT (PDF) STYLES ======= */
+    @media print {
+      body { background: #ffffff !important; }
+      .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+
+      /* Hide web-only UI */
+      .tab-bar,
+      .action-row,
+      footer {
+        display: none !important;
+      }
+
+      header { text-align: left; margin-bottom: 12px; }
+      .policy-banner { max-width: 100% !important; box-shadow: none !important; }
+
+      /* Print cover */
+      .print-cover {
+        display: block !important;
+        margin: 0 0 16px !important;
+        padding: 14px 16px !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 14px !important;
+        background: #ffffff !important;
+      }
+
+      .print-cover h2 {
+        margin: 0 0 6px !important;
+        font-size: 16pt !important;
+      }
+
+      .print-cover p { margin: 0 0 8px !important; font-size: 11pt !important; }
+
+      /* Show BOTH cards in PDF */
+      #workplace-card, #health-card {
+        display: block !important;
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+      }
+
+      .card { margin-top: 12px !important; }
+      .section { page-break-inside: avoid; }
+      p, li { font-size: 11pt !important; }
+      h1 { font-size: 18pt !important; }
+      h2 { font-size: 14pt !important; }
+    }
+
+    /* Print cover hidden on web */
+    .print-cover { display: none; }
+
     @media (max-width: 640px) {
-      .card {
-        padding: 18px 16px 22px;
-      }
-
-      .card-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .tab-bar {
-        flex-wrap: wrap;
-      }
+      .card { padding: 18px 16px 22px; }
+      .card-header { flex-direction: column; align-items: flex-start; }
+      .tab-bar { flex-wrap: wrap; }
+      .policy-banner { margin-top: 12px; }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
@@ -298,121 +399,282 @@
           <h1>Workplace &amp; Health Policy</h1>
         </div>
       </div>
+
       <p class="subtitle">
-        Learn how we structure our on-site workplace, support our people, and
-        promote a safe, healthy environment for employees and guests.
+        This policy sets out workplace requirements, conduct standards, working hours,
+        probation, and health &amp; safety expectations for employees, applicants, and
+        stakeholders interacting with Shikisha Tours &amp; Travel.
       </p>
 
-      <div class="tab-bar">
-        <button class="tab-btn active" data-target="workplace">
+      <!-- Policy Banner (Version / Dates / Contact) -->
+      <div class="policy-banner" aria-label="Policy information">
+        <div class="policy-banner-grid">
+          <div class="policy-banner-item">
+            <div class="policy-banner-label">Effective Date</div>
+            January 2026
+          </div>
+          <div class="policy-banner-item">
+            <div class="policy-banner-label">Last Updated</div>
+            January 2026
+          </div>
+          <div class="policy-banner-item">
+            <div class="policy-banner-label">Policy Owner</div>
+            Human Resources (HR)
+          </div>
+          <div class="policy-banner-item">
+            <div class="policy-banner-label">Policy Contact</div>
+            <strong>hr@shikishatoursandtravels.co.ke</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tab-bar" role="tablist" aria-label="Policy Tabs">
+        <button class="tab-btn active" data-target="workplace" role="tab" aria-selected="true" aria-controls="workplace-card">
           <span class="icon">🏢</span>
           Workplace Policy
         </button>
-        <button class="tab-btn" data-target="health">
-          <span class="icon">💉</span>
-          Health &amp; Safety Policy
+
+        <button class="tab-btn" data-target="health" role="tab" aria-selected="false" aria-controls="health-card">
+          <span class="icon">🛡️</span>
+          Health &amp; Safety
         </button>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-row">
+        <button class="pdf-btn" type="button" id="downloadPdfBtn">⬇️ Download PDF</button>
+        <button class="pdf-btn" type="button" id="printBtn">🖨️ Print Policy</button>
+        <span class="pill"><span class="dot"></span> Saves as PDF from Print dialog</span>
       </div>
     </header>
 
-    <!-- Workplace Policy Card -->
     <main>
+      <!-- Print-only Cover -->
+      <section class="print-cover" aria-hidden="true">
+        <h2>Shikisha Tours &amp; Travel</h2>
+        <p><strong>Workplace &amp; Health Policy</strong> (Workplace, Conduct, Working Hours, Probation, Health &amp; Safety)</p>
+        <p><strong>Effective Date:</strong> January 2026 &nbsp;•&nbsp; <strong>Last Updated:</strong> January 2026</p>
+        <p><strong>Policy Owner:</strong> Human Resources (HR) &nbsp;•&nbsp; <strong>Contact:</strong> hr@shikishatoursandtravels.co.ke</p>
+        <p style="color:#6b7280;">
+          This document is intended for employees, applicants, and relevant stakeholders. It may be updated from time to time.
+        </p>
+        <div style="margin-top:10px; border-top:1px solid #e5e7eb; padding-top:10px;">
+          <p style="margin:0; font-size:11pt;"><strong>Employee Acknowledgement (Optional):</strong></p>
+          <p style="margin:6px 0 0; font-size:11pt;">
+            I acknowledge that I have read and understood this policy and agree to comply with its provisions.
+          </p>
+          <p style="margin:10px 0 0; font-size:11pt;">
+            Name: ___________________________ &nbsp;&nbsp; Signature: ___________________________ &nbsp;&nbsp; Date: _______________
+          </p>
+        </div>
+      </section>
+
+      <!-- Workplace Policy Card -->
       <article class="card" id="workplace-card">
         <div class="card-header">
-          <h2>Workplace Policy</h2>
-          <span class="badge">On-site</span>
+          <h2>Workplace, Conduct, Working Hours &amp; Probation Policy</h2>
+          <span class="badge">Effective: Jan 2026</span>
         </div>
 
         <section class="section">
-          <div class="section-title">Overview</div>
+          <div class="section-title">1. Purpose</div>
           <p>
-            Our workplace environment is designed
-            to support excellent service delivery, efficient operations, and strong
-            team collaboration. As a customer-focused travel company, being present
-            on-site helps us respond quickly to guest needs and coordinate
-            effectively across departments.
+            This Policy sets out the minimum standards and requirements governing workplace conduct,
+            working hours, attendance, probation, employee responsibilities, and operational expectations
+            at Shikisha Tours &amp; Travel (“the Company”). It is intended to promote service excellence,
+            fairness, employee wellbeing, and compliance with applicable laws and regulatory requirements.
           </p>
         </section>
 
         <section class="section">
-          <div class="section-title">On-site Work Requirement</div>
-          <p>
-            We operate fully on-site to support smooth travel operations, guest
-            services, and team coordination. Being on-site helps us maintain fast
-            communication, quality service, and strong team collaboration.
-          </p>
+          <div class="section-title">2. Scope and Applicability</div>
+          <p>This Policy applies to:</p>
           <ul>
-            <li>Seamless communication between team members and management</li>
-            <li>Real-time decision-making during travel operations</li>
-            <li>Hands-on support for bookings and service coordination</li>
-            <li>A collaborative environment that strengthens teamwork</li>
+            <li>All employees (full-time, part-time, casual, temporary);</li>
+            <li>Interns, trainees, and consultants where applicable; and</li>
+            <li>Any individual performing work on behalf of the Company.</li>
           </ul>
+          <p>This Policy applies at:</p>
+          <ul>
+            <li>Company offices and facilities;</li>
+            <li>Client sites and partner locations;</li>
+            <li>During tours, transfers, field operations, and work travel; and</li>
+            <li>Company events and work-related communications.</li>
+          </ul>
+        </section>
 
+        <section class="section">
+          <div class="section-title">3. Workplace Structure and On-site Requirement</div>
+          <p>
+            Shikisha Tours &amp; Travel operates as an <strong>on-site workplace</strong> to support travel operations,
+            booking coordination, real-time service delivery, and effective collaboration.
+          </p>
           <div class="highlight-box">
-            This on-site approach reflects our commitment to high-quality service
-            and operational excellence.
+            Remote work is not standard practice and may only be permitted in exceptional circumstances
+            with written approval from management.
           </div>
         </section>
 
         <section class="section">
-          <div class="section-title">On-site Employee Benefits</div>
+          <div class="section-title">4. Working Hours, Attendance &amp; Operational Flexibility</div>
+          <p>
+            The Company operates between <strong>9:00 AM and 7:00 PM</strong>, <strong>Monday to Saturday</strong>,
+            depending on workload, client demand, tour schedules, and operational requirements.
+          </p>
           <ul>
-            <li><strong>Collaborative Working Space</strong> for teamwork and shared problem-solving.</li>
-            <li><strong>Dedicated Focus Hours</strong> to support deep, distraction-free work.</li>
-            <li><strong>Free Meals</strong> to keep our team energized throughout the day.</li>
+            <li>Specific reporting and shift arrangements may vary depending on operational workload.</li>
+            <li>Supervisors may assign rosters or schedule adjustments to ensure service continuity and fairness.</li>
+            <li>Employees must report on time and remain available for assigned duties.</li>
+            <li>Delays, absences, or emergencies must be communicated to a supervisor as early as possible.</li>
+          </ul>
+          <p>
+            Employees are entitled to reasonable breaks during the workday. Supervisors are required to manage workloads
+            to support safe performance of duties and employee wellbeing.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="section-title">5. Probation Policy</div>
+          <p>
+            All new employees may be subject to a probation period as specified in their employment contract.
+            Probation is intended to assess performance, reliability, service standards, and compliance with Company rules.
+          </p>
+          <ul>
+            <li>Supervisors will monitor performance throughout probation and may conduct formal reviews.</li>
+            <li>Employees are expected to demonstrate satisfactory performance, professionalism, and compliance.</li>
+          </ul>
+          <p>At the end of probation, the Company may:</p>
+          <ul>
+            <li>Confirm the employee in their role;</li>
+            <li>Extend probation where further assessment is required (subject to applicable law and contract terms); or</li>
+            <li>Terminate employment where performance and/or conduct is unsatisfactory, in accordance with applicable law and employment terms.</li>
           </ul>
         </section>
 
         <section class="section">
-          <div class="section-title">Location-Based Pay Adjustment</div>
+          <div class="section-title">6. Code of Conduct</div>
           <p>
-            Shikisha Tours applies location-based pay adjustments based on the
-            employee’s country. This helps ensure fairness and consistency across
-            our global team.
+            All employees must uphold high standards of professionalism, integrity, and client service. Employees must:
           </p>
+          <ul>
+            <li>Treat clients, colleagues, and partners with respect and courtesy;</li>
+            <li>Avoid abusive, discriminatory, or harassing behaviour of any kind;</li>
+            <li>Protect Company and client confidentiality (including booking and personal data);</li>
+            <li>Disclose any conflict of interest to management;</li>
+            <li>Use Company property and resources responsibly for business purposes; and</li>
+            <li>Not report to work under the influence of alcohol or illegal substances.</li>
+          </ul>
+          <div class="highlight-box">
+            Breaches of the Code of Conduct may result in disciplinary action up to and including termination.
+          </div>
+        </section>
 
+        <section class="section">
+          <div class="section-title">7. Sick Leave &amp; Illness Reporting</div>
+          <p>
+            Shikisha Tours &amp; Travel encourages employees to prioritize their health and the safety of colleagues and clients.
+          </p>
+          <ul>
+            <li>Employees are free to report when they are unwell and may request leave to recover.</li>
+            <li><strong>Paid sick leave is provided</strong>, and employees will not be deducted salary for approved sick leave.</li>
+            <li>Where reasonably required, medical documentation may be requested for extended illness periods.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">8. Workplace Benefits and Support</div>
+          <ul>
+            <li><strong>Collaborative Working Space</strong> to support teamwork and shared problem-solving.</li>
+            <li><strong>Dedicated Focus Hours</strong> to support deep, distraction-free work where feasible.</li>
+            <li><strong>Meals / Meal Support</strong> to keep our team energized throughout the day (where applicable).</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">9. Location-Based Pay Adjustment</div>
+          <p>
+            Shikisha Tours applies location-based pay adjustments based on the employee’s country of residence or work location.
+            This helps ensure fairness and consistency across the global team.
+          </p>
           <div class="meta-grid">
             <div class="meta-item">
               <div class="meta-label">Adjustment basis</div>
-              Based on employee country
+              Based on employee country / work location
             </div>
             <div class="meta-item">
-              <div class="meta-label">Policy link</div>
+              <div class="meta-label">Workplace details</div>
               <div class="link-row">
-                <span>Full workplace details:</span>
-                <a
-                  href="https://www.shikishatoursandtravels.co.ke/workplace-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View policy page ↗</a
-                >
+                <span>Policy page:</span>
+                <a href="https://www.shikishatoursandtravels.co.ke/workplace-policy" target="_blank" rel="noopener noreferrer">
+                  View workplace policy ↗
+                </a>
               </div>
             </div>
           </div>
         </section>
+
+        <section class="section">
+          <div class="section-title">10. Reporting Concerns &amp; Discipline</div>
+          <p>
+            Employees are encouraged to report misconduct, policy violations, harassment, or safety concerns to HR or management.
+            The Company prohibits retaliation against employees who report concerns in good faith.
+          </p>
+          <p>
+            Failure to comply with this Policy may result in disciplinary action, including verbal warning, written warning,
+            final warning, suspension (where lawful), or termination.
+          </p>
+        </section>
+
+        <div class="legal-note">
+          <strong>Policy Updates:</strong> This Policy may be updated from time to time to reflect operational needs, legal requirements,
+          and changes in national health and safety guidelines. Employees will be notified of material updates through official
+          communication channels.
+        </div>
       </article>
 
-      <!-- Health & Safety / Vaccine Policy Card -->
+      <!-- Health & Safety Policy Card -->
       <article class="card" id="health-card" style="display:none;">
         <div class="card-header">
           <h2>Health, Safety &amp; Vaccination Policy</h2>
-          <span class="badge">Vaccine recommended</span>
+          <span class="badge">Safety first</span>
         </div>
 
         <section class="section">
-          <div class="section-title">Commitment to Safety</div>
+          <div class="section-title">1. Commitment to Safety</div>
           <p>
-            The safety and wellbeing of our employees, clients, and partners is a
-            top priority at Shikisha Tours &amp; Travel. We follow national health
-            guidelines and industry best practices to maintain a safe workplace.
+            The safety and wellbeing of our employees, clients, and partners is a top priority at Shikisha Tours &amp; Travel.
+            We follow national health guidelines and industry best practices to maintain a safe workplace and reliable operations.
           </p>
         </section>
 
         <section class="section">
-          <div class="section-title">COVID-19 Vaccination Policy</div>
+          <div class="section-title">2. General Workplace Safety</div>
+          <ul>
+            <li>Regular sanitization of shared spaces and equipment</li>
+            <li>Availability of hygiene supplies, including hand sanitizers</li>
+            <li>Clear procedures for reporting illness, exposure, hazards, or incidents</li>
+            <li>Flexible and supportive sick leave arrangements to support recovery</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">3. Employee Health Support</div>
           <p>
-            Vaccination is <strong>recommended</strong> for all employees who work
-            on-site. Staying up to date with COVID-19 vaccines helps us:
+            Employees who feel unwell should report promptly to their supervisor and may take leave to recover.
+            The Company encourages employees to seek medical attention when necessary and to return to work only when fit.
+          </p>
+          <ul>
+            <li><strong>Paid sick leave</strong> applies when sick leave is appropriately communicated and approved.</li>
+            <li>Any workplace injury or incident must be reported immediately for proper support and documentation.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title">4. COVID-19 Vaccination Policy</div>
+          <p>
+            Vaccination is <strong>recommended</strong> for all employees who work on-site. Staying up to date with COVID-19 vaccines
+            helps us promote safer in-person interactions, reduce health-related service disruptions, and maintain continuity in travel operations.
           </p>
           <ul>
             <li>Promote safer in-person interactions</li>
@@ -420,8 +682,7 @@
             <li>Maintain continuity in travel operations</li>
           </ul>
           <p>
-            Employees may be asked to present proof of vaccination only when
-            required by government or health authorities.
+            Employees may be asked to present proof of vaccination only when required by government or health authorities.
           </p>
 
           <div class="pill">
@@ -431,77 +692,110 @@
         </section>
 
         <section class="section">
-          <div class="section-title">General Workplace Safety</div>
-          <ul>
-            <li>Regular sanitization of shared spaces and equipment</li>
-            <li>Availability of hygiene supplies, including hand sanitizers</li>
-            <li>Clear procedures for reporting illness or exposure</li>
-            <li>Flexible sick leave arrangements to support recovery</li>
-          </ul>
+          <div class="section-title">5. Social Health Authority (SHA) Contributions</div>
+          <p>
+            The Company complies with statutory healthcare requirements. Employee healthcare contributions are deducted in accordance with
+            <strong>Social Health Authority (SHA)</strong> guidelines and applicable statutory caps and are remitted for employee access and use.
+          </p>
+          <div class="highlight-box">
+            For more information about SHA, visit: <strong>sha.go.ke</strong>
+          </div>
         </section>
 
         <section class="section">
-          <div class="section-title">More Information</div>
+          <div class="section-title">6. More Information</div>
           <div class="meta-grid">
             <div class="meta-item">
               <div class="meta-label">Policy link</div>
               <div class="link-row">
                 <span>Health &amp; safety details:</span>
-                <a
-                  href="https://www.shikishatoursandtravels.co.ke/health-and-safety"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View health &amp; safety page ↗</a
-                >
+                <a href="https://www.shikishatoursandtravels.co.ke/health-and-safety" target="_blank" rel="noopener noreferrer">
+                  View health &amp; safety page ↗
+                </a>
               </div>
             </div>
+
             <div class="meta-item">
               <div class="meta-label">Contact</div>
-              For policy questions, email
-              <strong>hr@shikishatoursandtravels.co.ke</strong>.
+              For policy questions, email <strong>hr@shikishatoursandtravels.co.ke</strong>.
             </div>
           </div>
         </section>
+
+        <div class="legal-note">
+          <strong>Non-Retaliation:</strong> Shikisha Tours &amp; Travel prohibits retaliation against any employee who reports a health,
+          safety, or workplace concern in good faith.
+        </div>
       </article>
     </main>
 
     <footer>
-      © <span id="2026"></span> Shikisha Tours &amp; Travel. All rights reserved.
+      © <span id="year"></span> Shikisha Tours &amp; Travel. All rights reserved.
     </footer>
   </div>
 
   <script>
-    // Tab switching logic
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const workplaceCard = document.getElementById("workplace-card");
-    const healthCard = document.getElementById("health-card");
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const workplaceCard = document.getElementById("workplace-card");
+      const healthCard = document.getElementById("health-card");
 
-    tabButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Update active tab button
-        tabButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
+      function switchTab(target) {
+        tabButtons.forEach((b) => {
+          const isActive = b.getAttribute("data-target") === target;
+          b.classList.toggle("active", isActive);
+          b.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
 
-        const target = btn.getAttribute("data-target");
+        const showWorkplace = target === "workplace";
+        workplaceCard.style.display = showWorkplace ? "block" : "none";
+        healthCard.style.display = showWorkplace ? "none" : "block";
 
-        if (target === "workplace") {
-          workplaceCard.style.display = "block";
-          healthCard.style.display = "none";
-        } else {
-          workplaceCard.style.display = "none";
-          healthCard.style.display = "block";
+        history.replaceState(null, "", "#" + target);
+
+        const header = document.querySelector("header");
+        if (header) {
+          window.scrollTo({ top: header.offsetTop, behavior: "smooth" });
         }
+      }
 
-        // Small scroll adjustment on mobile
-        window.scrollTo({
-          top: document.querySelector("header").offsetTop,
-          behavior: "smooth",
+      // Tabs click
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-target");
+          switchTab(target);
         });
       });
-    });
 
-    // Set current year in footer
-    document.getElementById("2026").textContent = new Date().getFullYear();
+      // Load correct tab from URL hash (e.g., #health)
+      const hash = window.location.hash.replace("#", "");
+      if (hash === "health" || hash === "workplace") switchTab(hash);
+      else switchTab("workplace");
+
+      // Footer year
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Print & PDF buttons
+      function printPolicy() {
+        // Ensure both cards are visible in PDF/print output
+        workplaceCard.style.display = "block";
+        healthCard.style.display = "block";
+
+        window.print();
+
+        // Restore the UI after printing based on hash
+        const afterHash = window.location.hash.replace("#", "");
+        if (afterHash === "health") switchTab("health");
+        else switchTab("workplace");
+      }
+
+      const downloadPdfBtn = document.getElementById("downloadPdfBtn");
+      if (downloadPdfBtn) downloadPdfBtn.addEventListener("click", printPolicy);
+
+      const printBtn = document.getElementById("printBtn");
+      if (printBtn) printBtn.addEventListener("click", printPolicy);
+    });
   </script>
 </body>
 </html>
