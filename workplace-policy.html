@@ -329,6 +329,10 @@
       color: var(--text-muted);
     }
 
+    /* Print cover hidden on web */
+    .print-cover { display: none; }
+    .print-cover.pdf-break { page-break-after: always; }
+
     /* ======= PRINT (PDF) STYLES ======= */
     @media print {
       body { background: #ffffff !important; }
@@ -352,6 +356,7 @@
         border: 1px solid #e5e7eb !important;
         border-radius: 14px !important;
         background: #ffffff !important;
+        page-break-after: always;
       }
 
       .print-cover h2 {
@@ -374,9 +379,6 @@
       h1 { font-size: 18pt !important; }
       h2 { font-size: 14pt !important; }
     }
-
-    /* Print cover hidden on web */
-    .print-cover { display: none; }
 
     @media (max-width: 640px) {
       .card { padding: 18px 16px 22px; }
@@ -443,15 +445,16 @@
 
       <!-- Actions -->
       <div class="action-row">
-        <button class="pdf-btn" type="button" id="downloadPdfBtn">⬇️ Download PDF</button>
+        <button class="pdf-btn" type="button" id="directPdfBtn">📄 Download PDF (Direct)</button>
+        <button class="pdf-btn" type="button" id="downloadPdfBtn">⬇️ Download PDF (Print)</button>
         <button class="pdf-btn" type="button" id="printBtn">🖨️ Print Policy</button>
-        <span class="pill"><span class="dot"></span> Saves as PDF from Print dialog</span>
+        <span class="pill"><span class="dot"></span> Direct PDF downloads instantly</span>
       </div>
     </header>
 
     <main>
       <!-- Print-only Cover -->
-      <section class="print-cover" aria-hidden="true">
+      <section class="print-cover pdf-break" aria-hidden="true">
         <h2>Shikisha Tours &amp; Travel</h2>
         <p><strong>Workplace &amp; Health Policy</strong> (Workplace, Conduct, Working Hours, Probation, Health &amp; Safety)</p>
         <p><strong>Effective Date:</strong> January 2026 &nbsp;•&nbsp; <strong>Last Updated:</strong> January 2026</p>
@@ -734,13 +737,34 @@
     </footer>
   </div>
 
+  <!-- Direct PDF Library -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-YcsIPGdhPK4P9V2t1S9sG7mXzYkNw2y4e1pM9xL0nQF6HRWmV8iL9rR9g2Qq0mI9x6hVQWwQYQ+o3WZ9mQ2Gg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const tabButtons = document.querySelectorAll(".tab-btn");
       const workplaceCard = document.getElementById("workplace-card");
       const healthCard = document.getElementById("health-card");
 
-      function switchTab(target) {
+      const directPdfBtn = document.getElementById("directPdfBtn");
+      const downloadPdfBtn = document.getElementById("downloadPdfBtn");
+      const printBtn = document.getElementById("printBtn");
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      if (!workplaceCard || !healthCard) {
+        console.error("Policy cards not found. Check IDs: workplace-card, health-card");
+        return;
+      }
+
+      // --- TAB SWITCHING ---
+      function switchTab(target, options = { scroll: true, setHash: true }) {
         tabButtons.forEach((b) => {
           const isActive = b.getAttribute("data-target") === target;
           b.classList.toggle("active", isActive);
@@ -751,15 +775,16 @@
         workplaceCard.style.display = showWorkplace ? "block" : "none";
         healthCard.style.display = showWorkplace ? "none" : "block";
 
-        history.replaceState(null, "", "#" + target);
+        if (options.setHash) history.replaceState(null, "", "#" + target);
 
-        const header = document.querySelector("header");
-        if (header) {
-          window.scrollTo({ top: header.offsetTop, behavior: "smooth" });
+        if (options.scroll) {
+          const header = document.querySelector("header");
+          if (header) {
+            window.scrollTo({ top: header.offsetTop, behavior: "smooth" });
+          }
         }
       }
 
-      // Tabs click
       tabButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const target = btn.getAttribute("data-target");
@@ -767,34 +792,98 @@
         });
       });
 
-      // Load correct tab from URL hash (e.g., #health)
+      // Default tab based on hash
       const hash = window.location.hash.replace("#", "");
-      if (hash === "health" || hash === "workplace") switchTab(hash);
-      else switchTab("workplace");
+      if (hash === "health" || hash === "workplace") {
+        switchTab(hash, { scroll: false, setHash: false });
+      } else {
+        switchTab("workplace", { scroll: false, setHash: false });
+      }
 
-      // Footer year
-      const yearEl = document.getElementById("year");
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Print & PDF buttons
+      // --- PRINT POLICY (fallback) ---
       function printPolicy() {
-        // Ensure both cards are visible in PDF/print output
+        const currentHash = window.location.hash.replace("#", "") || "workplace";
+
         workplaceCard.style.display = "block";
         healthCard.style.display = "block";
 
+        // Ensure cover prints on print/PDF
+        const printCover = document.querySelector(".print-cover");
+        if (printCover) printCover.style.display = "block";
+
         window.print();
 
-        // Restore the UI after printing based on hash
-        const afterHash = window.location.hash.replace("#", "");
-        if (afterHash === "health") switchTab("health");
-        else switchTab("workplace");
+        // Restore cover back to hidden on web
+        if (printCover) printCover.style.display = "";
+
+        if (currentHash === "health") switchTab("health", { scroll: false, setHash: false });
+        else switchTab("workplace", { scroll: false, setHash: false });
       }
 
-      const downloadPdfBtn = document.getElementById("downloadPdfBtn");
       if (downloadPdfBtn) downloadPdfBtn.addEventListener("click", printPolicy);
-
-      const printBtn = document.getElementById("printBtn");
       if (printBtn) printBtn.addEventListener("click", printPolicy);
+
+      // --- DIRECT PDF DOWNLOAD ---
+      async function downloadDirectPdf() {
+        if (typeof html2pdf === "undefined") {
+          alert("PDF generator failed to load. Please check your internet connection or CDN access.");
+          return;
+        }
+
+        const currentHash = window.location.hash.replace("#", "") || "workplace";
+
+        // Show both sections for PDF
+        workplaceCard.style.display = "block";
+        healthCard.style.display = "block";
+
+        // Show print cover for the generated PDF
+        const printCover = document.querySelector(".print-cover");
+        if (printCover) {
+          printCover.style.display = "block";
+          printCover.classList.add("pdf-break");
+        }
+
+        // Hide web-only UI for PDF generation
+        const actionRow = document.querySelector(".action-row");
+        const tabBar = document.querySelector(".tab-bar");
+        if (actionRow) actionRow.style.display = "none";
+        if (tabBar) tabBar.style.display = "none";
+
+        const filename = "Shikisha_Workplace_Health_Policy_Jan_2026.pdf";
+        const element = document.querySelector(".page");
+
+        const opt = {
+          margin:       0.4,
+          filename:     filename,
+          image:        { type: "jpeg", quality: 0.98 },
+          html2canvas:  { scale: 2, useCORS: true, scrollY: 0 },
+          jsPDF:        { unit: "in", format: "a4", orientation: "portrait" },
+          pagebreak:    { mode: ["avoid-all", "css", "legacy"] }
+        };
+
+        try {
+          await html2pdf().set(opt).from(element).save();
+        } catch (err) {
+          console.error("Direct PDF generation failed:", err);
+          alert("Direct PDF download failed. Please try the Print-based PDF option.");
+        } finally {
+          // Restore UI elements
+          if (actionRow) actionRow.style.display = "";
+          if (tabBar) tabBar.style.display = "";
+
+          // Restore print cover
+          if (printCover) {
+            printCover.style.display = "";
+            printCover.classList.remove("pdf-break");
+          }
+
+          // Restore original tab
+          if (currentHash === "health") switchTab("health", { scroll: false, setHash: false });
+          else switchTab("workplace", { scroll: false, setHash: false });
+        }
+      }
+
+      if (directPdfBtn) directPdfBtn.addEventListener("click", downloadDirectPdf);
     });
   </script>
 </body>
